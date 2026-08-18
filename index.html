@@ -688,7 +688,14 @@ h2::after{
   background:var(--white);border-radius:20px;padding:20px 18px;
   box-shadow:var(--shadow-sm);border-left:6px solid var(--coral);
 }
-.family-card h4{font-size:1.05rem;color:var(--navy);margin-bottom:8px;}
+.family-card .fc-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.family-card .icon{
+  width:56px;height:56px;flex:0 0 56px;border-radius:50%;
+  background:var(--navy-soft);
+  display:flex;align-items:center;justify-content:center;
+}
+.family-card .icon svg{width:34px;height:34px;}
+.family-card h4{font-size:1.05rem;color:var(--navy);margin-bottom:0;}
 .family-card p{font-size:1rem;line-height:1.9;}
 .family-card p + p{margin-top:8px;}
 
@@ -777,6 +784,12 @@ h2::after{
   display:flex;align-items:center;justify-content:center;
   font-weight:800;font-size:1rem;
 }
+.howto-item .ic{
+  flex:0 0 40px;width:40px;height:40px;border-radius:50%;
+  background:var(--navy-soft);
+  display:flex;align-items:center;justify-content:center;
+}
+.howto-item .ic svg{width:24px;height:24px;}
 .howto-item h4{font-size:1.03rem;color:var(--navy);margin-bottom:4px;}
 .howto-item p{font-size:1rem;line-height:1.85;}
 .tips-box{
@@ -1017,22 +1030,34 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
       <p class="sub">同じ「地震の備え」でも、確かめる場所は住まいと家族のかたちで違います。</p>
       <div class="family-grid">
         <div class="family-card">
-          <h4>賃貸にお住まいの方</h4>
+          <div class="fc-head">
+            <div class="icon" data-art="sRent" aria-hidden="true"></div>
+            <h4>賃貸にお住まいの方</h4>
+          </div>
           <p>建物の保険は大家さんのご契約です。ご自身で備えるのは<strong>「家財」</strong>。地震で家具・家電・寝具をひととおり買い直す金額を思い浮かべると、家財の地震保険の意味が見えてきます。</p>
           <p>借家にお住まいの方でもご契約いただけるのが一般的です。</p>
         </div>
         <div class="family-card">
-          <h4>住宅ローンを返済中の方</h4>
+          <div class="fc-head">
+            <div class="icon" data-art="sLoan" aria-hidden="true"></div>
+            <h4>住宅ローンを返済中の方</h4>
+          </div>
           <p>住宅ローンは、建物が壊れても残るのが原則です。団体信用生命保険が対応するのはご契約者の死亡・高度障害などで、建物の損害は対象ではないのが一般的です。</p>
           <p>地震保険は<strong>「ローンを抱えたまま次に進むための、当座の資金」</strong>という位置づけになります。被災された方のための「自然災害による被災者の債務整理に関するガイドライン」という仕組みもありますが、対象となる災害や要件に該当する場合に限られ、どなたでもご利用いただけるものではありません。</p>
         </div>
         <div class="family-card">
-          <h4>お子さまがいるご家庭</h4>
+          <div class="fc-head">
+            <div class="icon" data-art="sKids" aria-hidden="true"></div>
+            <h4>お子さまがいるご家庭</h4>
+          </div>
           <p>平日の昼間、家族はそれぞれの場所にいます。学校・保育園の引き取りルール（だれが・どこで・連絡がつかないときは）と、家族の集合場所。</p>
           <p>保険の前に、この2つを決めておくと当日の動きが変わります。</p>
         </div>
         <div class="family-card">
-          <h4>離れて暮らすご家族がいる方</h4>
+          <div class="fc-head">
+            <div class="icon" data-art="sFamilyFar" aria-hidden="true"></div>
+            <h4>離れて暮らすご家族がいる方</h4>
+          </div>
           <p>ご実家は別のご契約です。①1981年（昭和56年）5月以前に建てられた建物か ②火災保険に地震保険が付いているか ③証券をどなたが保管しているか——この3点だけでも違います。</p>
           <p>ご契約者ご本人の同意があれば、ご家族ご一緒での確認も承ります。</p>
         </div>
@@ -1328,6 +1353,7 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
       <div class="howto" style="margin-bottom:14px;">
       <div class="howto-item">
         <span class="n">1</span>
+        <span class="ic" data-art="sCamera" aria-hidden="true"></span>
         <div>
           <h4>被害の写真を撮る</h4>
           <p>建物の全景と、こわれた部分を近くから。日付が分かるように、片づける前に撮っておくのがコツです。</p>
@@ -1335,6 +1361,7 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
       </div>
       <div class="howto-item">
         <span class="n">2</span>
+        <span class="ic" data-art="sCall" aria-hidden="true"></span>
         <div>
           <h4>当社にご連絡ください</h4>
           <p>保険会社へのご連絡と、必要書類のご案内をお手伝いします。</p>
@@ -1342,6 +1369,7 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
       </div>
       <div class="howto-item">
         <span class="n">3</span>
+        <span class="ic" data-art="sVerdict" aria-hidden="true"></span>
         <div>
           <h4>損害の程度が認定されます</h4>
           <p>認定は保険会社の調査によります（支払の可否・時期は保険会社の判断によります）。</p>
@@ -1574,6 +1602,17 @@ sLawyer:'<svg viewBox="0 0 48 48"><path d="M24 8v30" stroke="#27587f" stroke-wid
 sMyhouse:'<svg viewBox="0 0 48 48"><path d="M11 26v15h26V26Z" fill="#fff" stroke="#e0cdb4" stroke-width="1.8"/><path d="M7 27 24 13l17 14" fill="none" stroke="#d9603f" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 41v-8h8v8Z" fill="#27587f"/><path d="M24 2c2.2 5 6.4 6.2 6.4 10.8a6.4 6.4 0 0 1-12.8 0c0-3.2 2.1-5.2 3.9-7.3.8 1.8 1.6 2.5 2.6 3.4-.5-2.5 0-4.4 0-6.9Z" fill="#f0846a"/><path d="M24 8.5c1 2.5 3 3 3 5.4a3 3 0 0 1-6 0c0-1.7 1.1-2.7 2-3.8.4.9.7 1.2 1 1.7Z" fill="#f7c34e"/></svg>',
 sNeighbor:'<svg viewBox="0 0 48 48"><path d="M5 28v13h15V28Z" fill="#fbe8c8" stroke="#d9a45f" stroke-width="1.8"/><path d="M2 29 12.5 20 23 29" fill="none" stroke="#d9a45f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 28v13h15V28Z" fill="#e4f2fa" stroke="#63b8dd" stroke-width="1.8"/><path d="M25 29 35.5 20 46 29" fill="none" stroke="#63b8dd" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 5c1.7 4 5.2 5 5.2 8.6a5.2 5.2 0 0 1-10.4 0c0-2.6 1.7-4.2 3.1-5.9.6 1.4 1.2 2 2.1 2.7-.4-2.2 0-3.6 0-5.4Z" fill="#f0846a"/><path d="M35.5 12c1.1 2.6 3.4 3.2 3.4 5.5a3.4 3.4 0 0 1-6.8 0c0-1.7 1.1-2.8 2.1-3.9.4 1 .8 1.4 1.3 1.8-.3-1.4 0-2.3 0-3.4Z" fill="#f7c34e"/></svg>',
 sGift:'<svg viewBox="0 0 48 48"><rect x="11" y="7" width="26" height="35" rx="3" fill="#fff" stroke="#d9c3ae" stroke-width="2.2"/><path d="M11 19h26" stroke="#eadbc9" stroke-width="2"/><path d="M24 7v12" stroke="#c2453f" stroke-width="2.6"/><path d="M17 16c2-4.5 5-4.5 7 0 2-4.5 5-4.5 7 0" fill="none" stroke="#c2453f" stroke-width="2.4" stroke-linecap="round"/><path d="M20 27h8M20 32h8M20 37h5" stroke="#dcd0c2" stroke-width="2.2" stroke-linecap="round"/></svg>',
+
+/* === STEP1 わが家のかたち === */
+sRent:'<svg viewBox="0 0 48 48"><rect x="10" y="8" width="22" height="34" rx="2.5" fill="#fff" stroke="#63b8dd" stroke-width="2.4"/><path d="M14 14h4M22 14h4M14 21h4M22 21h4M14 28h4M22 28h4M14 35h4M22 35h4" stroke="#a8dcef" stroke-width="2.4" stroke-linecap="round"/><circle cx="36" cy="34" r="8" fill="#f7c34e"/><circle cx="33.3" cy="34" r="2.3" fill="#fff8f2"/><path d="M35.4 34h6.6M40 34v3M42.2 34v2" stroke="#fff8f2" stroke-width="2" stroke-linecap="round"/></svg>',
+sLoan:'<svg viewBox="0 0 48 48"><path d="M8 24v16h18V24Z" fill="#fff" stroke="#e0cdb4" stroke-width="1.8"/><path d="M4 25 17 14l13 11" fill="none" stroke="#d9a45f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 40v-8h8v8Z" fill="#27587f"/><ellipse cx="37" cy="34" rx="8" ry="3.2" fill="#f7c34e"/><ellipse cx="37" cy="30" rx="8" ry="3.2" fill="#ffd76b"/><path d="M33.5 29.5h7M37 26.5v6" stroke="#a8701a" stroke-width="1.8" stroke-linecap="round"/></svg>',
+sKids:'<svg viewBox="0 0 48 48"><circle cx="16" cy="14" r="6.5" fill="#f7cdb4"/><path d="M9.5 13c.7-5 3.2-7.2 6.5-7.2s5.8 2.2 6.5 7.2c-2-2.1-4-2.9-6.5-2.9s-4.5.8-6.5 2.9Z" fill="#5c4030"/><path d="M6 38c0-8 4.5-13 10-13s10 5 10 13v3H6Z" fill="#63b8dd"/><circle cx="34" cy="20" r="5" fill="#f7cdb4"/><path d="M29.5 19c.5-3.8 2.5-5.5 4.5-5.5s4 1.7 4.5 5.5c-1.5-1.6-3-2.2-4.5-2.2s-3 .6-4.5 2.2Z" fill="#7a5a3a"/><path d="M26 41c0-6 3.5-10 8-10s8 4 8 10v0H26Z" fill="#f0846a"/></svg>',
+sFamilyFar:'<svg viewBox="0 0 48 48"><path d="M4 30v12h14V30Z" fill="#fff" stroke="#e0cdb4" stroke-width="1.8"/><path d="M1 31 11 22l10 9" fill="none" stroke="#d9a45f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M25 27c4-4 4-4 8 0" stroke="#63b8dd" stroke-width="2.4" stroke-linecap="round" fill="none" stroke-dasharray="1 5"/><path d="M28 31c2-2 2-2 4 0" stroke="#63b8dd" stroke-width="2.4" stroke-linecap="round" fill="none" stroke-dasharray="1 4"/><rect x="30" y="18" width="14" height="24" rx="3" fill="#4fbf9b"/><rect x="33.5" y="21.5" width="7" height="10" rx="1.5" fill="#e6f5f0"/><circle cx="37" cy="36" r="1.6" fill="#e6f5f0"/></svg>',
+
+/* === まとめ もしものときは、こう進みます === */
+sCamera:'<svg viewBox="0 0 48 48"><path d="M6 16a3 3 0 0 1 3-3h6l2-4h10l2 4h6a3 3 0 0 1 3 3v20a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3Z" fill="#fff" stroke="#63b8dd" stroke-width="2.4"/><circle cx="24" cy="27" r="8" fill="none" stroke="#27587f" stroke-width="2.6"/><circle cx="24" cy="27" r="3.4" fill="#27587f"/><circle cx="35" cy="18" r="1.6" fill="#f7c34e"/></svg>',
+sCall:'<svg viewBox="0 0 48 48"><path d="M11 8c8 0 8 0 10 6l-4 4c1.5 4 4.5 7 8.5 8.5l4-4c6 2 6 2 6 10a3 3 0 0 1-3 3C19 35.5 12.5 29 9 16a3 3 0 0 1 2-8Z" fill="#4fbf9b" stroke="#1b7867" stroke-width="1.6"/></svg>',
+sVerdict:'<svg viewBox="0 0 48 48"><rect x="10" y="6" width="24" height="34" rx="3" fill="#fff" stroke="#9fb3c8" stroke-width="2.2"/><path d="M15 15h14M15 21h14M15 27h9" stroke="#c9dbe7" stroke-width="2.4" stroke-linecap="round"/><circle cx="34" cy="34" r="9" fill="#f7c34e"/><path d="m30 34 2.7 2.7L38 31" fill="none" stroke="#a8701a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
 
 /* === クイズ結果 === */
 resultCheer:'<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#fff3e6"/><path d="M8 64c0-13 11-20 24-20s24 7 24 20H8Z" fill="#f0846a"/><rect x="27" y="39" width="10" height="11" rx="5" fill="#f7cdb4"/><path d="M25 45l7 9 7-9 3.4 1.8L32 61 21.6 46.8Z" fill="#fff"/><ellipse cx="32" cy="28" rx="16" ry="17" fill="#5c4030"/><ellipse cx="32" cy="30" rx="12.5" ry="13.5" fill="#f7cdb4"/><path d="M19.5 27c0-9 5.6-14.5 12.5-14.5S44.5 18 44.5 27c-1.6-3.6-4.2-5.7-7.2-6.6-2.6 2.4-7 3.8-10.9 3.2-1.4 1-2.4 2.1-2.9 3.4Z" fill="#5c4030"/><path d="M24 30.5c1.4-1.8 4-1.8 5.4 0M34.6 30.5c1.4-1.8 4-1.8 5.4 0" fill="none" stroke="#3d3028" stroke-width="1.8" stroke-linecap="round"/><ellipse cx="23.6" cy="35.5" rx="2.6" ry="1.7" fill="#f4a08a" opacity=".6"/><ellipse cx="40.4" cy="35.5" rx="2.6" ry="1.7" fill="#f4a08a" opacity=".6"/><path d="M28.5 36c1.9 2.4 5.1 2.4 7 0" fill="none" stroke="#3d3028" stroke-width="1.8" stroke-linecap="round"/><path d="M8 14l1.5 4L14 19.5 9.5 21 8 25l-1.5-4L2 19.5 6.5 18Z" fill="#f7c34e"/><path d="M56 10l1.2 3.2L60 14.5l-2.8 1.3L56 19l-1.2-3.2L52 14.5l2.8-1.3Z" fill="#63b8dd"/></svg>'
