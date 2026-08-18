@@ -644,6 +644,25 @@ h2::after{
 }
 .textsize svg{width:20px;height:20px;stroke:var(--navy);flex:0 0 20px;}
 
+/* ---------- 都道府県セレクター ---------- */
+.pref-box{
+  background:var(--white);border-radius:20px;padding:18px 18px 16px;
+  box-shadow:var(--shadow);margin-bottom:22px;border-left:6px solid var(--coral);
+}
+.pref-label{display:block;font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:10px;}
+.pref-select{
+  width:100%;min-height:56px;border-radius:14px;
+  border:2px solid #c9dbe7;background:var(--white);color:var(--navy);
+  font-family:inherit;font-size:1.1rem;font-weight:700;
+  padding:0 14px;cursor:pointer;
+}
+.pref-select:focus-visible{outline:3px solid var(--sunny);outline-offset:2px;}
+.pref-zone{
+  font-size:.9rem;line-height:1.8;color:var(--muted);margin-top:10px;
+  display:flex;gap:8px;align-items:flex-start;
+}
+.pref-zone b{color:var(--amber-deep);white-space:nowrap;}
+
 /* ---------- わが家だと、いくら？（簡易試算） ---------- */
 .calc-box{background:var(--white);border-radius:20px;padding:18px 16px;box-shadow:var(--shadow-sm);}
 .calc-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
@@ -863,14 +882,14 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
       <span class="ico" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 4.5 5.6v5.2c0 4.7 3.2 8.6 7.5 9.8 4.3-1.2 7.5-5.1 7.5-9.8V5.6L12 2.7Z"/><path d="m9 12 2.2 2.2L15.4 10"/></svg>
       </span>
-      <span>ニッサン総合保険企画株式会社<small>香川県高松市の損害保険代理店</small></span>
+      <span>ニッサン総合保険企画株式会社</span>
     </div>
     <div class="hero-flex">
       <div class="hero-copy">
         <h1>もしもの南海トラフ地震。<br><span class="nowrap">わが家は<span class="accent">いくら出る</span>か、</span><span class="nowrap">ご存じですか。</span></h1>
         <p class="lead">香川県にお住まいの方へ。持ち家の方も、賃貸の方も。離れて暮らすご実家のことも含めて、いまの火災保険・自動車保険で「出るもの・出ないもの」を確かめられます。○×クイズだけなら3分、全部読むと10分ほど。気になるところだけどうぞ。</p>
         <nav class="hero-nav" aria-label="ページ内メニュー">
-          <a href="#sec1"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path d="M19.5 10.5c0 7.1-7.5 11-7.5 11s-7.5-3.9-7.5-11a7.5 7.5 0 1 1 15 0Z"/></svg>香川のリスク</a>
+          <a href="#sec1"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path d="M19.5 10.5c0 7.1-7.5 11-7.5 11s-7.5-3.9-7.5-11a7.5 7.5 0 1 1 15 0Z"/></svg><span><span data-pref-name>香川県</span>のリスク</span></a>
           <a href="#sec2"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 9a2.6 2.6 0 0 1 5.1.7c0 1.7-2.6 2.6-2.6 2.6M12.4 16h.01"/><circle cx="12" cy="12" r="9"/></svg>○×クイズ</a>
           <a href="#sec3"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 4.5 5.6v5.2c0 4.7 3.2 8.6 7.5 9.8 4.3-1.2 7.5-5.1 7.5-9.8V5.6L12 2.7Z"/></svg>地震保険とは</a>
           <a href="#sec4"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3.3 11 3 3 0 0 1 1.1 1.9l.03.35h4.34l.03-.35a3 3 0 0 1 1.1-1.9A6 6 0 0 0 12 3Z"/><path d="M9.8 19.2h4.4M10.7 21.7h2.6"/></svg>保険の意外な出番</a>
@@ -927,50 +946,57 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
   <div class="wrap">
     <div class="sec-head">
       <div>
-        <span class="step-pill"><i>1</i>香川のリスクを知る</span>
-        <h2>香川県の南海トラフ想定リスク</h2>
+        <span class="step-pill"><i>1</i><span><span data-pref-name>香川県</span>のリスクを知る</span></span>
+        <h2><span data-pref-name>香川県</span>の南海トラフ想定リスク</h2>
       </div>
       <div class="spot"><span class="spot-circle" data-art="spotRisk" aria-hidden="true"></span></div>
     </div>
-    <p class="sec-lead">「瀬戸内は災害が少ない」と言われますが、南海トラフ地震は香川県にも大きな影響が想定されています。まずは全体像から。（約4分）</p>
+
+    <div class="pref-box">
+      <label class="pref-label" for="prefSelect">お住まいの都道府県を選んでください</label>
+      <select id="prefSelect" class="pref-select"></select>
+      <p class="pref-zone" id="prefZone"></p>
+    </div>
+
+    <p class="sec-lead" id="sec1Lead"></p>
 
     <div class="cards">
       <div class="risk-card" id="card-shake">
         <span class="hl-badge">あなたの地域の注意点</span>
         <div class="icon ic-red" data-art="quake" aria-hidden="true"></div>
         <h3>揺れ（最大震度）</h3>
-        <div class="num">震度6弱〜6強 <small>／高松市を含む県内の広い範囲</small></div>
-        <p>立っていられないほどの揺れです。古い木造家屋の倒壊や、家具の転倒・ブロック塀の倒壊が想定されます。食器棚も家電も倒れます。片づけと修理のあいだ、いつもの暮らしは止まります。</p>
+        <div class="num" id="numShindo"></div>
+        <p id="txtShindo"></p>
       </div>
 
       <div class="risk-card" id="card-tsunami">
         <span class="hl-badge">あなたの地域の注意点</span>
         <div class="icon ic-blue" data-art="tsunami" aria-hidden="true"></div>
         <h3>津波の高さ</h3>
-        <div class="num">最大 約3〜4m <small>／沿岸部（満潮時）</small></div>
-        <p>瀬戸内海側にも津波は到達します。海抜の低い市街地や埋立地では浸水のおそれがあります。浸水すると泥のかき出しと乾燥に時間がかかり、しばらく住めなくなることがあります。</p>
+        <div class="num" id="numTsunami"></div>
+        <p id="txtTsunami"></p>
       </div>
 
       <div class="risk-card" id="card-time">
         <span class="hl-badge">あなたの地域の注意点</span>
         <div class="icon ic-amber" data-art="clock" aria-hidden="true"></div>
         <h3>津波の到達時間</h3>
-        <div class="num">約2時間前後〜 <small>／市町により異なる</small></div>
-        <p>太平洋側より時間の余裕はありますが、潮位の変化はもっと早く始まります。揺れたら、到達予想時間を待たずに早めの避難が大切です。その時間のあいだに、どこへ、だれと逃げるかを決めておけると安心です。</p>
+        <div class="num" id="numArrival"></div>
+        <p id="txtArrival"></p>
       </div>
 
       <div class="risk-card" id="card-liquid">
         <span class="hl-badge">あなたの地域の注意点</span>
         <div class="icon ic-green" data-art="ground" aria-hidden="true"></div>
-        <h3>液状化・ため池</h3>
-        <div class="num">沿岸の埋立地などで高リスク</div>
-        <p>建物が傾く液状化のおそれ。また香川県は全国有数のため池地帯で、地震による決壊・浸水のリスクもあります。建物が傾くと、見た目はそのままでも住み続けるのが難しくなることがあります。</p>
+        <h3 id="ttlLocal">この地域で、特に注意したいこと</h3>
+        <div class="num" id="numLocal"></div>
+        <p id="txtLocal"></p>
       </div>
     </div>
 
     <div class="note">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 11.25h.75v5.25h.75M12 7.5h.01"/><circle cx="12" cy="12" r="9"/></svg>
-      <span>上記は香川県が公表している地震・津波の被害想定などに基づく一般的な目安です（想定は見直しにより変わることがあります）。想定される揺れ・浸水は地域によって大きく異なります。<strong>詳細はかならず、お住まいの市町のハザードマップでご確認ください。</strong></span>
+      <span>出典：内閣府「南海トラフ巨大地震モデル・被害想定手法検討会 市町村別一覧表」（令和7年3月31日公表）をもとに当社が作成。国が示す最大クラスの想定で、内閣府は「都府県別の数値はある程度幅をもって見る必要がある」としています。1回の地震で県内全域が同時にこの震度・この津波高になるわけではありません。各都道府県が独自に公表している想定とは数値が異なる場合があります。想定される揺れ・浸水は地域によって大きく異なりますので、<strong>詳細はかならず、お住まいの市町のハザードマップでご確認ください。</strong>耐震化・備蓄・早期避難などの対策により、被害は軽減できるとされています。</span>
     </div>
 
     <div class="area-box">
@@ -987,7 +1013,7 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
         </button>
         <button type="button" class="area-btn" data-area="pond" aria-pressed="false">
           <span class="art" data-art="areaPond" aria-hidden="true"></span>
-          <span class="t">ため池の近く<small>歩いて行ける距離にため池がある</small></span>
+          <span class="t">ため池・川の近く<small>歩いて行ける距離にため池や川がある</small></span>
         </button>
         <button type="button" class="area-btn" data-area="unknown" aria-pressed="false">
           <span class="art" data-art="spotRisk" aria-hidden="true"></span>
@@ -1582,13 +1608,134 @@ var ICONS = {
   rain:'<svg viewBox="0 0 48 48"><path d="M35 26a8 8 0 0 0-1.4-15.9A11 11 0 0 0 12 12.6 8.5 8.5 0 0 0 13.5 29h19c1.4 0 2.5-1 2.5-3Z" fill="#9fb3c8"/><path d="m15 34-3 8M24 34l-3 8M33 34l-3 8" fill="none" stroke="#63b8dd" stroke-width="3.6" stroke-linecap="round"/></svg>'
 };
 
+/* ---------- 都道府県別の想定（内閣府 令和7年3月31日公表の被害想定より） ----------
+   ⚠️要確認：数値は内閣府「南海トラフ巨大地震モデル・被害想定手法検討会 市町村別一覧表」
+   （令和7年3月31日公表）をもとに整理したものです。公開前に原典で突合すること。
+   ・震度＝強震波形計算4ケース＋経験的手法の各地点最大値の重ね合わせ
+   ・津波高＝満潮位・地殻変動を考慮した検討ケースの最大値
+   ・到達時間＝地震発生から津波高が+1mに達するまでの県内最短時間（第一波の到達＝0分ではない）
+   ・内閣府は「都府県別の数値はある程度幅をもって見る必要がある」と明記。各県独自の想定とは一致しない
+   ・【2026-08-17 決定】香川県も他46都道府県と同じ内閣府版の数値で統一する。香川県が独自に公表している
+     想定は採用せず、併記もしない（出典と基準を47都道府県でそろえるため）。したがって、地元向けの数値でも
+     県の公表値と一致しないことがある。ページ上の出典表記・注記もこの前提で書かれているので崩さないこと
+   ・確度「中」＝震度は公式値だが津波が一覧表に掲載なし等。「低」＝京都府（津波）・沖縄県（震度）は要確認
+   ・自転車保険の条例区分は国土交通省の全国集計（令和6年4月1日現在）。条例名・施行日を確認できたのは香川県のみ
+   ・出典表記が必須：「出典：内閣府『南海トラフ巨大地震モデル・被害想定手法検討会 市町村別一覧表』
+     （令和7年3月31日）をもとに当社が作成」  */
+var PREFS = [
+  {c:'01',n:'北海道',z:'外',s:'直接的な影響は限定的と想定',t:'—',a:'—',l:'日本海溝・千島海溝沿いの地震が主な想定。積雪期は避難時の低体温症に注意',b:'努力義務'},
+  {c:'02',n:'青森県',z:'外',s:'直接的な影響は限定的と想定',t:'—',a:'—',l:'日本海溝・千島海溝沿いの地震が主な想定。津軽平野では液状化の例も',b:'努力義務'},
+  {c:'03',n:'岩手県',z:'外',s:'直接的な影響は限定的と想定',t:'—',a:'—',l:'日本海溝沿いの地震が主な想定。リアス海岸の斜面崩壊・集落孤立に注意',b:'努力義務'},
+  {c:'04',n:'宮城県',z:'外',s:'直接的な影響は限定的と想定',t:'—',a:'—',l:'日本海溝沿いの地震が主な想定。長町－利府断層帯など内陸直下型も指摘',b:'義務'},
+  {c:'05',n:'秋田県',z:'外',s:'直接的な影響は限定的と想定',t:'—',a:'—',l:'日本海側の地震が主な想定。1983年には平野部で大規模な液状化',b:'義務'},
+  {c:'06',n:'山形県',z:'外',s:'直接的な影響は限定的と想定',t:'—',a:'—',l:'日本海側の地震や庄内平野東縁断層帯が主な想定。豪雪期の避難も課題',b:'義務'},
+  {c:'07',n:'福島県',z:'外',s:'最大 震度4程度',t:'最大 約4m',a:'最短 約1時間29分〜',l:'福島盆地西縁など内陸活断層と、原子力災害との複合が課題とされる',b:'義務'},
+  {c:'08',n:'茨城県',z:'推',s:'最大 震度5弱',t:'最大 約6m',a:'最短 約1時間18分〜',l:'2011年に鹿嶋・潮来などで大規模な液状化。県南東部は特に注意',b:'努力義務'},
+  {c:'09',n:'栃木県',z:'外',s:'最大 震度5強',t:'津波の想定なし（内陸）',a:'—',l:'内陸で津波はないが、家具転倒・停電など生活面の備えが課題とされる',b:'義務'},
+  {c:'10',n:'群馬県',z:'外',s:'最大 震度5強',t:'津波の想定なし（内陸）',a:'—',l:'内陸で津波はないが、活火山との複合や物流の停滞が懸念される',b:'義務'},
+  {c:'11',n:'埼玉県',z:'外',s:'最大 震度5強',t:'津波の想定なし（内陸）',a:'—',l:'首都直下では周辺県で最大級の被害想定。荒川・中川低地は液状化に注意',b:'義務'},
+  {c:'12',n:'千葉県',z:'強',s:'最大 震度5強',t:'最大 約11m',a:'最短 約30分〜',l:'東京湾岸の埋立地で液状化。コンビナート災害への備えも課題とされる',b:'義務'},
+  {c:'13',n:'東京都',z:'強',s:'最大 震度5強（伊豆諸島など）',t:'島嶼部 最大 約28m／区部 約3m',a:'島嶼部 最短 約11分〜',l:'木造住宅密集地域の延焼と、高層階を長く揺らす長周期地震動に注意',b:'義務'},
+  {c:'14',n:'神奈川県',z:'強',s:'最大 震度6弱',t:'最大 約10m',a:'最短 約26分〜',l:'密集市街地の延焼と、京浜臨海部のコンビナート災害が課題とされる',b:'義務'},
+  {c:'15',n:'新潟県',z:'外',s:'最大 震度5弱',t:'—',a:'—',l:'1964年新潟地震で液状化。日本海側の地震や豪雪期の避難が課題',b:'義務'},
+  {c:'16',n:'富山県',z:'外',s:'最大 震度5弱',t:'—',a:'—',l:'富山市直下の呉羽山断層帯が県内最大の想定。豪雪期の避難も課題',b:'努力義務'},
+  {c:'17',n:'石川県',z:'外',s:'最大 震度5弱',t:'—',a:'—',l:'能登半島地震のように、道路寸断による集落の孤立が課題とされる',b:'義務'},
+  {c:'18',n:'福井県',z:'外',s:'最大 震度5強',t:'—',a:'—',l:'若狭湾の原子力施設との複合災害を想定した広域避難計画が整備されている',b:'義務'},
+  {c:'19',n:'山梨県',z:'推',s:'最大 震度6強',t:'津波の想定なし（内陸）',a:'—',l:'内陸で津波はないが、富士川河口断層帯や富士山の火山活動が課題',b:'義務'},
+  {c:'20',n:'長野県',z:'推',s:'最大 震度6強',t:'津波の想定なし（内陸）',a:'—',l:'糸魚川－静岡構造線など活断層が集中。山間部の土砂災害にも注意',b:'義務'},
+  {c:'21',n:'岐阜県',z:'推',s:'最大 震度6強',t:'津波の想定なし（内陸）',a:'—',l:'内陸直下型地震の歴史があり、山間部は道路寸断による孤立に注意',b:'義務'},
+  {c:'22',n:'静岡県',z:'強',s:'最大 震度7',t:'最大 約31m',a:'最短 約2分〜',l:'津波到達が最短2分とされる地域も。富士山の火山活動との複合も課題',b:'義務'},
+  {c:'23',n:'愛知県',z:'強',s:'最大 震度7',t:'最大 約22m',a:'最短 約8分〜',l:'濃尾平野の液状化と、名古屋の高層階を揺らす長周期地震動に注意',b:'義務'},
+  {c:'24',n:'三重県',z:'強',s:'最大 震度7',t:'最大 約26m',a:'最短 約3分〜',l:'四日市のコンビナート災害と、紀伊半島東岸の孤立が課題とされる',b:'義務'},
+  {c:'25',n:'滋賀県',z:'推',s:'最大 震度6強',t:'津波の想定なし（内陸）',a:'—',l:'内陸で津波はないが、琵琶湖西岸断層帯など内陸直下型の想定がある',b:'義務'},
+  {c:'26',n:'京都府',z:'推',s:'最大 震度6強',t:'要確認（一覧表に掲載なし）',a:'要確認',l:'花折断層帯による直下型と、町家・密集市街地の延焼が課題とされる',b:'義務'},
+  {c:'27',n:'大阪府',z:'推',s:'最大 震度6強',t:'最大 約5m',a:'最短 約58分〜',l:'長周期地震動で高層ビルが大きく揺れた例。西大阪の低地は浸水に注意',b:'義務'},
+  {c:'28',n:'兵庫県',z:'強',s:'最大 震度7（淡路島の一部）',t:'最大 約9m',a:'最短 約39分〜',l:'ため池数が全国最多で決壊に注意。密集市街地の同時多発火災も課題',b:'義務'},
+  {c:'29',n:'奈良県',z:'推',s:'最大 震度6強',t:'津波の想定なし（内陸）',a:'—',l:'内陸で津波はないが、中央構造線断層帯や山間部の土砂災害に注意',b:'義務'},
+  {c:'30',n:'和歌山県',z:'強',s:'最大 震度7',t:'最大 約20m',a:'最短 約2分〜',l:'津波到達が最短2分とされる地域も。紀伊山地の土砂災害にも注意',b:'努力義務'},
+  {c:'31',n:'鳥取県',z:'外',s:'最大 震度5強',t:'—',a:'—',l:'内陸直下型が繰り返し発生。島根原発の30km圏に入る市町もある',b:'努力義務'},
+  {c:'32',n:'島根県',z:'外',s:'最大 震度5強',t:'—',a:'—',l:'宍道断層が松江市付近を走り、原子力災害との複合避難が課題とされる',b:'条例なし'},
+  {c:'33',n:'岡山県',z:'推',s:'最大 震度6強',t:'最大 約4m',a:'最短 約3時間〜',l:'ため池が多く、揺れで緩んだ地盤の土砂災害・液状化にも注意',b:'義務'},
+  {c:'34',n:'広島県',z:'推',s:'最大 震度6強',t:'最大 約5m',a:'最短 約2時間29分〜',l:'ため池数が全国2位。まさ土の斜面は崩れやすいとされる',b:'義務'},
+  {c:'35',n:'山口県',z:'推',s:'最大 震度6弱',t:'最大 約5m',a:'最短 約1時間30分〜',l:'瀬戸内側はまさ土が多く崩れやすい。コンビナート災害にも注意',b:'義務'},
+  {c:'36',n:'徳島県',z:'強',s:'最大 震度7',t:'最大 約24m',a:'最短 約5分〜',l:'中央構造線断層帯が県北を横断。吉野川下流の軟弱地盤にも注意',b:'努力義務'},
+  {c:'37',n:'香川県',z:'推',s:'最大 震度7（観音寺市など一部）',t:'最大 約5m',a:'最短 約1時間16分〜',l:'全国有数のため池地帯で、地震時は決壊・浸水への警戒が必要とされる',b:'義務'},
+  {c:'38',n:'愛媛県',z:'強',s:'最大 震度7',t:'最大 約20m（宇和海側）',a:'最短 約12分〜',l:'中央構造線断層帯が横断。佐田岬半島は避難路の寸断が課題とされる',b:'義務'},
+  {c:'39',n:'高知県',z:'強',s:'最大 震度7',t:'最大 約34m（全国最大）',a:'最短 約3分〜',l:'地盤沈下により高知市中心部が長期間浸水するおそれが指摘されている',b:'努力義務'},
+  {c:'40',n:'福岡県',z:'推',s:'最大 震度5強',t:'最大 約5m',a:'最短 約3時間11分〜',l:'警固断層帯が福岡市直下を走り、市街地の液状化・延焼にも注意',b:'義務'},
+  {c:'41',n:'佐賀県',z:'外',s:'最大 震度5弱',t:'—',a:'—',l:'有明海沿岸の低地・軟弱地盤で、堤防が損壊した際の浸水が懸念される',b:'努力義務'},
+  {c:'42',n:'長崎県',z:'推',s:'最大 震度5強',t:'最大 約4m',a:'最短 約2時間7分〜',l:'島嶼・半島が多く、急傾斜地の崩壊や離島の孤立が課題とされる',b:'条例なし'},
+  {c:'43',n:'熊本県',z:'推',s:'最大 震度6弱',t:'最大 約4m',a:'最短 約2時間11分〜',l:'布田川・日奈久断層帯があり、南側区間の活動が指摘されている',b:'義務'},
+  {c:'44',n:'大分県',z:'強',s:'最大 震度6強',t:'最大 約14m',a:'最短 約16分〜',l:'別府－万年山断層帯による直下型と、臨海部のコンビナートに注意',b:'義務'},
+  {c:'45',n:'宮崎県',z:'強',s:'最大 震度7',t:'最大 約17m',a:'最短 約15分〜',l:'日向灘の地震が繰り返し発生。霧島山の火山活動との複合も課題',b:'義務'},
+  {c:'46',n:'鹿児島県',z:'強',s:'最大 震度6弱',t:'最大 約13m',a:'最短 約27分〜',l:'桜島など活火山が多く、離島の孤立や支援の遅れが課題とされる',b:'義務'},
+  {c:'47',n:'沖縄県',z:'推',s:'要確認（一覧表に掲載なし）',t:'最大 約5m',a:'最短 約59分〜',l:'離島が多く孤立に注意。活断層の調査が途上で不確実性が大きいとされる',b:'条例なし'}
+];
+
+var LANDLOCKED = ['09','10','11','19','20','21','25','29'];
+var DEFAULT_PREF = '37'; /* 香川県 */
+var curPref = null;
+
+/* 自転車保険の条例の一文。モーダルは開くたびに中身を作り直すので、そのつど差し込む */
+function fillBikeRule(){
+  var slot = document.getElementById('bikeRule');
+  if(!slot || !curPref){ return; }
+  var p = curPref, bt;
+  if(p.b === '義務'){ bt = p.n + 'では条例により、自転車保険等への加入が義務とされています。'; }
+  else if(p.b === '努力義務'){ bt = p.n + 'では条例により、自転車保険等への加入が努力義務とされています。'; }
+  else { bt = p.n + 'では加入を求める条例は確認されていませんが、備えとしての必要性は変わりません。'; }
+  slot.textContent = bt + '（条例の内容は改正されることがあります。最新の内容は自治体の案内でご確認ください。）';
+}
+
+/* 揺れの強さから、暮らしへの影響の書き分けを決める */
+function shakeText(s){
+  if(s.indexOf('震度7') >= 0 || s.indexOf('6強') >= 0 || s.indexOf('6弱') >= 0){
+    return '立っていられないほどの揺れです。古い木造家屋の倒壊や、家具の転倒・ブロック塀の倒壊が想定されます。食器棚も家電も倒れます。片づけと修理のあいだ、いつもの暮らしは止まります。';
+  }
+  if(s.indexOf('5強') >= 0 || s.indexOf('5弱') >= 0 || s.indexOf('震度4') >= 0){
+    return '歩くのが難しくなることがある揺れです。家具の転倒や、棚のものが落ちることが想定されます。倒れた家具でけがをしたり、片づけに時間がかかったりします。';
+  }
+  return '南海トラフ地震そのものによる揺れは限定的と想定されています。ただし、地震への備えが要らないという意味ではありません。';
+}
+function tsunamiText(t){
+  if(t.indexOf('想定なし') >= 0){ return '内陸のため、南海トラフ地震による津波の想定はありません。そのぶん、揺れと火災への備えが中心になります。'; }
+  if(t === '—'){ return 'この地域では、南海トラフ地震による津波の想定は示されていません。お住まいの地域で想定されている地震・津波は、ハザードマップでご確認ください。'; }
+  if(t.indexOf('要確認') >= 0){ return '公表資料での確認が必要な項目です。お住まいの市町のハザードマップで、想定される浸水の範囲をご確認ください。'; }
+  return '浸水すると泥のかき出しと乾燥に時間がかかり、しばらく住めなくなることがあります。海抜の低い市街地や埋立地では特に注意が必要です。';
+}
+function arrivalText(a){
+  if(a === '—'){ return '津波の想定がないため、到達時間の目安も示されていません。'; }
+  if(a.indexOf('要確認') >= 0){ return '公表資料での確認が必要な項目です。お住まいの市町のハザードマップでご確認ください。'; }
+  if(a.indexOf('分〜') >= 0 && a.indexOf('時間') < 0){ return 'ごく短時間で到達すると想定されています。揺れを感じたら、すぐに高いところへ避難することが何より大切です。'; }
+  return '時間の余裕があるように見えますが、潮位の変化はもっと早く始まります。揺れたら、到達予想時間を待たずに早めの避難が大切です。';
+}
+/* 「わからない」を選んだときの1行目。県名と想定震度を選択中の県から作る
+   （以前は香川県の震度を直書きしていたため、他県を選ぶと文と数値が食い違っていた） */
+function prefShakeLine(){
+  var p = curPref;
+  if(!p){ return 'お住まいの地域で想定される揺れは、上の「揺れ（最大震度）」のカードでご確認ください。'; }
+  if(p.s.indexOf('要確認') >= 0){
+    return p.n + 'の想定震度は、公表資料での確認が必要な項目です。お住まいの市町のハザードマップでご確認ください。';
+  }
+  if(p.z === '外'){
+    return p.n + 'は南海トラフ地震防災対策推進地域には含まれていませんが、揺れや停電などの影響は起こり得ます。まずここは、どの地域にお住まいでも共通です。';
+  }
+  return p.n + 'では「' + p.s + '」の揺れが想定されています（上の「揺れ（最大震度）」のカード）。まずここは、どの地域にお住まいでも共通です。';
+}
+
+function zoneLabel(z){
+  if(z === '強'){ return '南海トラフ地震防災対策推進地域（津波避難対策特別強化地域を含む）'; }
+  if(z === '推'){ return '南海トラフ地震防災対策推進地域'; }
+  return '南海トラフ地震防災対策推進地域には含まれていません';
+}
+
 /* ---------- セクション1：エリア選択 ---------- */
 var AREAS = {
   coast:{
     title:'沿岸部（海の近く・埋立地）にお住まいの方へ',
     cards:['card-tsunami','card-time','card-liquid'],
     points:[
-      '瀬戸内沿岸にも津波は到達します。時間の余裕はあっても、揺れたらすぐ避難が原則です。',
+      '沿岸部には津波が到達すると想定されています。時間の余裕があっても、揺れたらすぐ避難が原則です。',
       '埋立地・干拓地では液状化のリスクが高めです。建物が傾くなどの損害は、程度の認定に応じて地震保険の対象になり得ます。',
       '保険の目線：建物・家財の地震保険に加えて、車の津波対策（車両の特約）も確認しておきましょう。'
     ]
@@ -1597,16 +1744,16 @@ var AREAS = {
     title:'内陸部（平野・市街地）にお住まいの方へ',
     cards:['card-shake'],
     points:[
-      '県内の広い範囲で震度6弱〜6強の強い揺れが想定されています。家屋の損壊・家具の転倒に注意が必要です。',
+      '強い揺れによる家屋の損壊・家具の転倒に注意が必要です。想定される震度は上のカードでご確認ください。',
       '地震のあとの火災（延焼）は、建物が密集する市街地ほどリスクが高くなります。地震が原因の火災は火災保険では対象外（地震保険の領域）です。',
       '保険の目線：地震保険が付いているかどうかと、建物の耐震対策をあわせて確認しておきましょう。'
     ]
   },
   pond:{
-    title:'ため池の近くにお住まいの方へ',
+    title:'ため池や川の近くにお住まいの方へ',
     cards:['card-shake','card-liquid'],
     points:[
-      '香川県は全国有数のため池地帯（約1万2千か所）。強い揺れによる決壊・浸水のリスクが指摘されています。',
+      'ため池は強い揺れで決壊し、下流が浸水するおそれが指摘されています。近くにため池や川がある場合は、その位置と避難の方向を確かめておきましょう。',
       '注意：地震が原因の浸水は、火災保険の「水災補償」では対象外です。地震保険の領域になります。',
       '保険の目線：大雨に備える水災補償と、地震に備える地震保険。役割が違うので、両方の確認がおすすめです。'
     ]
@@ -1615,7 +1762,7 @@ var AREAS = {
     title:'お住まいの地域がはっきりしない方へ',
     cards:['card-shake','card-tsunami','card-time','card-liquid'],
     points:[
-      '香川県の広い範囲で震度6弱〜6強の強い揺れが想定されています。まずここは、どの地域にお住まいでも共通です。',
+      '{PREFSHAKE}',
       '沿岸部かどうか・ため池が近いかどうかで、津波や浸水の注意点が変わります。町名でお調べしますので、お気軽にお尋ねください。',
       '保険の目線：地域にかかわらず、まずは火災保険に地震保険が付いているかの確認から始められます。'
     ]
@@ -1624,6 +1771,95 @@ var AREAS = {
 
 var areaBtns = document.querySelectorAll('.area-btn');
 var areaPanel = document.getElementById('areaPanel');
+
+/* ---------- 都道府県の切り替え ---------- */
+(function(){
+  var sel = document.getElementById('prefSelect');
+  if(!sel){ return; }
+
+  var opts = '';
+  for(var i = 0; i < PREFS.length; i++){
+    opts += '<option value="' + PREFS[i].c + '">' + PREFS[i].n + '</option>';
+  }
+  sel.innerHTML = opts;
+
+  function byCode(c){
+    for(var i = 0; i < PREFS.length; i++){ if(PREFS[i].c === c){ return PREFS[i]; } }
+    return null;
+  }
+  function setText(id, v){ var e = document.getElementById(id); if(e){ e.textContent = v; } }
+
+  function apply(code){
+    var p = byCode(code);
+    if(!p){ return; }
+    curPref = p;
+    sel.value = p.c;
+
+    /* 推進地域の別 */
+    var zn = document.getElementById('prefZone');
+    if(zn){ zn.innerHTML = '<b>' + p.n + '</b><span>' + zoneLabel(p.z) + '</span>'; }
+
+    /* セクション1のリード文 */
+    var lead = (p.z === '外')
+      ? p.n + 'は南海トラフ地震防災対策推進地域には含まれていませんが、地震への備えは地域を問わず必要です。まずは全体像から。（約4分）'
+      : '南海トラフ地震は' + p.n + 'にも大きな影響が想定されています。まずは全体像から。（約4分）';
+    setText('sec1Lead', lead);
+
+    /* リスクカード4枚 */
+    setText('numShindo', p.s);
+    setText('txtShindo', shakeText(p.s));
+    setText('numTsunami', p.t);
+    setText('txtTsunami', tsunamiText(p.t));
+    setText('numArrival', p.a);
+    setText('txtArrival', arrivalText(p.a));
+    setText('numLocal', p.n + 'の特性');
+    setText('txtLocal', p.l);
+
+    /* 内陸県では「沿岸部」の選択肢を出さない */
+    var isLand = LANDLOCKED.indexOf(p.c) >= 0;
+    for(var i = 0; i < areaBtns.length; i++){
+      if(areaBtns[i].getAttribute('data-area') === 'coast'){
+        areaBtns[i].style.display = isLand ? 'none' : '';
+      }
+    }
+    /* 内陸県で「沿岸部」を選んだままにはできないので、その場合だけ選択を解除する。
+       それ以外のエリア（内陸部・ため池・わからない）の選択は県を変えても保つ */
+    var onBtn = document.querySelector('.area-btn.on');
+    if(isLand && onBtn && onBtn.getAttribute('data-area') === 'coast'){
+      onBtn.classList.remove('on');
+      onBtn.setAttribute('aria-pressed', 'false');
+      if(areaPanel){
+        areaPanel.classList.remove('show');
+        areaPanel.innerHTML = '';
+      }
+      onBtn = null;
+    }
+
+    /* 県を切り替えたら、表示中のエリアのパネルを作り直す（県名・想定震度が入るため） */
+    if(onBtn && areaPanel && areaPanel.classList.contains('show')){
+      selectArea(onBtn.getAttribute('data-area'));
+    }
+
+    /* ヒーローのリード文 */
+    var hl = document.querySelector('.hero .lead');
+    if(hl){
+      hl.textContent = p.n + 'にお住まいの方へ。持ち家の方も、賃貸の方も。離れて暮らすご実家のことも含めて、いまの火災保険・自動車保険で「出るもの・出ないもの」を確かめられます。○×クイズだけなら3分、全部読むと10分ほど。気になるところだけどうぞ。';
+    }
+    /* 県名が入る箇所 */
+    var slots = document.querySelectorAll('[data-pref-name]');
+    for(var j = 0; j < slots.length; j++){ slots[j].textContent = p.n; }
+
+    fillBikeRule();
+
+    try{ localStorage.setItem('nissanPref', p.c); }catch(e){}
+  }
+
+  var saved = null;
+  try{ saved = localStorage.getItem('nissanPref'); }catch(e){}
+  apply(byCode(saved) ? saved : DEFAULT_PREF);
+
+  sel.addEventListener('change', function(){ apply(this.value); });
+})();
 
 function selectArea(key){
   var i, data = AREAS[key];
@@ -1640,7 +1876,7 @@ function selectArea(key){
     if(c){ c.classList.add('hl'); }
   }
   var html = '<h4><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path d="M19.5 10.5c0 7.1-7.5 11-7.5 11s-7.5-3.9-7.5-11a7.5 7.5 0 1 1 15 0Z"/></svg>' + data.title + '</h4><ul>';
-  for(i = 0; i < data.points.length; i++){ html += '<li>' + data.points[i] + '</li>'; }
+  for(i = 0; i < data.points.length; i++){ html += '<li>' + data.points[i].replace('{PREFSHAKE}', prefShakeLine()) + '</li>'; }
   html += '</ul>';
   areaPanel.innerHTML = html;
   areaPanel.classList.add('show');
@@ -2037,27 +2273,12 @@ var SVG_MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-l
   update();
 })();
 
-/* ---------- 文字を大きくする ---------- */
-(function(){
-  var btn = document.getElementById('btnTextSize');
-  if(!btn){ return; }
-  var label = btn.querySelector('span');
-  function apply(on){
-    document.documentElement.classList.toggle('lg', on);
-    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    label.textContent = on ? '文字を元に戻す' : '文字を大きくする';
-    try{ localStorage.setItem('nissanTextLg', on ? '1' : '0'); }catch(e){}
-  }
-  var saved = null;
-  try{ saved = localStorage.getItem('nissanTextLg'); }catch(e){}
-  if(saved === '1'){ apply(true); }
-  btn.addEventListener('click', function(){ apply(!document.documentElement.classList.contains('lg')); });
-})();
-
 /* ---------- セクション4：ケーススタディ（カード＋モーダル） ---------- */
-/* ⚠️要確認：ケース1の「香川県では条例により、自転車保険等への加入が義務とされています（罰則はありません）」は
-   法令の効力に関する記述です。香川県の現行条例で、条例名・施行日・義務／努力義務の別・罰則の有無を確認すること。
-   誤りは募集文書での不実の告知になり得ます。確認が取れるまでこの一文を公開しないこと */
+/* ⚠️要確認：ケース1の自転車保険の条例の記述（#bikeRule に都道府県ごとに差し込まれる）は法令の効力に関する記述です。
+   区分の出典は国土交通省の全国集計（令和6年4月1日現在）で、その後の条例改正が反映されていない可能性があります。
+   特に茨城・富山・和歌山・鳥取・秋田・山口・島根・長崎は民間まとめと分類が食い違うため、掲載前に各県の公式ページで
+   個別確認が必須です。条例名・施行日まで確認できているのは香川県のみ（香川県自転車の安全利用に関する条例／
+   令和4年4月1日施行／義務／県公式ページに罰則の記載なし）。確認が取れるまでこの一文を公開しないこと */
 var CASES = [
   {
     chip:'日常のリスク', title:'自転車で、うっかり',
@@ -2067,7 +2288,7 @@ var CASES = [
     lead:'相手のケガ、だれが払うの？',
     story:'「自転車で買い物に行く途中、曲がり角で歩行者の方とぶつかってしまいました。ケガをさせてしまって…どうすればいいのでしょうか」',
     hoken:'個人賠償責任特約',
-    sonae:'<p>相手の方の治療費などの賠償に備える特約で、火災保険や自動車保険にセットで付けられます。ご本人だけでなく、同居のご家族なども対象になるのが一般的です（対象となる方の範囲はご契約により異なります）。香川県では条例により、自転車保険等への加入が義務とされています（罰則はありません）。</p>' +
+    sonae:'<p>相手の方の治療費などの賠償に備える特約で、火災保険や自動車保険にセットで付けられます。ご本人だけでなく、同居のご家族なども対象になるのが一般的です（対象となる方の範囲はご契約により異なります）。<span id="bikeRule"></span></p>' +
           '<p class="case-plus">飼い犬が人をかんでしまった、お子さまがお店の商品をこわした、洗濯機の水もれで階下のお宅を汚してしまった——そんな場面も対象になり得ます。ご自宅の塀や庭木が倒れて他人の物をこわしてしまった場合の賠償も対象になり得ます（地震・噴火・津波が原因の場合は対象外となるのが一般的です。地震で塀が倒れた場合など、そもそも法律上の賠償責任を負わないケースもあります）。</p>'
   },
   {
@@ -2180,6 +2401,7 @@ function openCase(i){
     sh += '<figure><span class="art" aria-hidden="true">' + (ART[s[0]] || '') + '</span><figcaption>' + s[1] + '</figcaption></figure>';
   }
   cmScene.innerHTML = sh;
+  fillBikeRule();
 
   cmLastFocus = document.activeElement;
   caseModal.classList.add('open');
@@ -2214,6 +2436,23 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'Escape' && caseModal.classList.contains('open')){ closeCase(); }
 });
 
+})();
+
+/* ---------- 文字を大きくする ---------- */
+(function(){
+  var btn = document.getElementById('btnTextSize');
+  if(!btn){ return; }
+  var label = btn.querySelector('span');
+  function apply(on){
+    document.documentElement.classList.toggle('lg', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    label.textContent = on ? '文字を元に戻す' : '文字を大きくする';
+    try{ localStorage.setItem('nissanTextLg', on ? '1' : '0'); }catch(e){}
+  }
+  var saved = null;
+  try{ saved = localStorage.getItem('nissanTextLg'); }catch(e){}
+  if(saved === '1'){ apply(true); }
+  btn.addEventListener('click', function(){ apply(!document.documentElement.classList.contains('lg')); });
 })();
 </script>
 </body>
