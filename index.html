@@ -45,20 +45,21 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px;}
-/* 「文字を大きくする」はhtml基準で切り替える（remで書いた全要素が追随する） */
-html.lg{font-size:20px;}
+/* 左右の余白が広い画面ほど文字を大きく・字間を広くして見やすさに還元する（rem基準の要素は連動して拡大） */
+@media(min-width:600px){ html{font-size:17px;} }
+@media(min-width:1000px){ html{font-size:18px;} }
 body{
   font-family:"Hiragino Mincho ProN","Hiragino Mincho Pro","Yu Mincho",YuMincho,"游明朝体","游明朝","MS PMincho","ＭＳ Ｐ明朝",serif;
   color:var(--text);
   background:var(--bg);
   font-size:1.09rem;
   line-height:1.95;
-  letter-spacing:.02em;
+  letter-spacing:.03em;
   padding-bottom:calc(132px + env(safe-area-inset-bottom));
   overflow-wrap:break-word;
 }
 @media(min-width:768px){
-  body{font-size:1.16rem;padding-bottom:calc(100px + env(safe-area-inset-bottom));}
+  body{font-size:1.16rem;letter-spacing:.04em;padding-bottom:calc(100px + env(safe-area-inset-bottom));}
 }
 img,svg{max-width:100%;vertical-align:middle;}
 button{font-family:inherit;}
@@ -636,14 +637,6 @@ h2::after{
 .sec-lead,.hero .lead{font-size:1.06rem;}
 /* 免責文は画面を圧迫しないよう拡大対象から外す（文言・表示位置は不変） */
 .disclaimer p{font-size:14px !important;}
-.textsize{
-  display:inline-flex;align-items:center;gap:8px;
-  margin-top:16px;min-height:48px;padding:0 20px;
-  background:var(--white);border:2px solid var(--navy);border-radius:999px;
-  color:var(--navy);font-size:.95rem;font-weight:700;cursor:pointer;
-}
-.textsize svg{width:20px;height:20px;stroke:var(--navy);flex:0 0 20px;}
-
 /* ---------- 都道府県セレクター ---------- */
 .pref-box{
   background:var(--white);border-radius:20px;padding:18px 18px 16px;
@@ -850,7 +843,7 @@ h1,h2,h3,.cta h3,.case-card h3{line-break:strict;}
   body{padding-bottom:0;background:#fff;}
   .disclaimer{position:static;background:#fff;}
   .contact-bar,.hero-nav,.tel-btn,.mail-btn,.cta-mini,.case-btn,
-  #btnNext,#btnRetry,.textsize,.btn-primary,.btn-ghost{display:none !important;}
+  #btnNext,#btnRetry,.btn-primary,.btn-ghost{display:none !important;}
   .case-card,.risk-card,.basic-card,.family-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc;}
   .round-top{margin-top:0;}
 }
@@ -894,10 +887,6 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
           <a href="#sec3"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 4.5 5.6v5.2c0 4.7 3.2 8.6 7.5 9.8 4.3-1.2 7.5-5.1 7.5-9.8V5.6L12 2.7Z"/></svg>地震保険とは</a>
           <a href="#sec4"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3.3 11 3 3 0 0 1 1.1 1.9l.03.35h4.34l.03-.35a3 3 0 0 1 1.1-1.9A6 6 0 0 0 12 3Z"/><path d="M9.8 19.2h4.4M10.7 21.7h2.6"/></svg>保険の意外な出番</a>
         </nav>
-        <button type="button" class="textsize" id="btnTextSize" aria-pressed="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19 9 5l6 14M5.4 14h7.2M16 19l3.5-8 3.5 8M17.4 16.4h4.2"/></svg>
-          <span>文字を大きくする</span>
-        </button>
       </div>
       <div class="hero-scene" aria-hidden="true">
         <svg viewBox="0 0 360 212">
@@ -2436,23 +2425,6 @@ document.addEventListener('keydown', function(e){
   if(e.key === 'Escape' && caseModal.classList.contains('open')){ closeCase(); }
 });
 
-})();
-
-/* ---------- 文字を大きくする ---------- */
-(function(){
-  var btn = document.getElementById('btnTextSize');
-  if(!btn){ return; }
-  var label = btn.querySelector('span');
-  function apply(on){
-    document.documentElement.classList.toggle('lg', on);
-    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    label.textContent = on ? '文字を元に戻す' : '文字を大きくする';
-    try{ localStorage.setItem('nissanTextLg', on ? '1' : '0'); }catch(e){}
-  }
-  var saved = null;
-  try{ saved = localStorage.getItem('nissanTextLg'); }catch(e){}
-  if(saved === '1'){ apply(true); }
-  btn.addEventListener('click', function(){ apply(!document.documentElement.classList.contains('lg')); });
 })();
 </script>
 </body>
