@@ -55,11 +55,11 @@ body{
   font-size:1.09rem;
   line-height:1.95;
   letter-spacing:.03em;
-  padding-bottom:calc(132px + env(safe-area-inset-bottom));
+  padding-bottom:calc(84px + env(safe-area-inset-bottom));
   overflow-wrap:break-word;
 }
 @media(min-width:768px){
-  body{font-size:1.16rem;letter-spacing:.04em;padding-bottom:calc(100px + env(safe-area-inset-bottom));}
+  body{font-size:1.16rem;letter-spacing:.04em;padding-bottom:calc(64px + env(safe-area-inset-bottom));}
 }
 img,svg{max-width:100%;vertical-align:middle;}
 button{font-family:inherit;}
@@ -609,15 +609,6 @@ h2::after{
 .cta > p{color:var(--text);font-size:.97rem;}
 .cta .co{font-size:1.04rem;font-weight:800;margin-top:16px;color:var(--navy);}
 .cta .addr{font-size:.9rem;color:var(--muted);margin-top:2px;}
-.cta .tel-btn{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--white);color:var(--navy);text-decoration:none;
-  border:2px solid var(--navy);
-  border-radius:999px;min-height:62px;margin:12px auto 0;max-width:420px;
-  font-size:1.1rem;font-weight:800;letter-spacing:.03em;
-}
-.cta .tel-btn svg{width:22px;height:22px;stroke:var(--navy);flex:0 0 22px;}
-.cta .tel-note{font-size:.85rem;color:var(--muted);margin-top:10px;}
 .cta .tip{
   font-size:.88rem;background:rgba(255,255,255,.8);
   border-radius:16px;padding:12px 16px;margin-top:16px;line-height:1.8;
@@ -625,7 +616,7 @@ h2::after{
 }
 
 /* ---------- 読みやすさ（注記の下限・文字拡大） ---------- */
-.note,.quiz-note,.table-foot,.cmodal-note,.cta .tel-note,.grade-table td small,.area-btn small,.brand small{
+.note,.quiz-note,.table-foot,.cmodal-note,.grade-table td small,.area-btn small,.brand small{
   font-size:.86rem;line-height:1.8;
 }
 .risk-card p,.chk,.case-q,.basic-card p{font-size:1rem;}
@@ -678,7 +669,7 @@ h2::after{
 .family-card p{font-size:1rem;line-height:1.9;}
 .family-card p + p{margin-top:8px;}
 
-/* ---------- CTA：お約束・メール・ミニCTA ---------- */
+/* ---------- CTA：お約束 ---------- */
 .promise{
   background:rgba(255,255,255,.85);border-radius:18px;
   padding:18px 20px;text-align:left;max-width:26em;margin:20px auto 0;
@@ -696,33 +687,6 @@ h2::after{
   transform:rotate(-45deg);
 }
 .promise > p{font-size:.97rem;line-height:1.85;margin-top:12px;color:var(--text);}
-.mail-btn{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:2px;background:linear-gradient(135deg,var(--navy-2),var(--navy));
-  color:#fff;text-decoration:none;border:none;border-radius:999px;
-  min-height:72px;margin:20px auto 0;max-width:420px;padding:10px 18px;
-  font-size:1.24rem;font-weight:800;box-shadow:var(--shadow);
-}
-.mail-btn small{font-size:.82rem;font-weight:500;color:#d5e4f0;}
-.mail-fallback{font-size:.86rem;color:var(--muted);margin-top:8px;line-height:1.8;}
-.cta-or{font-size:.95rem;color:var(--muted);margin-top:14px;}
-.cta-mini{
-  background:var(--white);border:2px solid #f0dfd2;border-radius:20px;
-  padding:16px 16px 14px;margin-top:20px;text-align:center;
-  box-shadow:var(--shadow-sm);
-}
-.cta-mini p{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:12px;}
-.cta-mini .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.cta-mini a{
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  min-height:56px;border-radius:999px;text-decoration:none;
-  font-size:1rem;font-weight:700;
-}
-.cta-mini a.mail{background:linear-gradient(135deg,var(--navy-2),var(--navy));color:#fff;}
-.cta-mini a.tel{background:var(--white);color:var(--navy);border:2px solid var(--navy);}
-.cta-mini a svg{width:19px;height:19px;flex:0 0 19px;}
-.cta-mini a.mail svg{stroke:#fff;}
-.cta-mini a.tel svg{stroke:var(--navy);}
 
 /* ---------- 証券が見つからないとき ほか折りたたみ ---------- */
 .finder{
@@ -804,29 +768,6 @@ h2::after{
   padding:8px 12px;margin-bottom:14px;line-height:1.6;
 }
 
-/* ---------- 固定連絡バー ---------- */
-.contact-bar{
-  position:fixed;left:0;right:0;z-index:55;
-  bottom:0;
-  background:rgba(255,248,242,.97);border-top:1px solid var(--line);
-  padding:8px 14px;
-  display:none;
-}
-.contact-bar.show{display:block;}
-.contact-bar .row{
-  max-width:520px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px;
-}
-.contact-bar a{
-  display:flex;align-items:center;justify-content:center;gap:7px;
-  min-height:48px;border-radius:999px;text-decoration:none;
-  font-size:.97rem;font-weight:700;
-}
-.contact-bar a.mail{background:linear-gradient(135deg,var(--navy-2),var(--navy));color:#fff;}
-.contact-bar a.tel{background:var(--white);color:var(--navy);border:2px solid var(--navy);}
-.contact-bar a svg{width:18px;height:18px;flex:0 0 18px;}
-.contact-bar a.mail svg{stroke:#fff;}
-.contact-bar a.tel svg{stroke:var(--navy);}
-
 /* ---------- 見出しの折り返し ---------- */
 h1,h2,h3,.cta h3,.case-card h3{line-break:strict;}
 
@@ -835,7 +776,7 @@ h1,h2,h3,.cta h3,.case-card h3{line-break:strict;}
   /* JSがbodyのpadding-bottomをインラインで設定するため !important で打ち消す */
   body{padding-bottom:0 !important;background:#fff;}
   .disclaimer{position:static;background:#fff;}
-  .contact-bar,.hero-nav,.tel-btn,.mail-btn,.cta-mini,.case-btn,
+  .hero-nav,.case-btn,
   #btnNext,#btnRetry,.btn-primary,.btn-ghost{display:none !important;}
   .case-card,.risk-card,.basic-card,.family-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc;}
   .round-top{margin-top:0;}
@@ -1034,7 +975,6 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
           <p>外すかどうかは、<strong>お住まいの水害リスクとセットで</strong>考えるのがおすすめです。水没のとき、車両保険は「いちばん出番の多い補償」だからです。判断の材料づくりからお手伝いします。</p>
         </div>
       </div>
-      <div data-cta-mini data-cta-msg="お使いのかたちに合わせて、どこを見るかご案内します"></div>
     </div>
   </div>
 </section>
@@ -1048,11 +988,11 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
       </div>
       <div class="spot"><span class="spot-circle" data-art="spotQuiz" aria-hidden="true"></span></div>
     </div>
-    <p class="sec-lead">「この場合、保険金は出る？出ない？」○（出る）か ×（出ない）をタップ（クリック）してください。「出るもの」も「出ないもの」もあります。半々くらいのつもりでどうぞ。設問によって選択肢の言葉が変わります（出る／出ない、任せられる／任せられない）。（10問・約5分）</p>
+    <p class="sec-lead">「この場合、保険金は出る？出ない？」○か×をタップ（クリック）してください。どれも、実際によくある場面です。「出るもの」も「出ないもの」も混ざっています。<strong>設問によって、選択肢の言葉が変わります</strong>（出る／出ない、任せられる／任せられない、合っている／まちがい）。答える前に、選択肢の言葉をご確認ください。（10問・約5分）</p>
 
     <div class="guide">
       <span class="guide-ava" data-guide aria-hidden="true"></span>
-      <p class="guide-msg">先にお伝えします。自動車保険は「何でも出る保険」ではありません。それでも、出る・出ないの分かれ目のほとんどは、特約ひとつ・お電話1本で埋められるものです。まず、いまのご契約が何を守っているかを見ていきましょう。</p>
+      <p class="guide-msg">先にお伝えします。この10問は、少し意地悪です。「うちはちゃんと入っているから大丈夫」と思っている方ほど、つまずくように作りました。まちがえた問題が、そのまま「いまのご契約で確認したいところ」になります。全問正解できる方は、ほとんどいません。</p>
     </div>
 
     <div class="quiz-box">
@@ -1103,7 +1043,6 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
         <button type="button" class="btn-ghost" id="btnMailSelf">この結果を自分（またはご家族）に送る</button>
         <button type="button" class="btn-ghost" id="btnPrint">印刷して保険証券と一緒に保管する</button>
         <button type="button" class="btn-ghost" id="btnRetry">もう一度挑戦する</button>
-        <div data-cta-mini></div>
       </div>
     </div>
     <p class="quiz-note">※一般的な契約例にもとづくクイズです。実際のご契約の補償内容は、保険証券や約款をご確認ください。</p>
@@ -1165,10 +1104,10 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
           <h3>地震・噴火・津波は、<br>どちらの型でも対象外</h3>
         </div>
         <!-- ⚠️要確認：一時金の金額（50万円）・全損時のみ・車両保険金額が下回る場合の扱いは
-             各社の「地震・噴火・津波車両全損時一時金特約」の一般的な内容。名称・条件の各社差を公開前に確認すること -->
+             各社の「地震・噴火・津波危険車両全損時一時金特約」の一般的な内容。名称・条件の各社差を公開前に確認すること -->
         <p>正直にお伝えすると、地震で車が壊れたときに車両保険だけでは備えられません。実は、相手への賠償（対人・対物）にも地震・噴火・津波の免責規定があります。ここは制度の設計上の「穴」です。</p>
-        <p>穴を埋める方法は<strong>「地震・噴火・津波車両全損時一時金特約」</strong>。全損のときに一時金（50万円が一般的。車両保険金額がそれを下回る場合はその額）が出ます。修理できる程度の損害（分損）は対象外で、買い替え費用の全額でもなく、<strong>当面の足を確保するための資金</strong>という位置づけです。</p>
-        <p>この特約は<strong>車両保険にセットして付ける</strong>のが一般的で、車両保険のご契約が前提になります。</p>
+        <p>穴を埋める方法は<strong>「地震・噴火・津波危険車両全損時一時金特約」</strong>。全損のときに一時金（50万円が一般的。車両保険金額がそれを下回る場合はその額）が出ます。修理できる程度の損害（分損）は対象外で、買い替え費用の全額でもなく、<strong>当面の足を確保するための資金</strong>という位置づけです。</p>
+        <p>この特約は<strong>車両保険にセットして付ける</strong>のが一般的で、車両保険のご契約が前提になります。名称は保険会社により異なり（「車両全損時定額払」など）、金額を上乗せできる商品もあります。</p>
       </div>
 
       <div class="basic-card">
@@ -1235,7 +1174,6 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 11.25h.75v5.25h.75M12 7.5h.01"/><circle cx="12" cy="12" r="9"/></svg>
       <span><strong>故障・経年劣化は、どちらの型でも対象外です。</strong>車両保険は「偶然な事故・災害」に備える保険で、寿命や消耗はメーカー保証・点検の領域になります。この線引きも含めてご説明します。</span>
     </div>
-    <div data-cta-mini data-cta-msg="ご契約の型と車両保険金額で、どうなるかお調べします"></div>
   </div>
 </section>
 <!-- ================= セクション4 ケーススタディ ================= -->
@@ -1289,7 +1227,7 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
     <div class="checklist" id="checklist">
       <p class="chk-group">保険証券で確認できること</p>
       <label class="chk"><input type="checkbox"><span class="art" data-art="chkCar" aria-hidden="true"></span><span><strong>車両保険</strong>が付いているか、付いているなら<strong>「一般型」か「エコノミー型」か</strong>を確認した</span></label>
-      <label class="chk"><input type="checkbox"><span class="art" data-art="quakeCar" aria-hidden="true"></span><span>車が地震・津波でだめになったときのそなえ（<strong>地震・噴火・津波車両全損時一時金特約</strong>）を確認した</span></label>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="quakeCar" aria-hidden="true"></span><span>車が地震・津波でだめになったときのそなえ（<strong>地震・噴火・津波危険車両全損時一時金特約</strong>）を確認した</span></label>
       <label class="chk"><input type="checkbox"><span class="art" data-art="chkLawyer" aria-hidden="true"></span><span>もらい事故のそなえ（<strong>弁護士費用特約</strong>）が付いているか確認した</span></label>
       <label class="chk"><input type="checkbox"><span class="art" data-art="chkDriver" aria-hidden="true"></span><span><strong>運転者の限定・年齢条件</strong>が、実際にハンドルを握る家族と合っているか確認した</span></label>
       <label class="chk"><input type="checkbox"><span class="art" data-art="chkInjury" aria-hidden="true"></span><span>自分と家族のケガのそなえ（<strong>人身傷害</strong>）の範囲（搭乗中のみ／歩行中もカバー）を確認した</span></label>
@@ -1301,7 +1239,6 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
     <div class="chk-msg" id="chkMsg">
       あてはまるものにチェックを入れてみてください。証券で分かる項目と、今日おうちで確認できる項目が混じっています。
     </div>
-    <div data-cta-mini></div>
 
     <details class="finder">
       <summary>「保険証券が見つからない」も、よくあるご相談です</summary>
@@ -1403,10 +1340,9 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
            ④土日・夜間の対応可否 ⑤他社証券の閲覧に関する社内ルール ⑥受付時間 ⑦証券探しの支援可否
            ⑧ご契約者本人の同意があれば家族同席で内容確認できるか
            対象は下の .promise ブロックだけでなく、同種の運営実態にかかわる記述すべて：
-           ・メールボタンの「24時間受付・お返事は営業日にご連絡します」
-           ・「受付：平日 9:00〜17:00／メールは24時間受付」
            ・まとめの「証券探しからお手伝いします」
            ・「もしものときは」の「損得も一緒に考えます」
+           ・「当社にご連絡ください」系の案内
            すべて確認が取れるまで公開しないこと -->
       <div class="promise">
         <h4>ご相談の前に、4つのお約束</h4>
@@ -1416,48 +1352,19 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
           <li>他社・他の代理店でご契約中の保険証券でも拝見します。</li>
           <li>保険証券が見つからなくても大丈夫です。探すところからお手伝いします。</li>
         </ul>
-        <p>お時間の目安は30分ほど。ご来店・お電話・メールのいずれでも承ります。お車の使い方が変わったとき（お子さまの免許取得・お引っ越し・車の買い替え）は、見直しのちょうどよいタイミングです。</p>
+        <p>お時間の目安は30分ほどです。お車の使い方が変わったとき（お子さまの免許取得・お引っ越し・車の買い替え）は、見直しのちょうどよいタイミングです。</p>
         <p>いただいた個人情報は、ご相談への対応のみに使用し、ご本人の同意なく第三者に提供しません。</p>
       </div>
 
-      <!-- ⚠️要確認：ダミー連絡先の差し替え。公開前に以下をすべて本番値へ：
-           ・電話番号 087-000-0000 … tel-btn の href と表示文字列、固定連絡バーの href、
-             さらにJS内のミニCTAに「tel:0870000000」（ハイフン無し）があり、
-             「087-000-0000」で検索すると漏れるので必ず「0870000000」でも検索すること
-           ・メールアドレス info@example.com … 下の mailto の href と、その下のフォールバック表示文字列の2か所
-           ・住所「香川県高松市〇〇町0-0」 -->
-      <a class="mail-btn" href="mailto:info@example.com?subject=%E8%87%AA%E5%8B%95%E8%BB%8A%E4%BF%9D%E9%99%BA%E3%81%AE%E5%82%99%E3%81%88%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87&amp;body=%EF%BC%88%E4%B8%8B%E3%81%AE%E9%A0%85%E7%9B%AE%E3%81%AB%E3%80%81%E3%82%8F%E3%81%8B%E3%82%8B%E7%AF%84%E5%9B%B2%E3%81%A7%E3%81%94%E8%A8%98%E5%85%A5%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%EF%BC%89%0D%0A%0D%0A%E2%96%A0%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0D%0A%E2%96%A0%E3%81%8A%E4%BD%8F%E3%81%BE%E3%81%84%E3%81%AE%E5%B8%82%E7%94%BA%EF%BC%9A%0D%0A%E2%96%A0%E3%81%94%E9%80%A3%E7%B5%A1%E3%81%AE%E3%81%A4%E3%81%8D%E3%82%84%E3%81%99%E3%81%84%E6%99%82%E9%96%93%E5%B8%AF%EF%BC%88%E4%BE%8B%EF%BC%9A%E5%B9%B3%E6%97%A520%E6%99%82%E4%BB%A5%E9%99%8D%EF%BC%8F%E5%9C%9F%E6%9B%9C%E5%8D%88%E5%89%8D%EF%BC%89%EF%BC%9A%0D%0A%E2%96%A0%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%EF%BC%9A%0D%0A">
-        メールで質問する
-        <small>24時間受付・お返事は営業日にご連絡します</small>
-      </a>
-      <p class="mail-fallback">ボタンでうまく開かないときは、<strong>info@example.com</strong> あてに直接お送りください。</p>
-      <p class="cta-or">お電話がご都合よければ、こちらへ</p>
-      <a class="tel-btn" href="tel:0870000000">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 6.75c0 8.28 6.72 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.37c0-.52-.35-.97-.85-1.09l-4.42-1.11c-.44-.11-.9.06-1.18.42l-.97 1.29c-.28.38-.77.54-1.21.38a12.04 12.04 0 0 1-7.14-7.14c-.16-.44 0-.93.38-1.21l1.29-.97c.36-.27.53-.73.42-1.17L6.96 3.1a1.13 1.13 0 0 0-1.09-.85H4.5a2.25 2.25 0 0 0-2.25 2.25v2.25Z"/></svg>
-        087-000-0000
-      </a>
-      <p class="tel-note">メールは24時間受け付けています。夜間・土日のご希望も本文にお書きください。折り返しの時間を合わせます。</p>
+      <!-- ⚠️要確認：住所はダミー（香川県高松市〇〇町0-0）。公開前に本番の所在地へ差し替えること。
+           このページには電話・メールのCTAを置かない方針のため、連絡先の掲載要否（募集文書として
+           代理店名・所在地・連絡先の表示が求められるか）を所属保険会社に確認すること -->
       <p class="co">ニッサン総合保険企画株式会社</p>
       <p class="addr">香川県高松市〇〇町0-0</p>
-      <p class="addr">受付：平日 9:00〜17:00／メールは24時間受付</p>
       <p class="tip">保険証券がお手元にあれば、その場での確認がより早く進みます。</p>
     </div>
   </div>
 </section>
-
-<!-- ================= 固定連絡バー ================= -->
-<div class="contact-bar" id="contactBar">
-  <div class="row">
-    <a class="mail" id="barMail" href="#matome">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
-      メールで質問
-    </a>
-    <a class="tel" href="tel:0870000000">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 6.75c0 8.28 6.72 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.37c0-.52-.35-.97-.85-1.09l-4.42-1.11c-.44-.11-.9.06-1.18.42l-.97 1.29c-.28.38-.77.54-1.21.38a12.04 12.04 0 0 1-7.14-7.14c-.16-.44 0-.93.38-1.21l1.29-.97c.36-.27.53-.73.42-1.17L6.96 3.1a1.13 1.13 0 0 0-1.09-.85H4.5a2.25 2.25 0 0 0-2.25 2.25v2.25Z"/></svg>
-      お電話
-    </a>
-  </div>
-</div>
 
 <!-- ================= 固定フッター（免責） ================= -->
 <!-- ⚠️要確認：本ツールは特約名と補償範囲に踏み込み、相談へのCTAを繰り返す構成のため、
@@ -1500,7 +1407,6 @@ button:focus-visible,a:focus-visible,.chk input:focus-visible{
         <div class="cmodal-hoken" id="caseModalHoken"></div>
         <div id="caseModalSonae"></div>
       </div>
-      <div data-cta-mini></div>
       <p class="cmodal-note">※事例は一般的な内容をもとにした例で、実在の個人・事案とは関係ありません。補償の名称・範囲は保険会社やご契約により異なります。実際の支払可否は約款・契約内容によりますので、お手元の保険証券でご確認ください。</p>
     </div>
   </div>
@@ -1611,7 +1517,7 @@ var AREAS = {
     title:'通勤・通学で毎日乗る方へ',
     items:[
       '車が使えない期間の「足」——修理・全損のときの代車費用（レンタカー費用特約）が付いているか。',
-      '地震・噴火・津波車両全損時一時金特約。被災した翌日も通勤は続きます。「当面の足の資金」の有無は大きな差になります。',
+      '地震・噴火・津波危険車両全損時一時金特約。被災した翌日も通勤は続きます。「当面の足の資金」の有無は大きな差になります。',
       '通勤路のアンダーパス・冠水しやすい道を、ハザードマップで一度見ておく。'
     ]
   },
@@ -1636,7 +1542,7 @@ var AREAS = {
     items:[
       '全損時の保険金は原則、時価まで。ローンの残債との差が出ないか、車両保険金額を確認。',
       '新車のうちは、新車の再取得費用まで補償される車両新価特約という選択肢があります（対象期間は保険会社により異なります）。',
-      '地震・噴火・津波車両全損時一時金特約。ローンが残る車が動かなくなったときの、次の一歩の資金に。'
+      '地震・噴火・津波危険車両全損時一時金特約。ローンが残る車が動かなくなったときの、次の一歩の資金に。'
     ]
   }
 };
@@ -1673,86 +1579,86 @@ var ICONS = {
   flood:'<svg viewBox="0 0 48 48"><path d="M13 10a6 6 0 0 1 10.4-3.8A7.2 7.2 0 0 1 36.5 10 5.5 5.5 0 0 1 35 20.8H14.5A5.5 5.5 0 0 1 13 10Z" fill="#9fb3c8"/><path d="m16 24-1.6 4M23 24l-1.6 4M30 24l-1.6 4" fill="none" stroke="#63b8dd" stroke-width="2.6" stroke-linecap="round"/><path d="M10 38l1.8-5a3 3 0 0 1 2.8-2h16.8a3 3 0 0 1 2.8 2l1.8 5" fill="#f0846a"/><rect x="7" y="37" width="34" height="6" rx="3" fill="#d9603f"/><path d="M2 41c5-3.5 9.5-3.5 14.5 0s9.5 3.5 14.5 0c4-2.8 8.5-3 15-.6V48H2Z" fill="#63b8dd"/></svg>',
   quakeG:'<svg viewBox="0 0 48 48"><g transform="rotate(-11 20 19)"><path d="M11 19v8h18v-8Z" fill="#fff" stroke="#e0cdb4" stroke-width="1.8"/><path d="M8 20l12-9 12 9" fill="none" stroke="#f0846a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g><path d="m30 14-3 4.5 3.6 2-2.2 3.5" fill="none" stroke="#c2452a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 37l1.6-4.4a3 3 0 0 1 2.8-2h13.2a3 3 0 0 1 2.8 2L34 37" fill="#63b8dd"/><rect x="9" y="36" width="28" height="6.5" rx="3" fill="#3f7fae"/><circle cx="16" cy="43" r="3" fill="#33404d"/><circle cx="31" cy="43" r="3" fill="#33404d"/><path d="M4 32c-1.6-2-1.6-5.2 0-7.2M44 32c1.6-2 1.6-5.2 0-7.2" fill="none" stroke="#f7c34e" stroke-width="2.6" stroke-linecap="round"/></svg>',
   stone:'<svg viewBox="0 0 48 48"><path d="M8 34a17 17 0 0 1 32-8l1 3H8Z" fill="#e4f2fa" stroke="#63b8dd" stroke-width="2.4"/><rect x="5" y="33" width="38" height="7" rx="3.4" fill="#3f7fae"/><path d="m22 20 3 3-3.6 1.6 2.6 3" fill="none" stroke="#c2452a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="16" r="3.4" fill="#9aa7b3"/><path d="M9 8l4.5 4M6 14l4.6 1.6" stroke="#c9dbe7" stroke-width="2.2" stroke-linecap="round"/></svg>',
-  pole:'<svg viewBox="0 0 48 48"><rect x="33" y="5" width="6" height="38" rx="2.5" fill="#c0a684"/><path d="M30 10h12M30 15h12" stroke="#c0a684" stroke-width="2.6" stroke-linecap="round"/><path d="M5 34l1.8-5a3 3 0 0 1 2.8-2h13.2a3 3 0 0 1 2.8 2l1.8 5" fill="#f0846a"/><rect x="2" y="33" width="29" height="6.5" rx="3" fill="#d9603f"/><circle cx="9" cy="40" r="3" fill="#33404d"/><circle cx="24" cy="40" r="3" fill="#33404d"/><path d="M31 28v-4M27.5 29.5l-2.6-3M34 29l2.6-3" fill="none" stroke="#f7c34e" stroke-width="2.4" stroke-linecap="round"/></svg>',
-  wind:'<svg viewBox="0 0 48 48"><path d="M4 12h16a4.5 4.5 0 1 0-4.5-5.6M4 20h25a4.5 4.5 0 1 1-4.5 6" fill="none" stroke="#63b8dd" stroke-width="3.4" stroke-linecap="round"/><g transform="rotate(16 36 16)"><rect x="29" y="10" width="14" height="10" rx="2" fill="#f7c34e" stroke="#a8701a" stroke-width="1.5"/><path d="M32 13.5h8M32 16.5h5" stroke="#a8701a" stroke-width="1.7" stroke-linecap="round"/></g><path d="M10 38l1.6-4.6a3 3 0 0 1 2.8-2h13.2a3 3 0 0 1 2.8 2L32 38" fill="#f0846a"/><rect x="7" y="37" width="28" height="6" rx="3" fill="#d9603f"/><circle cx="14" cy="43.5" r="2.8" fill="#33404d"/><circle cx="28" cy="43.5" r="2.8" fill="#33404d"/></svg>',
   scratch:'<svg viewBox="0 0 48 48"><path d="M8 27l2.2-6.2A3.4 3.4 0 0 1 13.4 18h15.2a3.4 3.4 0 0 1 3.2 2.2L34 27" fill="#63b8dd"/><rect x="13" y="20" width="6" height="5.5" rx="1.3" fill="#e4f2fa"/><rect x="22" y="20" width="6" height="5.5" rx="1.3" fill="#e4f2fa"/><rect x="5" y="26" width="32" height="8" rx="3.4" fill="#3f7fae"/><circle cx="12" cy="35" r="3.4" fill="#33404d"/><circle cx="29" cy="35" r="3.4" fill="#33404d"/><path d="m38 10 4 4M40 8l4 4M42 6l4 4" stroke="#c2452a" stroke-width="2.2" stroke-linecap="round"/><path d="M10 29.5h14" stroke="#c2452a" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/></svg>',
-  engine:'<svg viewBox="0 0 48 48"><path d="M7 30l2.2-6.4A3.4 3.4 0 0 1 12.4 21h15.2a3.4 3.4 0 0 1 3.2 2.6L33 30" fill="#f0846a"/><rect x="4" y="29" width="32" height="8" rx="3.4" fill="#d9603f"/><circle cx="11" cy="38" r="3.4" fill="#33404d"/><circle cx="28" cy="38" r="3.4" fill="#33404d"/><rect x="11" y="23" width="6" height="5.5" rx="1.3" fill="#fde8e0"/><rect x="20" y="23" width="6" height="5.5" rx="1.3" fill="#fde8e0"/><path d="M14 17c0-3 2-5.5 2-5.5s2 2.5 2 5.5" fill="none" stroke="#9aa7b3" stroke-width="2.4" stroke-linecap="round"/><path d="M21 15c0-3.6 2.4-6.6 2.4-6.6s2.4 3 2.4 6.6" fill="none" stroke="#9aa7b3" stroke-width="2.4" stroke-linecap="round"/><circle cx="39" cy="14" r="7" fill="#fdf3e2" stroke="#d9a45f" stroke-width="2.4"/><path d="M39 10.5V14l2.4 2" fill="none" stroke="#a8701a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   rearend:'<svg viewBox="0 0 48 48"><path d="M4 29l2-5.5A3 3 0 0 1 8.8 22h8.4a3 3 0 0 1 2.8 1.5L22 29" fill="#63b8dd"/><rect x="8.5" y="23.5" width="4.5" height="5" rx="1" fill="#e4f2fa"/><rect x="14" y="23.5" width="4.5" height="5" rx="1" fill="#e4f2fa"/><rect x="2" y="28.5" width="21" height="7" rx="2.5" fill="#3f7fae"/><circle cx="7" cy="36" r="3" fill="#33404d"/><circle cx="18" cy="36" r="3" fill="#33404d"/><path d="M26 29l2-5.5A3 3 0 0 1 30.8 22h8.4a3 3 0 0 1 2.8 1.5L44 29" fill="#f0846a"/><rect x="30.5" y="23.5" width="4.5" height="5" rx="1" fill="#fde8e0"/><rect x="36" y="23.5" width="4.5" height="5" rx="1" fill="#fde8e0"/><rect x="25" y="28.5" width="21" height="7" rx="2.5" fill="#d9603f"/><circle cx="30" cy="36" r="3" fill="#33404d"/><circle cx="41" cy="36" r="3" fill="#33404d"/><path d="M24 18v-5M19.5 19l-3-3.5M28.5 19l3-3.5" fill="none" stroke="#f7c34e" stroke-width="2.8" stroke-linecap="round"/></svg>',
   family:'<svg viewBox="0 0 48 48"><circle cx="14" cy="14" r="6.5" fill="#f7cdb4"/><path d="M7.5 13c.8-5.2 3.4-7.5 6.5-7.5s5.7 2.3 6.5 7.5c-2-2.2-4-3-6.5-3s-4.5.8-6.5 3Z" fill="#5c4030"/><path d="M4 36c0-7.5 4.3-12.5 10-12.5S24 28.5 24 36v3H4Z" fill="#63b8dd"/><circle cx="33" cy="17" r="5.5" fill="#f7cdb4"/><path d="M27.5 16c.7-4.4 2.9-6.3 5.5-6.3s4.8 1.9 5.5 6.3c-1.7-1.9-3.4-2.5-5.5-2.5s-3.8.6-5.5 2.5Z" fill="#7a5a3a"/><path d="M25 39c0-6.3 3.5-10.5 8-10.5s8 4.2 8 10.5v0H25Z" fill="#f0846a"/><circle cx="41" cy="28" r="4.6" fill="none" stroke="#d9a45f" stroke-width="2.6"/><circle cx="41" cy="28" r="1.5" fill="#fdf3e2"/><path d="M41 32.6V39M41 35.5h3M41 39h2.4" stroke="#d9a45f" stroke-width="2.4" stroke-linecap="round"/></svg>',
-  borrow:'<svg viewBox="0 0 48 48"><path d="M9 26l2-5.6a3.2 3.2 0 0 1 3-2.4h13a3.2 3.2 0 0 1 3 2.4L32 26" fill="#63b8dd"/><rect x="6" y="25" width="30" height="7.5" rx="3.2" fill="#3f7fae"/><circle cx="13" cy="33" r="3.2" fill="#33404d"/><circle cx="29" cy="33" r="3.2" fill="#33404d"/><rect x="12.5" y="20" width="5.5" height="5" rx="1.2" fill="#e4f2fa"/><rect x="20.5" y="20" width="5.5" height="5" rx="1.2" fill="#e4f2fa"/><circle cx="39" cy="12" r="5.5" fill="none" stroke="#d9a45f" stroke-width="3"/><circle cx="39" cy="12" r="1.8" fill="#fdf3e2"/><path d="M39 17.5V24M39 20.5h3.4M39 24h2.8" stroke="#d9a45f" stroke-width="2.6" stroke-linecap="round"/><path d="M4 12h8M9 9l3 3-3 3" fill="none" stroke="#f0846a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  borrow:'<svg viewBox="0 0 48 48"><path d="M9 26l2-5.6a3.2 3.2 0 0 1 3-2.4h13a3.2 3.2 0 0 1 3 2.4L32 26" fill="#63b8dd"/><rect x="6" y="25" width="30" height="7.5" rx="3.2" fill="#3f7fae"/><circle cx="13" cy="33" r="3.2" fill="#33404d"/><circle cx="29" cy="33" r="3.2" fill="#33404d"/><rect x="12.5" y="20" width="5.5" height="5" rx="1.2" fill="#e4f2fa"/><rect x="20.5" y="20" width="5.5" height="5" rx="1.2" fill="#e4f2fa"/><circle cx="39" cy="12" r="5.5" fill="none" stroke="#d9a45f" stroke-width="3"/><circle cx="39" cy="12" r="1.8" fill="#fdf3e2"/><path d="M39 17.5V24M39 20.5h3.4M39 24h2.8" stroke="#d9a45f" stroke-width="2.6" stroke-linecap="round"/><path d="M4 12h8M9 9l3 3-3 3" fill="none" stroke="#f0846a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  grade:ART.bGrade,
+  bike:ART.sBike,
+  golf:ART.sGolf
 };
 
 /* ---------- ○×クイズ（10問） ---------- */
 var QUIZ = [
   {
-    icon:'flood', a:true,
-    q:'大雨で道路が冠水し、乗っていた車が水没して動かなくなった。車両保険で保険金は出る？',
-    expl:'台風・豪雨・洪水・高潮による水没は、車両保険の対象です。補償範囲をしぼったエコノミー型でも対象になるのが一般的です。ただし、車両保険そのものを付けていない契約では、保険金は支払われません。「対人・対物に入っているから大丈夫」は、相手への賠償の話。ご自身の車を守るのは車両保険だけです。',
+    icon:'flood', a:false,
+    q:'自動車保険（対人・対物・人身傷害）に、きちんと入っています。大雨で駐車場が冠水し、愛車が水没しました。車の修理代は、自分の自動車保険から出る？',
+    expl:'「ちゃんと保険に入っているから大丈夫」——ここが、いちばん多い思い込みです。対人・対物は相手の方への賠償、人身傷害は人のケガのための補償で、ご自身の車そのものに支払われるのは車両保険だけ。台風・豪雨・洪水・高潮による水没は車両保険の対象（エコノミー型でも対象になるのが一般的）ですが、その車両保険が付いている車は約47%。2台に1台は、水没しても修理代が出ません。',
     hoken:'車両保険（一般型・エコノミー型とも）',
-    sonae:'車両保険が付いているか証券で確認する。水害リスクはハザードマップとあわせて'
+    sonae:'証券の「車両保険」欄に金額が入っているか確認する（空欄なら付いていません）'
   },
   {
     icon:'quakeG', a:false,
-    q:'地震で自宅の車庫が倒れ、下敷きになった車が全損した。車両保険で保険金は出る？',
-    expl:'車両保険は、地震・噴火・津波による損害を対象外（免責）としています。大雨の水没は出るのに、地震は出ない——ここが自動車保険のいちばん誤解されやすいところです。「地震・噴火・津波車両全損時一時金特約」を付けていれば、全損のときに一時金（50万円が一般的。車両保険金額がそれを下回る場合はその額）が支払われます。買い替え費用の全額ではなく、当面の足を確保するための一時金という位置づけです。',
-    hoken:'地震・噴火・津波車両全損時一時金特約',
-    sonae:'通勤・生活に車が欠かせない方は、特約の有無を証券で確認する'
+    q:'車両保険は、いちばん手厚い「一般型」で加入しています。地震で自宅の車庫が倒れ、下敷きになった車が全損しました。車両保険から出る？',
+    expl:'「一般型なら何でも出る」と思われがちですが、地震・噴火・津波による損害は、一般型でも対象外（免責）です。大雨の水没は出るのに、地震は出ない。しかも同じ免責は、相手への賠償（対人・対物）にもあります。備えるには「地震・噴火・津波危険車両全損時一時金特約」を車両保険にセットしておく必要があり、支払われるのは全損のときの一時金（50万円が一般的）です。',
+    hoken:'地震・噴火・津波危険車両全損時一時金特約（車両保険にセット）',
+    sonae:'通勤・生活に車が欠かせない方は、特約が付いているか確認する'
   },
   {
     icon:'stone', a:true,
-    q:'高速道路で、前の車が跳ねた小石がフロントガラスに当たってヒビが入った。車両保険で保険金は出る？',
-    expl:'飛び石は「飛来中・落下中の物との衝突」として、エコノミー型でも対象になるのが一般的です。ただし、自己負担額（免責金額）の設定によっては修理費の一部が自己負担になります。また、車両保険を使うと翌年の等級が下がる扱いが一般的なので、修理費によっては「出るけれど、使わないほうが得」なこともあります。',
+    q:'保険料を抑えるため、車両保険は「エコノミー型（車対車＋A）」にしています。高速道路の飛び石で、フロントガラスにヒビが入りました。出る？',
+    expl:'「ぶつけた相手がいないから」「安いほうの型だから」と思い込んで、自費で交換してしまう方が多い問題です。飛び石は「飛来中・落下中の物との衝突」として、エコノミー型でも対象になるのが一般的。ただし、自己負担額（免責金額）の設定と、使うと翌年の等級が下がる点は要確認です。修理費によっては「出るけれど、使わないほうが得」なこともあります。',
     hoken:'車両保険（一般型・エコノミー型とも）',
-    sonae:'免責金額の設定と、使った場合の保険料への影響を確認してから請求を判断する'
+    sonae:'免責金額と、使った場合の保険料への影響を確かめてから請求を判断する'
   },
   {
-    icon:'pole', a:false,
-    q:'運転を誤って電柱にぶつけてしまった（単独事故）。エコノミー型（車対車＋A）の車両保険で保険金は出る？',
-    expl:'エコノミー型は、相手の車が確認できる「車どうしの事故」と、火災・盗難・台風・水没・飛び石などに補償をしぼった型です。電柱・ガードレールへの衝突などの単独事故や、相手が特定できないあて逃げは対象外。ここをカバーできるのは一般型だけです。保険料の安さには理由がある——型の違いは、事故が起きたときに初めて効いてきます。',
+    icon:'scratch', a:false,
+    q:'エコノミー型の車両保険です。駐車場に戻ると、知らない間にぶつけられてへこんでいました（相手は不明）。こちらは完全な被害者。出る？',
+    expl:'被害者なのに出ない——ここが、自動車保険のいちばん厳しいところです。エコノミー型が補償する衝突は「相手の車と、その運転者などが確認できる場合」に限られ、相手が分からないあて逃げは対象外。相手が特定できないので、相手の対物賠償も使えません。この場面をカバーできるのは一般型だけです。',
     hoken:'車両保険（一般型）',
-    sonae:'自分の車両保険がどちらの型か、証券の「車両保険のタイプ」欄で確認する'
+    sonae:'証券の「車両保険のタイプ」欄で、一般型かエコノミー型かを確認する'
   },
   {
-    icon:'wind', a:true,
-    q:'台風の強風で飛んできた看板が車を直撃し、ボンネットがへこんだ。車両保険で保険金は出る？',
-    expl:'台風・竜巻などの風災や、飛来物・落下物による損害は、エコノミー型でも対象になるのが一般的です。雹（ひょう）でボディがへこんだ場合も同じ扱いです。「自然災害は出ないだろう」と思い込んで、請求しないまま自費で直してしまう方が実は少なくありません。台風のあとは、車のまわりをひと回りしてみてください。',
-    hoken:'車両保険（一般型・エコノミー型とも）',
-    sonae:'損害を見つけたら、修理の前に写真を撮って保険会社・代理店に相談する'
-  },
-  {
-    icon:'scratch', a:true,
-    q:'駐車中に、いたずらでボディに深い傷をつけられた。車両保険で保険金は出る？',
-    expl:'いたずら・落書きによる損害は、エコノミー型でも対象になるのが一般的です。車両の盗難も同様です。警察への届出（被害届）とセットで進めるのが基本です。注意したいのは、へこみが実は「あて逃げ（車との衝突痕）」と判断されると、エコノミー型では支払われないことがある点。また、車内に置いていた荷物の盗難は車両保険の対象外です。',
-    hoken:'車両保険（一般型・エコノミー型とも）',
-    sonae:'見つけたら片づける前に写真。警察へ届け出てから保険会社・代理店へ'
-  },
-  {
-    icon:'engine', a:false,
-    q:'走行中にエンジンが故障して、動かなくなった。車両保険で保険金は出る？',
-    expl:'故障・経年劣化は「偶然な事故」ではないため、車両保険の対象外です。車両保険が守るのは事故や災害による損害で、寿命や消耗はメーカー保証・点検の領域になります。ただし、故障で動けなくなったときのレッカー移動などは、多くの任意保険に自動セットされているロードサービスで対応でき、利用しても等級に影響しない扱いが一般的です。',
-    hoken:'ロードサービス（レッカー等）※修理費そのものは対象外',
-    sonae:'ロードサービスの連絡先とサービス範囲を確認し、スマホに登録しておく'
+    icon:'family', a:false,
+    q:'運転者を「本人・配偶者限定」で契約している車です。お盆に帰省した息子が運転し、よその家の塀を壊してしまいました。相手への賠償（対物賠償）は出る？',
+    expl:'「自分の車は直せなくても、相手への賠償は出るだろう」と思われがちですが、限定の範囲外の人が運転中に起こした事故は、対人・対物も含めて、この車のご契約からは支払われないのが原則です。塀の弁償まで自己負担になります（自賠責保険が使えるのは相手のケガだけで、物損には使えません。ただし、息子さんご自身が自動車保険をお持ちなら、その契約の他車運転特約から支払われる場合があります）。帰省の間だけ限定を外す変更や、1日単位の自動車保険という方法もあります。',
+    hoken:'運転者限定の変更／1日単位の自動車保険',
+    sonae:'ハンドルを握る可能性のある家族を書き出し、証券の限定条件と突き合わせる'
   },
   {
     icon:'rearend', a:false, yes:'任せられる', no:'任せられない',
-    q:'信号待ちで追突された（過失ゼロのもらい事故）。相手との示談交渉は、自分の保険会社に任せられる？',
-    expl:'意外に思われる方が多い問題です。あなたに過失がない事故では、あなたの保険会社が相手方と示談交渉をすることは、法律上できません（弁護士法との関係）。被害者なのに、交渉はご自身で相手方の保険会社と行うことになります。弁護士費用特約があれば、弁護士への相談・依頼の費用を限度額の範囲内でまかなえ、使っても等級に影響しない扱いが一般的です。',
+    q:'信号待ちで追突されました。過失はゼロ、こちらは完全な被害者です。相手との示談交渉は、自分の保険会社に任せられる？',
+    expl:'保険料を払っているのに、被害者のときこそ動いてもらえない——意外に思われる問題です。ご自身に過失がない事故では、ご自身の保険会社が相手方と示談交渉をすることは、法律上できません（弁護士法との関係）。相手方の保険会社との交渉を、ご自身で進めることになります。弁護士費用特約があれば、弁護士への相談・依頼の費用を限度額の範囲内でまかなえ、使っても等級に影響しない扱いが一般的です。',
     hoken:'弁護士費用特約',
     sonae:'特約の有無を証券で確認する（ご家族の契約の特約を使える場合もあります）'
   },
   {
-    icon:'family', a:false,
-    q:'運転者を「本人・配偶者限定」にした契約の車を、帰省してきた別居の子どもが運転して事故を起こした。保険金は出る？',
-    expl:'運転者限定の範囲外の人が運転中に起こした事故には、対人・対物・車両とも、この車のご契約からは保険金が支払われないのが原則です（相手のケガに対する自賠責保険を除く。運転していた子ども自身が自動車保険を持っていれば、その契約の他車運転特約から支払われる場合があります）。保険料を抑えるための限定条件が、帰省や送迎の「ちょっとだけ運転」で思わぬ落とし穴になります。帰省の間だけ限定を外す変更や、1日単位で入れる自動車保険を使う方法もあります。ちなみに、運転者の年齢条件は別居の未婚の子には適用されないのが一般的——条件のかかり方は思った以上に複雑なので、家族構成が変わるときはご相談ください。',
-    hoken:'運転者限定の変更／1日単位の自動車保険',
-    sonae:'実際にハンドルを握る可能性のある家族を書き出し、証券の限定条件と突き合わせる'
+    icon:'grade', a:false, yes:'合っている', no:'まちがい',
+    q:'台風で水没した車の修理に、車両保険を使いました。「自分は何も悪くない自然災害なのだから、翌年の等級も保険料も変わらない」——この考えは合っている？',
+    expl:'自然災害でも、車両保険を使えば等級は下がります。台風・水没・盗難・いたずら・飛び石などは1等級ダウン（追突などの一般的な事故は3等級ダウン）で、あわせて事故有係数適用期間も加算されます（1等級ダウン事故なら1年、3等級ダウン事故なら3年が一般的）。そのぶん、翌年からの保険料が上がります。だからこそ、修理費が小さいときは「出るけれど、あえて使わない」という判断もあります。使う前に、保険料がいくら増えるかを試算してから決められます。',
+    hoken:'車両保険（使うかどうかは、損得を試算してから）',
+    sonae:'請求の前に、保険を使った場合の保険料への影響を確認する'
   },
   {
-    icon:'borrow', a:true,
-    q:'友人の車を借りて運転中に、ぶつけてしまった。自分の自動車保険から保険金は出る？',
-    expl:'多くの自動車保険には「他車運転特約」が自動セットされていて、臨時に借りた他人の車を運転中の事故は、持ち主の保険より優先して自分の保険から支払われるのが一般的です（借りた車自体の損害は、自分の契約に車両保険が付いている場合に限るなど、条件があります）。日常的に借りている車や、同居のご家族の車は対象外になるのが一般的です。',
+    icon:'borrow', a:false, pay:true, yes:'合っている', no:'まちがい',
+    q:'友人の車を借りて運転中、ぶつけてしまいました。「他人の車なのだから、自分の自動車保険は使えない」——この考えは合っている？',
+    expl:'ここは逆に、知っておくと助かる話です。多くの自動車保険には「他車運転特約」が自動セットされていて、臨時に借りた他人の車を運転中の事故は、持ち主の保険より優先して、ご自身の契約から支払われるのが一般的です（借りた車自体の損害は、ご自身の契約に車両保険が付いている場合など、条件があります）。ただし、日常的に借りている車や、同居のご家族の車は対象外になるのが一般的です。',
     hoken:'他車運転特約（自動セットが一般的）',
-    sonae:'自分の契約に付いているか、対象になる車の範囲とあわせて確認する'
+    sonae:'ご自身の契約に付いているか、対象になる車の範囲とあわせて確認する'
+  },
+  {
+    icon:'bike', a:true,
+    q:'自動車保険に「個人賠償責任特約」をセットしています。休日、自転車で歩行者にぶつかり、ケガをさせてしまいました。車にはまったく乗っていません。この自動車保険から出る？',
+    expl:'「自動車保険なのに、自転車？」と思われた方は、もったいないかもしれません。個人賠償責任特約は自動車保険にセットでき、自転車事故をはじめ、日常生活の賠償事故（お子さまがお店の商品をこわした、飼い犬が人をかんだ等）も対象になります。ご本人だけでなく同居のご家族なども対象になるのが一般的で、示談交渉サービス付きのものが多くあります。',
+    hoken:'個人賠償責任特約',
+    sonae:'火災保険側と重複していないかも含めて、付帯の状況を確認する'
+  },
+  {
+    icon:'golf', a:false,
+    q:'事故で、車に積んでいたゴルフバッグとカメラが壊れました。車両保険には入っています。出る？',
+    expl:'車両保険が守るのは「車そのもの」と、車に定着した付属品（カーナビ・ETCなど）まで。車内やトランクに積んでいた物は、原則として対象外です。備えるには「車内身の回り品の補償特約」が必要で、限度額は10〜30万円程度が一般的。現金・貴金属・データ類は特約でも対象外です。また、車上荒らしなどの「盗難」が対象になるかは、保険会社によって取り扱いが分かれます。',
+    hoken:'車内身の回り品の補償特約',
+    sonae:'積みっぱなしの高価な物がないか見直し、特約の有無を確認する'
   }
 ];
 
@@ -1817,18 +1723,18 @@ function renderQuestion(){
 
 function commentFor(score, total){
   if(total && total < QUIZ.length){
-    return 'ここまでで ' + total + '問。続きはお時間のあるときにどうぞ。間違えたところが、いまのご契約でいちばん確認したいポイントです。';
+    return 'ここまでで ' + total + '問。続きはお時間のあるときにどうぞ。まちがえたところが、いまのご契約でいちばん確認したいポイントです。';
   }
   if(score >= 10){
-    return '全問正解です。補償の範囲をとてもよくご存じですね。あとは「実際のご契約がどうなっているか」の確認だけです。ぜひ一度、証券をチェックしてみてください。';
+    return '全問正解です。この10問は意地悪に作ってありますので、これは相当お詳しい方です。あとは「知識」ではなく「実際のご契約がどうなっているか」の確認だけ。ぜひ一度、証券をチェックしてみてください。';
   }
   if(score >= 7){
-    return '好成績です。間違えた問題こそ、いまのご契約を見直すヒントです。該当する補償・特約が付いているか、証券で確認してみてください。';
+    return '好成績です。それでも、まちがえた問題が残りました。知識としてご存じでも、いまのご契約にその補償・特約が付いているかは別の話です。証券で確かめてみてください。';
   }
   if(score >= 4){
-    return '大事なところに、意外な落とし穴があったのではないでしょうか。ここを知っていれば十分です。あとは証券との突き合わせだけです。';
+    return 'ちょうど半分ほど。ここでつまずくのが、いちばん多いパターンです。「入っているつもり」と「実際に出るかどうか」の間には、これだけの差があります。まちがえた問題から確認してみてください。';
   }
-  return '驚かれたかもしれません。でも大丈夫。「知らなかった」に今日気づけたことが、備えの第一歩です。気になる点はどうぞお気軽にご相談ください。';
+  return '驚かれたかもしれません。でも、これがふつうです。自動車保険は「入っていれば安心」ではなく、「どこまで守るかを選ぶ」保険だからです。「知らなかった」に今日気づけたことが、いちばんの備えです。';
 }
 
 function onAnswer(choiceYes){
@@ -1842,7 +1748,9 @@ function onAnswer(choiceYes){
   btnYes.disabled = true; btnNo.disabled = true;
   (choiceYes ? btnYes : btnNo).classList.add('picked');
 
-  elVerd.className = 'verdict show ' + (item.a ? 'pay' : 'nopay');
+  /* 色は「結果が良い知らせか」で決める。考え方の正誤を問う設問は a と一致しないことがある */
+  var isPay = (typeof item.pay === 'boolean') ? item.pay : item.a;
+  elVerd.className = 'verdict show ' + (isPay ? 'pay' : 'nopay');
   elVAns.innerHTML = (item.a ? SVG_O : SVG_X) + '正解は「' + (item.a ? (item.yes || '出る') : (item.no || '出ない')) + '」';
   elVChip.className = 'result-chip ' + (correct ? 'ok' : 'ng');
   elVChip.textContent = correct ? 'あなたの回答：正解！' : 'あなたの回答：残念…';
@@ -1908,7 +1816,7 @@ function buildResultMail(){
   }
   b += '■証券で確認する3点：\n';
   b += '・車両保険の有無と型（一般型／エコノミー型）\n';
-  b += '・地震・噴火・津波車両全損時一時金特約\n';
+  b += '・地震・噴火・津波危険車両全損時一時金特約\n';
   b += '・弁護士費用特約と運転者の限定条件\n';
   return 'mailto:?subject=' + encodeURIComponent('自動車保険の備えチェックの結果') +
          '&body=' + encodeURIComponent(b);
@@ -2016,59 +1924,16 @@ function updateChecklist(){
   }
 })();
 
-/* ---------- ミニCTA（ページの途中にも出口を置く） ---------- */
-var MAIL_HREF = document.querySelector('.mail-btn') ? document.querySelector('.mail-btn').getAttribute('href') : '#matome';
-var SVG_TEL = '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 6.75c0 8.28 6.72 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.37c0-.52-.35-.97-.85-1.09l-4.42-1.11c-.44-.11-.9.06-1.18.42l-.97 1.29c-.28.38-.77.54-1.21.38a12.04 12.04 0 0 1-7.14-7.14c-.16-.44 0-.93.38-1.21l1.29-.97c.36-.27.53-.73.42-1.17L6.96 3.1a1.13 1.13 0 0 0-1.09-.85H4.5a2.25 2.25 0 0 0-2.25 2.25v2.25Z"/></svg>';
-var SVG_MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>';
-
+/* ---------- 固定フッター（免責）の高さぶん、本文の下に余白を積む ---------- */
 (function(){
-  var slots = document.querySelectorAll('[data-cta-mini]');
-  for(var i = 0; i < slots.length; i++){
-    slots[i].innerHTML =
-      '<div class="cta-mini">' +
-        '<p>' + (slots[i].getAttribute('data-cta-msg') || '気になるところは、その場で聞くのがいちばん早いです') + '</p>' +
-        '<div class="row">' +
-          '<a class="mail" href="' + MAIL_HREF + '">' + SVG_MAIL + 'メールで質問</a>' +
-          '<a class="tel" href="tel:0870000000">' + SVG_TEL + 'お電話</a>' +
-        '</div>' +
-      '</div>';
-  }
-  var barMail = document.getElementById('barMail');
-  if(barMail){ barMail.setAttribute('href', MAIL_HREF); }
-})();
-
-/* ---------- 固定連絡バー（ヒーローを過ぎたら出す／CTAが見えたら引っ込める） ---------- */
-(function(){
-  var bar = document.getElementById('contactBar');
-  var cta = document.querySelector('.cta');
   var footer = document.querySelector('.disclaimer');
-  if(!bar || !cta || !footer){ return; }
-  var basePad = 0;
-
-  /* 免責フッターの高さは文字サイズ・画面幅で変わるので毎回実測して積む */
+  if(!footer){ return; }
+  /* 免責フッターの高さは文字サイズ・画面幅で変わるので毎回実測する */
   function layout(){
-    var fh = footer.offsetHeight;
-    bar.style.bottom = fh + 'px';
-    basePad = fh;
-    applyPad();
+    document.body.style.paddingBottom = (footer.offsetHeight + 16) + 'px';
   }
-  function applyPad(){
-    var extra = bar.classList.contains('show') ? bar.offsetHeight : 0;
-    document.body.style.paddingBottom = (basePad + extra + 16) + 'px';
-  }
-  function update(){
-    var r = cta.getBoundingClientRect();
-    var ctaVisible = (r.top < window.innerHeight) && (r.bottom > 0);
-    var show = (window.scrollY > 600) && !ctaVisible;
-    if(show !== bar.classList.contains('show')){
-      bar.classList.toggle('show', show);
-      applyPad();
-    }
-  }
-  window.addEventListener('scroll', update, {passive:true});
-  window.addEventListener('resize', function(){ layout(); update(); }, {passive:true});
+  window.addEventListener('resize', layout, {passive:true});
   layout();
-  update();
 })();
 
 /* ---------- セクション4：ケーススタディ（カード＋モーダル） ---------- */
@@ -2211,9 +2076,9 @@ function closeCase(){
   if(cmLastFocus && cmLastFocus.focus){ cmLastFocus.focus(); }
 }
 
-/* モーダル表示中は背面（固定連絡バー含む）をキーボード・読み上げの対象外にする */
+/* モーダル表示中は背面をキーボード・読み上げの対象外にする */
 function setBackgroundInert(on){
-  var bg = document.querySelectorAll('body > header, body > section, body > footer, body > .contact-bar');
+  var bg = document.querySelectorAll('body > header, body > section, body > footer');
   for(var i = 0; i < bg.length; i++){ bg[i].inert = on; }
 }
 
