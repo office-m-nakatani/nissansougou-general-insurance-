@@ -127,8 +127,10 @@ section{padding:40px 0 46px;}
   margin-top:-24px;position:relative;z-index:1;
   padding-top:42px;
 }
-.sec-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;}
-.sec-head .spot{flex:0 0 84px;}
+/* 文字サイズを大きくした利用者でも横スクロールが出ないよう、入り切らなければ折り返す */
+.sec-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.sec-head > div:first-child{flex:1 1 min(100%,15em);min-width:0;}
+.sec-head .spot{flex:0 0 auto;}
 .sec-head .spot svg{width:84px;height:84px;display:block;}
 .spot-circle{
   width:84px;height:84px;border-radius:50%;
@@ -374,7 +376,9 @@ h2::after{
   font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:4px;
 }
 .quiz-done .score .num{font-size:2.3rem;color:var(--coral-text);}
-.nowrap{white-space:nowrap;}
+/* 意味の切れ目で改行させるための塊。white-space:nowrap と違い、
+   文字を拡大した利用者の画面では塊の内側で折り返せるので横スクロールにならない */
+.nowrap{display:inline-block;}
 .quiz-done .cmt{font-size:.97rem;color:var(--text);max-width:560px;margin:8px auto 4px;text-align:left;}
 .quiz-note{font-size:.9rem;color:var(--muted);margin-top:14px;}
 
@@ -438,7 +442,7 @@ h2::after{
 .case-illust svg{width:56px;height:56px;}
 .case-chip{
   align-self:flex-start;
-  font-size:.82rem;font-weight:700;letter-spacing:.04em;
+  font-size:.88rem;font-weight:700;letter-spacing:.04em;
   padding:3px 12px;border-radius:999px;margin-bottom:8px;
 }
 .case-card h3{font-size:1.06rem;color:var(--navy);margin-bottom:6px;line-height:1.55;}
@@ -617,12 +621,43 @@ h2::after{
 
 /* ---------- 読みやすさ（注記の下限・文字拡大） ---------- */
 .note,.quiz-note,.table-foot,.cmodal-note,.grade-table td small,.area-btn small,.brand small{
-  font-size:.86rem;line-height:1.8;
+  font-size:.92rem;line-height:1.8;
 }
 .risk-card p,.chk,.case-q,.basic-card p{font-size:1rem;}
 .sec-lead,.hero .lead{font-size:1.06rem;}
-/* 免責文は画面を圧迫しないよう拡大対象から外す（文言・表示位置は不変） */
-.disclaimer p{font-size:14px !important;}
+/* 免責文は画面を圧迫しないよう控えめなサイズにとどめる（文言・表示位置は不変） */
+.disclaimer p{font-size:14.5px !important;}
+
+/* ---------- 日本語の読みやすさ（出典つきの調整） ----------
+   1行の長さ：WCAG 2.2 達成基準1.4.8（AAA）は1行を全角40文字以内としており、
+   デジタル庁デザインシステムも同じ目安を示す。日本語は全角1文字＝1em なので
+   max-width を em で指定すると、文字を拡大しても1行の文字数が変わらない。
+   比較表は「一覧性を優先すべきコンテンツ」として同ガイドライン自身が適用外と
+   しているため、.grade-table には行長の制限をかけない。
+   スマートフォン幅では1行20〜23文字にしかならず、この指定は効かない（PC向け）。 */
+.sec-lead,.quiz-note,.table-foot,.hero .lead,.guide-msg,.verdict .expl,
+.score-box p,.chk-msg,.tips-box > p,.finder > p,.promise > p{
+  max-width:40em;
+}
+/* アイコンを内包する行は、枠ではなく中の文章側に上限をかける
+   （枠を狭めると他のパネルと右端が揃わなくなるため） */
+.note > span,.chk > span:not(.art){max-width:40em;}
+.disclaimer p{max-width:min(900px,40em);}
+
+/* 段落の間隔：同ガイドラインは行の高さを文字サイズの1.5倍以上、段落間を
+   その1.5倍以上（＝文字サイズの2.25倍以上）とすることを推奨している。
+   行間はすでに1.6〜1.95で満たしているため、狭かった段落間だけを揃える。 */
+.basic-card p + p,.family-card p + p,.cmodal-body p + p{margin-top:2.25em;}
+
+/* 和文と数字・欧文の間の四分アキ（0.25em）。日本語組版の原則だがブラウザは
+   既定で入れないため指定する。未対応のブラウザでは無視されるだけで害はない。 */
+body{text-autospace:ideograph-alpha ideograph-numeric;}
+
+/* 文節単位の折り返し。文字単位より読み速度が速いことが実証されている
+   （小林潤平ら, 人工知能学会論文誌 30(2), 2015）。本文全体に効かせると
+   描画が重くなるため、ブラウザ側の推奨どおり見出しと設問文だけに適用する。
+   Chromium系のみ対応、他ブラウザでは無視される。 */
+h1,h2,h3,.q-scene p,.case-q,.cmodal-title{word-break:auto-phrase;}
 
 /* ---------- もし全損になったら（簡易比較） ---------- */
 .calc-box{background:var(--white);border-radius:20px;padding:18px 16px;box-shadow:var(--shadow-sm);}
@@ -667,7 +702,7 @@ h2::after{
 .family-card .icon svg{width:34px;height:34px;}
 .family-card h4{font-size:1.05rem;color:var(--navy);margin-bottom:0;}
 .family-card p{font-size:1rem;line-height:1.9;}
-.family-card p + p{margin-top:8px;}
+.family-card p + p{margin-top:2.25em;}
 
 /* ---------- CTA：お約束 ---------- */
 .promise{
@@ -790,7 +825,7 @@ h1,h2,h3,.cta h3,.case-card h3{line-break:strict;}
   text-align:center;
 }
 .disclaimer p{
-  max-width:900px;margin:0 auto;
+  max-width:min(900px,40em);margin:0 auto;
   font-size:.85rem;line-height:1.7;color:var(--muted);
 }
 /* フォーカス可視化（キーボード操作） */
