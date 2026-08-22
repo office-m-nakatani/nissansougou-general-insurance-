@@ -9,11 +9,14 @@
 :root{
   --navy:#1b3f5e;
   --navy-2:#27587f;
+  /* フォーカスリング専用。--sunnyは装飾用で背景とのコントラストが低いため、
+     キーボード操作時の視認性はこちらを使う（非テキストの3:1基準を満たす色） */
+  --focus:#27587f;
   --navy-soft:#eaf1f7;
   --bg:#fff8f2;
   --white:#ffffff;
   --text:#33404d;
-  --muted:#5c6874;
+  --muted:#4e5862;
   --line:#efe2d8;
   --shadow:0 6px 20px rgba(130,100,80,.09);
   --shadow-sm:0 3px 10px rgba(130,100,80,.07);
@@ -23,7 +26,7 @@
   --red-bg:#fdeee9;
   --red-border:#f4d0c6;
   --coral:#f0846a;
-  --coral-text:#d9552f;
+  --coral-text:#b84827;
 
   --green:#2c7a4b;
   --green-bg:#e8f6ef;
@@ -649,7 +652,7 @@ h2::after{
   font-family:inherit;font-size:1.1rem;font-weight:700;
   padding:0 14px;cursor:pointer;
 }
-.pref-select:focus-visible{outline:3px solid var(--sunny);outline-offset:2px;}
+.pref-select:focus-visible{outline:3px solid var(--focus);outline-offset:2px;}
 .pref-zone{
   font-size:.9rem;line-height:1.8;color:var(--muted);margin-top:10px;
   display:flex;gap:8px;align-items:flex-start;
@@ -874,9 +877,9 @@ h1,h2,h3,.cta h3,.case-card h3{line-break:strict;}
 }
 /* フォーカス可視化（キーボード操作） */
 button:focus-visible,a:focus-visible,.chk input:focus-visible{
-  outline:3px solid var(--sunny);outline-offset:2px;
+  outline:3px solid var(--focus);outline-offset:2px;
 }
-.cmodal-close:focus-visible{outline:3px solid var(--sunny);outline-offset:3px;}
+.cmodal-close:focus-visible{outline:3px solid var(--focus);outline-offset:3px;}
 </style>
 </head>
 <body>
@@ -2310,7 +2313,7 @@ var SVG_MAIL = '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-l
 var CASES = [
   {
     chip:'日常のリスク', title:'自転車で、うっかり',
-    color:'#24729f', bg:'#e8f4fb',
+    color:'#1e6087', bg:'#e8f4fb',
     ill:'<svg viewBox="0 0 48 48"><circle cx="12" cy="33" r="8" fill="none" stroke="#27587f" stroke-width="3"/><circle cx="36" cy="33" r="8" fill="none" stroke="#27587f" stroke-width="3"/><path d="M12 33 20 18h12l4 15M24 33 20 18M24 33H12" fill="none" stroke="#f0846a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 17h6M20 17v1.5M31 15h6M34 15v3" fill="none" stroke="#27587f" stroke-width="2.6" stroke-linecap="round"/></svg>',
     scene:[['sBike','自転車'],['sWalker','歩行者のケガ'],['sMoney','相手への賠償']],
     lead:'相手のケガ、だれが払うの？',
@@ -2321,7 +2324,7 @@ var CASES = [
   },
   {
     chip:'ご家族のこと', title:'実家の保険、見たことがない',
-    color:'#1b7867', bg:'#e6f5f0',
+    color:'#166657', bg:'#e6f5f0',
     ill:'<svg viewBox="0 0 48 48"><path d="M8 26v15h17V26Z" fill="#fff" stroke="#c0a684" stroke-width="2"/><path d="M5 27 16.5 17 28 27" fill="none" stroke="#d9a45f" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 41v-8h5v8Z" fill="#27587f"/><path d="M10 31h4M20 31h3" stroke="#e0cdb4" stroke-width="2" stroke-linecap="round"/><circle cx="36" cy="20" r="6.5" fill="#f7cdb4"/><path d="M29.5 19c.7-5.2 3.3-7.4 6.5-7.4s5.8 2.2 6.5 7.4c-2-2.2-4-3-6.5-3s-4.5.8-6.5 3Z" fill="#9fb3c8"/><path d="M27 41c0-7.5 4-12 9-12s9 4.5 9 12v2H27Z" fill="#4fbf9b"/></svg>',
     scene:[['sMyhouse','ご実家'],['setPolicy','別のご契約'],['sTalk','家族で共有']],
     lead:'あの家の備え、だれが見てる？',
@@ -2332,7 +2335,7 @@ var CASES = [
   },
   {
     chip:'自然のトラブル', title:'落雷で家電が故障',
-    color:'#96631a', bg:'#fdf3e2',
+    color:'#7f5416', bg:'#fdf3e2',
     ill:'<svg viewBox="0 0 48 48"><path d="M35 24a8 8 0 0 0-1.4-15.9A11 11 0 0 0 12 10.6 8.5 8.5 0 0 0 13.5 27H35Z" fill="#9fb3c8"/><path d="m27 22-8 12h6l-4 12 12-16h-7l5-8Z" fill="#f7c34e" stroke="#a8701a" stroke-width="1.5" stroke-linejoin="round"/></svg>',
     scene:[['sThunder','落雷'],['sTv','テレビ'],['sAircon','エアコン']],
     lead:'買い替えるしかない…？',
@@ -2343,7 +2346,7 @@ var CASES = [
   },
   {
     chip:'盗難の被害', title:'空き巣に入られた',
-    color:'#8f4574', bg:'#fbeef6',
+    color:'#793a62', bg:'#fbeef6',
     ill:'<svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="32" rx="4" fill="#e4f2fa" stroke="#27587f" stroke-width="2.5"/><path d="M24 6v32M8 22h32" fill="none" stroke="#27587f" stroke-width="2.5"/><path d="m30 11-4 5 5 2-3 6" fill="none" stroke="#c2453f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 44h20" fill="none" stroke="#9aa7b3" stroke-width="3" stroke-linecap="round"/></svg>',
     scene:[['sWindow','割られた窓'],['sStolen','盗まれた家財'],['sKey','こわれた鍵']],
     lead:'盗まれたもの、あきらめるしかない？',
@@ -2354,7 +2357,7 @@ var CASES = [
   },
   {
     chip:'クルマのこと', title:'過失ゼロの「もらい事故」',
-    color:'#4a5aa0', bg:'#eeeffa',
+    color:'#3e4c88', bg:'#eeeffa',
     ill:'<svg viewBox="0 0 48 48"><path d="M4 28l2-5.5A3 3 0 0 1 8.8 21h8.4a3 3 0 0 1 2.8 1.5L22 28" fill="#63b8dd"/><rect x="8.5" y="22.5" width="4.5" height="5" fill="#e4f2fa"/><rect x="14" y="22.5" width="4.5" height="5" fill="#e4f2fa"/><rect x="2" y="27.5" width="21" height="7" rx="2.5" fill="#3f7fae"/><circle cx="7" cy="35" r="3" fill="#33404d"/><circle cx="18" cy="35" r="3" fill="#33404d"/><path d="M26 28l2-5.5A3 3 0 0 1 30.8 21h8.4a3 3 0 0 1 2.8 1.5L44 28" fill="#f0846a"/><rect x="30.5" y="22.5" width="4.5" height="5" fill="#fde8e0"/><rect x="36" y="22.5" width="4.5" height="5" fill="#fde8e0"/><rect x="25" y="27.5" width="21" height="7" rx="2.5" fill="#d9603f"/><circle cx="30" cy="35" r="3" fill="#33404d"/><circle cx="41" cy="35" r="3" fill="#33404d"/><path d="M24 18v-4M20 19l-2.5-3M28 19l2.5-3" fill="none" stroke="#f7c34e" stroke-width="2.6" stroke-linecap="round"/></svg>',
     scene:[['sRearend','追突された'],['sTalk','進まない交渉'],['sLawyer','弁護士に依頼']],
     lead:'自分は悪くないのに、どうすれば？',
@@ -2365,7 +2368,7 @@ var CASES = [
   },
   {
     chip:'ご近所のこと', title:'わが家の火事が、お隣へ',
-    color:'#b2452f', bg:'#fdeee9',
+    color:'#973a27', bg:'#fdeee9',
     ill:'<svg viewBox="0 0 48 48"><path d="M4 26 14 17l10 9v13H4Z" fill="#fbe8c8" stroke="#d9a45f" stroke-width="2"/><path d="M24 26 34 17l10 9v13H24Z" fill="#e4f2fa" stroke="#63b8dd" stroke-width="2"/><path d="M20 6c1.5 3.5 5 4.5 5 8a5 5 0 0 1-10 0c0-2.5 1.6-4 3-5.6.6 1.4 1.2 2 2 2.6-.4-2 0-3.4 0-5Z" fill="#f0846a"/></svg>',
     scene:[['sMyhouse','わが家の火事'],['sNeighbor','お隣へ延焼'],['sGift','お隣へのお見舞い']],
     lead:'お隣に、何かできることは？',
