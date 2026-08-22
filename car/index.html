@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="大雨での水没・地震での損壊・もらい事故など、自動車保険の「出る・出ない」を○×クイズで確認できる啓発ツール。株式会社Office-M。">
+<title>大雨・地震と自動車保険の備えチェック｜株式会社Office-M</title>
+<style>
+:root{
+  --navy:#1b3f5e;
+  --navy-2:#27587f;
+  --navy-soft:#eaf1f7;
+  --bg:#fff8f2;
+  --white:#ffffff;
+  --text:#33404d;
+  --muted:#5c6874;
+  --line:#efe2d8;
+  --shadow:0 6px 20px rgba(130,100,80,.09);
+  --shadow-sm:0 3px 10px rgba(130,100,80,.07);
+
+  --red:#c2453f;
+  --red-dark:#a63631;
+  --red-bg:#fdeee9;
+  --red-border:#f4d0c6;
+  --coral:#f0846a;
+  --coral-text:#d9552f;
+
+  --green:#2c7a4b;
+  --green-bg:#e8f6ef;
+  --green-border:#c3e5d3;
+  --mint:#4fbf9b;
+
+  --amber:#a8701a;
+  --amber-deep:#a85c12;
+  --amber-bg:#fdf3e2;
+  --amber-border:#f2dcae;
+  --sunny:#f7c34e;
+
+  --sky:#24729f;
+  --sky-bg:#e8f4fb;
+  --sky-border:#c6e2f2;
+
+  --berry:#8f4574;
+  --berry-bg:#fbeef6;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:16px;}
+/* 左右の余白が広い画面ほど文字を大きく・字間を広くして見やすさに還元する（rem基準の要素は連動して拡大） */
+@media(min-width:600px){ html{font-size:17px;} }
+@media(min-width:1000px){ html{font-size:18px;} }
+body{
+  font-family:"Hiragino Mincho ProN","Hiragino Mincho Pro","Yu Mincho",YuMincho,"游明朝体","游明朝","MS PMincho","ＭＳ Ｐ明朝",serif;
+  color:var(--text);
+  background:var(--bg);
+  font-size:1.09rem;
+  line-height:1.95;
+  letter-spacing:.03em;
+  padding-bottom:calc(84px + env(safe-area-inset-bottom));
+  overflow-wrap:break-word;
+}
+@media(min-width:768px){
+  body{font-size:1.16rem;letter-spacing:.04em;padding-bottom:calc(64px + env(safe-area-inset-bottom));}
+}
+img,svg{max-width:100%;vertical-align:middle;}
+button{font-family:inherit;}
+a{color:var(--navy-2);}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px;}
+
+/* ---------- ヘッダー ---------- */
+.hero{
+  background:linear-gradient(168deg,#ddf0fb 0%,#eaf7fd 42%,#ffeede 100%);
+  color:var(--navy);
+  padding:24px 0 30px;
+  overflow:hidden;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-size:.92rem;font-weight:700;letter-spacing:.02em;color:var(--navy);
+}
+.brand .ico{
+  width:36px;height:36px;flex:0 0 36px;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--navy);border-radius:12px;
+}
+.brand .ico svg{width:20px;height:20px;stroke:#fff;}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:.82rem;letter-spacing:.04em;line-height:1.55;}
+.hero-flex{display:flex;flex-direction:column;}
+.hero h1{
+  font-size:1.58rem;line-height:1.45;font-weight:800;
+  margin:20px 0 12px;letter-spacing:.01em;color:var(--navy);
+}
+.hero h1 .accent{
+  background:linear-gradient(transparent 62%, #ffd9a8 62%);
+  padding:0 2px;
+}
+.hero .lead{font-size:1rem;color:var(--text);max-width:640px;}
+.hero-scene{margin:16px auto 0;width:100%;max-width:400px;}
+.hero-scene svg{width:100%;height:auto;display:block;}
+@media(min-width:768px){
+  .hero{padding:30px 0 40px;}
+  .hero h1{font-size:1.95rem;}
+  .hero .lead{font-size:1.06rem;}
+  .hero-flex{flex-direction:row;align-items:center;gap:28px;}
+  .hero-copy{flex:1;}
+  .hero-scene{flex:0 0 340px;margin:0;}
+}
+.hero-nav{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px;}
+.hero-nav a{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--white);
+  border:2px solid #ffffff;
+  color:var(--navy);text-decoration:none;
+  padding:11px 17px;border-radius:999px;
+  font-size:.94rem;font-weight:700;min-height:48px;
+  box-shadow:var(--shadow-sm);
+}
+.hero-nav a:active{background:#fff4e9;}
+.hero-nav a svg{width:18px;height:18px;stroke:var(--coral);flex:0 0 18px;}
+
+/* ---------- セクション共通 ---------- */
+section{padding:40px 0 46px;}
+.band{background:var(--white);}
+.band-sky{background:var(--sky-bg);}
+.band-blush{background:#fdf1eb;}
+.round-top{
+  border-radius:30px 30px 0 0;
+  margin-top:-24px;position:relative;z-index:1;
+  padding-top:42px;
+}
+.sec-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;}
+.sec-head .spot{flex:0 0 84px;}
+.sec-head .spot svg{width:84px;height:84px;display:block;}
+.spot-circle{
+  width:84px;height:84px;border-radius:50%;
+  background:var(--white);box-shadow:var(--shadow-sm);
+  display:flex;align-items:center;justify-content:center;
+}
+.spot-circle svg{width:52px;height:52px;}
+.step-pill{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--amber-bg);color:var(--navy);
+  font-size:.88rem;font-weight:700;letter-spacing:.02em;
+  padding:6px 18px 6px 7px;border-radius:999px;margin-bottom:12px;
+  box-shadow:var(--shadow-sm);
+}
+.step-pill i{
+  width:28px;height:28px;flex:0 0 28px;border-radius:50%;
+  background:linear-gradient(135deg,#c2452a,#a8601a);
+  color:#fff;font-style:normal;font-weight:800;font-size:.95rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.step-pill.plain{padding:7px 18px;}
+h2{
+  font-size:1.4rem;line-height:1.5;color:var(--navy);
+  font-weight:800;letter-spacing:.01em;
+  position:relative;padding-bottom:12px;margin-bottom:10px;
+}
+h2::after{
+  content:"";position:absolute;left:0;bottom:0;
+  width:54px;height:5px;border-radius:3px;
+  background:linear-gradient(90deg,var(--coral),var(--sunny));
+}
+@media(min-width:768px){h2{font-size:1.68rem;}}
+.sec-lead{color:var(--muted);font-size:1rem;margin-bottom:22px;}
+.sub-title{font-size:1.1rem;color:var(--navy);}
+.note{
+  font-size:.9rem;color:var(--muted);line-height:1.85;
+  background:var(--white);border-radius:16px;
+  padding:14px 16px;margin-top:20px;
+  display:flex;gap:9px;align-items:flex-start;
+  box-shadow:var(--shadow-sm);
+}
+.note svg{width:20px;height:20px;flex:0 0 20px;stroke:var(--coral);margin-top:4px;}
+
+/* ---------- ガイド（吹き出し） ---------- */
+.guide{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px;}
+.guide-ava{
+  width:58px;height:58px;flex:0 0 58px;border-radius:50%;
+  overflow:hidden;display:block;box-shadow:var(--shadow-sm);
+}
+.guide-ava svg{width:100%;height:100%;display:block;}
+.guide-msg{
+  position:relative;background:var(--white);
+  border:2px solid #ffe0cf;border-radius:18px;
+  padding:12px 16px;font-size:.95rem;line-height:1.75;
+}
+.guide-msg::before{
+  content:"";position:absolute;left:-9px;top:20px;
+  width:14px;height:14px;background:var(--white);
+  border-left:2px solid #ffe0cf;border-bottom:2px solid #ffe0cf;
+  transform:rotate(45deg);
+}
+
+/* ---------- セクション1 リスクカード ---------- */
+.cards{display:grid;grid-template-columns:1fr;gap:14px;}
+@media(min-width:700px){.cards{grid-template-columns:repeat(2,1fr);}}
+.risk-card{
+  position:relative;background:var(--white);
+  border-radius:20px;padding:20px 20px 18px;
+  box-shadow:var(--shadow);
+  transition:box-shadow .2s, transform .2s;
+}
+.risk-card .icon{
+  width:68px;height:68px;border-radius:50%;
+  background:var(--navy-soft);
+  display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+}
+.risk-card .icon svg{width:44px;height:44px;}
+.risk-card .icon.ic-red{background:var(--red-bg);}
+.risk-card .icon.ic-blue{background:var(--sky-bg);}
+.risk-card .icon.ic-amber{background:var(--amber-bg);}
+.risk-card .icon.ic-green{background:var(--green-bg);}
+.risk-card h3{font-size:1.02rem;color:var(--navy);margin-bottom:2px;}
+.risk-card .num{font-size:1.5rem;font-weight:800;color:var(--navy);line-height:1.35;}
+.risk-card .num small{font-size:.85rem;font-weight:600;color:var(--muted);}
+.risk-card .num .ok{color:var(--green);}
+.risk-card .num .ng{color:var(--red-dark);}
+.risk-card p{font-size:.93rem;color:var(--muted);margin-top:8px;line-height:1.85;}
+
+/* 使い方選択 */
+.area-box{margin-top:32px;}
+.area-box h3{font-size:1.14rem;color:var(--navy);margin-bottom:4px;}
+.area-box .sub{font-size:.92rem;color:var(--muted);margin-bottom:14px;}
+.area-btns{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:640px){.area-btns{grid-template-columns:repeat(2,1fr);}}
+.area-btn{
+  min-height:70px;border-radius:18px;cursor:pointer;
+  border:2px solid #f0dfd2;background:var(--white);color:var(--navy);
+  font-size:1.02rem;font-weight:700;line-height:1.45;
+  display:flex;align-items:center;justify-content:flex-start;gap:10px;
+  padding:10px 12px;box-shadow:var(--shadow-sm);
+  transition:background .15s,border-color .15s,transform .12s;
+}
+.area-btn:active{transform:scale(.98);}
+.area-btn small{font-weight:500;font-size:.8rem;color:var(--muted);display:block;}
+.area-btn .t{text-align:left;}
+.area-btn .art{
+  width:46px;height:46px;flex:0 0 46px;border-radius:50%;
+  background:var(--bg);display:flex;align-items:center;justify-content:center;
+}
+.area-btn .art svg{width:34px;height:34px;}
+.area-btn.on{
+  background:linear-gradient(135deg,var(--navy-2),var(--navy));
+  border-color:transparent;color:#fff;
+}
+.area-btn.on small{color:#d5e4f0;}
+.area-btn.on .art{background:rgba(255,255,255,.92);}
+.area-panel{
+  display:none;margin-top:16px;
+  background:var(--white);border:2px solid var(--amber-border);
+  border-radius:20px;padding:18px 18px 14px;
+  box-shadow:var(--shadow-sm);
+}
+.area-panel.show{display:block;}
+.area-panel h4{
+  font-size:1.05rem;color:var(--amber-deep);margin-bottom:8px;
+  display:flex;align-items:center;gap:9px;
+}
+.area-panel h4 svg{width:22px;height:22px;flex:0 0 22px;stroke:var(--amber-deep);}
+.area-panel ul{list-style:none;}
+.area-panel li{
+  position:relative;padding:7px 0 7px 26px;
+  font-size:.95rem;line-height:1.75;
+}
+.area-panel li::before{
+  content:"";position:absolute;left:4px;top:17px;
+  width:9px;height:9px;border-radius:50%;
+  background:linear-gradient(135deg,var(--coral),var(--sunny));
+}
+
+/* ---------- セクション2 クイズ ---------- */
+.quiz-box{
+  background:var(--white);border-radius:24px;
+  padding:22px 18px 24px;box-shadow:var(--shadow);
+  border:2px solid #fdeee4;
+}
+@media(min-width:768px){.quiz-box{padding:30px 34px 32px;}}
+.quiz-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;}
+.q-count{font-size:1rem;font-weight:800;color:var(--navy);}
+.q-count span{font-size:1.45rem;color:var(--coral-text);}
+.dots{display:flex;gap:6px;flex-wrap:wrap;}
+.dots i{
+  width:12px;height:12px;border-radius:50%;
+  background:#ecdfd4;display:inline-block;
+}
+.dots i.done{background:var(--mint);}
+.dots i.cur{background:var(--coral);box-shadow:0 0 0 3px rgba(240,132,106,.28);}
+.q-scene{
+  display:flex;gap:14px;align-items:center;
+  background:linear-gradient(135deg,#fff6ee,#eef7fc);
+  border-radius:20px;padding:16px;
+}
+.q-scene .icon{
+  width:60px;height:60px;flex:0 0 60px;border-radius:50%;
+  background:var(--white);display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-sm);
+}
+.q-scene .icon svg{width:44px;height:44px;}
+.q-scene p{font-size:1.08rem;font-weight:700;line-height:1.7;color:var(--navy);}
+@media(min-width:768px){.q-scene p{font-size:1.18rem;}}
+.ans-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;}
+.ans-btn{
+  min-height:104px;border-radius:20px;cursor:pointer;background:var(--white);
+  border:2.5px solid;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:6px;
+  font-size:1.08rem;font-weight:800;
+  box-shadow:var(--shadow-sm);
+  transition:transform .08s, background .15s;
+}
+.ans-btn:active{transform:scale(.97);}
+.ans-btn svg{width:42px;height:42px;}
+.ans-btn.yes{border-color:var(--mint);color:var(--green);}
+.ans-btn.no{border-color:#f3a99a;color:var(--red);}
+.ans-btn.yes svg{stroke:var(--green);}
+.ans-btn.no svg{stroke:var(--red);}
+.ans-btn:disabled{cursor:default;opacity:.55;}
+.ans-btn.picked{opacity:1;}
+.ans-btn.picked.yes{background:var(--green-bg);box-shadow:0 0 0 3px rgba(79,191,155,.35);}
+.ans-btn.picked.no{background:var(--red-bg);box-shadow:0 0 0 3px rgba(240,132,106,.35);}
+.verdict{display:none;margin-top:18px;border-radius:20px;padding:18px 16px 16px;}
+.verdict.show{display:block;}
+.verdict.nopay{background:var(--red-bg);border:2px solid var(--red-border);}
+.verdict.pay{background:var(--green-bg);border:2px solid var(--green-border);}
+.verdict-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
+.verdict-answer{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:1.3rem;font-weight:800;
+}
+.verdict.nopay .verdict-answer{color:var(--red-dark);}
+.verdict.pay .verdict-answer{color:var(--green);}
+.verdict-answer svg{width:30px;height:30px;flex:0 0 30px;}
+.verdict.nopay .verdict-answer svg{stroke:var(--red-dark);}
+.verdict.pay .verdict-answer svg{stroke:var(--green);}
+.result-chip{
+  font-size:.88rem;font-weight:700;padding:5px 15px;border-radius:999px;
+}
+.result-chip.ok{background:var(--green);color:#fff;}
+.result-chip.ng{background:#6b7683;color:#fff;}
+.verdict .expl{font-size:.97rem;line-height:1.8;}
+.kv{
+  display:flex;gap:10px;align-items:flex-start;
+  background:var(--white);border-radius:14px;
+  padding:11px 15px;margin-top:10px;font-size:.94rem;line-height:1.65;
+}
+.kv b{color:var(--navy);white-space:nowrap;flex:0 0 auto;}
+.btn-primary{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;min-height:60px;margin-top:18px;
+  background:linear-gradient(135deg,var(--navy-2),var(--navy));
+  color:#fff;border:none;border-radius:999px;
+  font-size:1.08rem;font-weight:700;cursor:pointer;
+  box-shadow:var(--shadow-sm);
+  transition:opacity .15s;
+  text-decoration:none;
+}
+.btn-primary:active{opacity:.85;}
+.btn-primary svg{width:20px;height:20px;stroke:#fff;flex:0 0 20px;}
+.btn-ghost{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;min-height:52px;margin-top:10px;
+  background:var(--white);color:var(--navy);
+  border:2px solid #f0dfd2;border-radius:999px;
+  font-size:.98rem;font-weight:700;cursor:pointer;
+}
+.quiz-done{display:none;text-align:center;padding:8px 0 4px;}
+.quiz-done .done-art{
+  width:96px;height:96px;border-radius:50%;
+  background:linear-gradient(135deg,#fff6ee,#eef7fc);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
+}
+.quiz-done .done-art svg{width:78px;height:78px;}
+.quiz-done.show{display:block;}
+.quiz-done .score{
+  font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:4px;
+}
+.quiz-done .score .num{font-size:2.3rem;color:var(--coral-text);}
+.nowrap{white-space:nowrap;}
+.quiz-done .cmt{font-size:.97rem;color:var(--text);max-width:560px;margin:8px auto 4px;text-align:left;}
+.quiz-note{font-size:.9rem;color:var(--muted);margin-top:14px;}
+
+/* ---------- セクション3 基礎知識 ---------- */
+.basics{display:grid;grid-template-columns:1fr;gap:14px;}
+@media(min-width:768px){.basics{grid-template-columns:1fr 1fr;}}
+.basic-card{
+  background:var(--white);border-radius:20px;
+  padding:22px 20px;box-shadow:var(--shadow-sm);
+}
+.basic-card .bc-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.basic-card .icon{
+  width:62px;height:62px;flex:0 0 62px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.basic-card .icon svg{width:40px;height:40px;}
+.basic-card h3{font-size:1.04rem;color:var(--navy);line-height:1.55;}
+.basic-card p{font-size:.94rem;line-height:1.85;}
+.basic-card p + p{margin-top:8px;}
+.table-scroll{
+  overflow-x:auto;margin-top:22px;border-radius:20px;
+  background:var(--white);box-shadow:var(--shadow-sm);
+}
+.grade-table{width:100%;border-collapse:collapse;}
+.grade-table caption{
+  text-align:left;font-weight:800;color:var(--navy);font-size:1.05rem;
+  padding:18px 20px 6px;
+}
+.grade-table th,.grade-table td{
+  padding:14px 16px;text-align:left;font-size:.95rem;
+  border-top:1px solid #eee3da;
+}
+.grade-table th:first-child,.grade-table td:first-child{white-space:normal;}
+.grade-table thead th{
+  background:linear-gradient(135deg,var(--navy-2),var(--navy));
+  color:#fff;font-size:.9rem;border-top:none;
+}
+.grade-table td .mk{font-size:1.28rem;font-weight:800;}
+.grade-table td .mk.ok{color:var(--green);}
+.grade-table td .mk.ng{color:var(--red-dark);}
+.grade-table td small{color:var(--muted);display:block;font-size:.8rem;line-height:1.6;}
+.grade-table tr.total td{background:var(--red-bg);}
+.table-foot{font-size:.88rem;color:var(--muted);padding:12px 20px 16px;line-height:1.8;}
+
+/* ---------- セクション4 ケーススタディ ---------- */
+.case-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:640px){.case-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:900px){.case-grid{grid-template-columns:repeat(3,1fr);}}
+.case-card{
+  background:var(--white);border-radius:22px;
+  padding:22px 18px 20px;display:flex;flex-direction:column;
+  box-shadow:var(--shadow);cursor:pointer;
+  transition:transform .18s, box-shadow .18s;
+}
+.case-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(130,100,80,.14);}
+.case-illust{
+  width:88px;height:88px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;
+}
+.case-illust svg{width:56px;height:56px;}
+.case-chip{
+  align-self:flex-start;
+  font-size:.82rem;font-weight:700;letter-spacing:.04em;
+  padding:3px 12px;border-radius:999px;margin-bottom:8px;
+}
+.case-card h3{font-size:1.06rem;color:var(--navy);margin-bottom:6px;line-height:1.55;}
+.case-q{font-size:1rem;line-height:1.75;color:var(--navy);font-weight:700;margin-bottom:16px;}
+.case-btn{
+  margin-top:auto;min-height:54px;border-radius:999px;cursor:pointer;
+  background:var(--white);color:var(--navy);border:2px solid var(--navy);
+  font-size:.99rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .15s;
+}
+.case-btn:active{background:var(--navy-soft);}
+.case-btn svg{width:17px;height:17px;stroke:var(--navy);flex:0 0 17px;}
+.case-plus{color:var(--muted);}
+
+/* ---------- ケース詳細モーダル ---------- */
+.cmodal{
+  position:fixed;inset:0;z-index:200;
+  display:none;align-items:center;justify-content:center;padding:24px;
+}
+.cmodal.open{display:flex;}
+.cmodal-back{
+  position:absolute;inset:0;background:rgba(35,50,65,.5);
+  opacity:0;transition:opacity .3s ease;
+}
+.cmodal.open .cmodal-back{opacity:1;}
+.cmodal-panel{
+  position:relative;background:var(--white);
+  width:100%;max-width:620px;max-height:86vh;overflow-y:auto;
+  border-radius:24px;box-shadow:0 26px 70px rgba(0,0,0,.3);
+  transform:translateY(26px) scale(.97);opacity:0;
+  transition:transform .38s cubic-bezier(.22,1,.36,1), opacity .28s ease;
+}
+.cmodal.open .cmodal-panel{transform:none;opacity:1;}
+.cmodal-head{
+  padding:26px 74px 24px 22px;color:#fff;
+  display:flex;align-items:center;gap:15px;
+  border-radius:24px 24px 0 0;
+  position:sticky;top:0;z-index:2;
+}
+.cmodal-ico{
+  width:62px;height:62px;flex:0 0 62px;border-radius:50%;
+  background:#fff;display:flex;align-items:center;justify-content:center;
+}
+.cmodal-ico svg{width:40px;height:40px;}
+.cmodal-chip{
+  display:inline-block;background:rgba(0,0,0,.2);
+  font-size:.8rem;font-weight:700;letter-spacing:.05em;
+  padding:3px 13px;border-radius:999px;margin-bottom:6px;
+}
+.cmodal-title{font-size:1.2rem;line-height:1.5;font-weight:800;}
+.cmodal-close{
+  position:absolute;top:16px;right:16px;z-index:3;
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(0,0,0,.2);border:none;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:background .2s, transform .25s;
+}
+.cmodal-close svg{width:20px;height:20px;stroke:#fff;}
+.cmodal-close:hover{background:rgba(0,0,0,.34);transform:rotate(90deg);}
+.cmodal-scene{
+  display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+  background:var(--bg);border-radius:20px;
+  padding:16px 10px 14px;margin-bottom:22px;
+}
+.cmodal-scene figure{width:84px;text-align:center;}
+.cmodal-scene .art{
+  width:74px;height:74px;margin:0 auto 7px;border-radius:50%;
+  background:var(--white);display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-sm);
+}
+.cmodal-scene .art svg{width:50px;height:50px;}
+.cmodal-scene figcaption{font-size:.84rem;font-weight:700;color:var(--navy);line-height:1.5;}
+.cmodal-body{padding:26px 24px 30px;}
+@media(min-width:768px){.cmodal-body{padding:30px 34px 36px;}}
+.cmodal-block + .cmodal-block{margin-top:26px;}
+.cmodal-label{
+  display:flex;align-items:center;gap:8px;
+  font-size:.82rem;font-weight:800;letter-spacing:.06em;
+  margin-bottom:12px;
+}
+.cmodal-label svg{width:18px;height:18px;flex:0 0 18px;}
+.lb-blue{color:var(--sky);}
+.lb-blue svg{stroke:var(--sky);}
+.lb-green{color:var(--green);}
+.lb-green svg{stroke:var(--green);}
+.cmodal-quote{
+  background:var(--bg);border-left:4px solid var(--coral);
+  border-radius:0 14px 14px 0;padding:16px 18px;
+  font-size:.96rem;line-height:1.95;color:var(--text);
+}
+.cmodal-hoken{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--green-bg);border:2px solid var(--green-border);
+  border-radius:999px;padding:8px 20px;margin-bottom:12px;
+  font-size:1.02rem;font-weight:800;color:var(--green);
+}
+.cmodal-hoken svg{width:20px;height:20px;stroke:var(--green);flex:0 0 20px;}
+.cmodal-body p{font-size:1rem;line-height:1.9;}
+.cmodal-body p + p{margin-top:12px;}
+.cmodal-note{
+  margin-top:22px;background:var(--bg);border-radius:14px;
+  padding:14px 16px;font-size:.88rem;color:var(--muted);line-height:1.85;
+}
+@media(max-width:600px){
+  .cmodal{padding:0;align-items:flex-end;}
+  .cmodal-panel{max-width:100%;max-height:92vh;border-radius:24px 24px 0 0;}
+  .cmodal-head{border-radius:24px 24px 0 0;padding:24px 72px 22px 20px;}
+}
+
+/* ---------- まとめ ---------- */
+.score-box{
+  background:linear-gradient(135deg,#fff6ee,#eef7fc);
+  border-radius:22px;padding:22px 20px;margin-bottom:26px;
+}
+.score-box h3{
+  display:flex;align-items:center;gap:10px;
+  font-size:1.08rem;color:var(--navy);margin-bottom:8px;
+}
+.score-box h3 svg{width:24px;height:24px;flex:0 0 24px;stroke:var(--coral);}
+.score-box .big{font-size:1.05rem;font-weight:800;color:var(--navy);}
+.score-box .big span{font-size:1.9rem;color:var(--coral-text);}
+.score-box p{font-size:.95rem;margin-top:6px;}
+.checklist{display:grid;gap:10px;margin-top:14px;}
+.chk-group{
+  font-size:1.05rem;font-weight:800;color:var(--navy);
+  margin-top:10px;padding-left:2px;
+}
+.chk-group:first-child{margin-top:0;}
+.chk{
+  display:flex;align-items:center;gap:14px;
+  background:var(--white);border:2px solid #f0dfd2;border-radius:18px;
+  padding:15px 17px;cursor:pointer;
+  font-size:.98rem;font-weight:600;line-height:1.6;
+  box-shadow:var(--shadow-sm);
+  transition:border-color .15s, background .15s;
+}
+.chk input{
+  width:26px;height:26px;flex:0 0 26px;accent-color:var(--green);cursor:pointer;
+}
+.chk .art{
+  width:52px;height:52px;flex:0 0 52px;border-radius:50%;
+  background:var(--bg);display:flex;align-items:center;justify-content:center;
+}
+.chk .art svg{width:40px;height:40px;}
+.chk.on .art{background:var(--white);}
+.chk.on{border-color:var(--mint);background:var(--green-bg);}
+.chk-msg{
+  margin-top:14px;border-radius:18px;padding:15px 18px;
+  font-size:.95rem;line-height:1.8;
+  background:var(--amber-bg);border:2px solid var(--amber-border);
+}
+.chk-msg.allok{background:var(--green-bg);border-color:var(--green-border);}
+.cta{
+  margin-top:30px;border-radius:26px;
+  background:linear-gradient(150deg,#ffeede 0%,#fff6ea 50%,#e9f4fc 100%);
+  color:var(--navy);padding:30px 20px 28px;text-align:center;
+}
+@media(min-width:768px){.cta{padding:38px 40px 36px;}}
+.cta-illust{
+  width:148px;height:148px;border-radius:50%;
+  background:rgba(255,255,255,.75);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+}
+.cta-illust svg{width:112px;height:auto;display:block;}
+.cta h3{font-size:1.26rem;line-height:1.55;margin-bottom:8px;color:var(--navy);}
+.cta > p{color:var(--text);font-size:.97rem;}
+.cta .co{font-size:1.04rem;font-weight:800;margin-top:16px;color:var(--navy);}
+.cta .addr{font-size:.9rem;color:var(--muted);margin-top:2px;}
+.cta .tip{
+  font-size:.88rem;background:rgba(255,255,255,.8);
+  border-radius:16px;padding:12px 16px;margin-top:16px;line-height:1.8;
+  color:var(--text);
+}
+
+/* ---------- 読みやすさ（注記の下限・文字拡大） ---------- */
+.note,.quiz-note,.table-foot,.cmodal-note,.grade-table td small,.area-btn small,.brand small{
+  font-size:.86rem;line-height:1.8;
+}
+.risk-card p,.chk,.case-q,.basic-card p{font-size:1rem;}
+.sec-lead,.hero .lead{font-size:1.06rem;}
+/* 免責文は画面を圧迫しないよう拡大対象から外す（文言・表示位置は不変） */
+.disclaimer p{font-size:14px !important;}
+
+/* ---------- もし全損になったら（簡易比較） ---------- */
+.calc-box{background:var(--white);border-radius:20px;padding:18px 16px;box-shadow:var(--shadow-sm);}
+.calc-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(min-width:640px){.calc-btns{grid-template-columns:repeat(4,1fr);}}
+.calc-btn{
+  min-height:56px;border-radius:14px;cursor:pointer;
+  border:2px solid #c9dbe7;background:var(--white);color:var(--navy);
+  font-size:1.02rem;font-weight:700;
+}
+.calc-btn.on{background:linear-gradient(135deg,var(--navy-2),var(--navy));border-color:transparent;color:#fff;}
+.calc-result{display:none;margin-top:16px;}
+.calc-result.show{display:block;}
+.calc-lead{font-size:1rem;line-height:1.85;margin-bottom:12px;}
+.calc-rows{display:grid;gap:8px;}
+.calc-row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--bg);border-radius:12px;padding:11px 15px;
+}
+.calc-row .k{font-size:1rem;font-weight:700;color:var(--navy);}
+.calc-row .k small{display:block;font-size:.8rem;font-weight:500;color:var(--muted);line-height:1.6;}
+.calc-row .v{font-size:1.14rem;font-weight:800;color:var(--navy);text-align:right;line-height:1.45;white-space:nowrap;}
+.calc-row.zero .v{color:var(--red-dark);}
+.calc-row.zero{background:var(--red-bg);}
+.calc-row.pay{background:var(--green-bg);}
+.calc-row.pay .v{color:var(--green);}
+.calc-note{font-size:.86rem;color:var(--muted);line-height:1.8;margin-top:12px;}
+
+/* ---------- わが家のクルマのかたち ---------- */
+.family-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px;}
+@media(min-width:700px){.family-grid{grid-template-columns:1fr 1fr;}}
+.family-card{
+  background:var(--white);border-radius:20px;padding:20px 18px;
+  box-shadow:var(--shadow-sm);border-left:6px solid var(--coral);
+}
+.family-card .fc-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.family-card .icon{
+  width:56px;height:56px;flex:0 0 56px;border-radius:50%;
+  background:var(--navy-soft);
+  display:flex;align-items:center;justify-content:center;
+}
+.family-card .icon svg{width:34px;height:34px;}
+.family-card h4{font-size:1.05rem;color:var(--navy);margin-bottom:0;}
+.family-card p{font-size:1rem;line-height:1.9;}
+.family-card p + p{margin-top:8px;}
+
+/* ---------- CTA：お約束 ---------- */
+.promise{
+  background:rgba(255,255,255,.85);border-radius:18px;
+  padding:18px 20px;text-align:left;max-width:26em;margin:20px auto 0;
+}
+.promise h4{font-size:1.05rem;color:var(--navy);margin-bottom:10px;}
+.promise ul{list-style:none;}
+.promise li{position:relative;padding:5px 0 5px 28px;font-size:1rem;line-height:1.8;}
+.promise li::before{
+  content:"";position:absolute;left:2px;top:15px;width:16px;height:16px;
+  border-radius:50%;background:var(--mint);
+}
+.promise li::after{
+  content:"";position:absolute;left:6.5px;top:20px;
+  width:7px;height:3.5px;border-left:2.2px solid #fff;border-bottom:2.2px solid #fff;
+  transform:rotate(-45deg);
+}
+.promise > p{font-size:.97rem;line-height:1.85;margin-top:12px;color:var(--text);}
+
+/* ---------- 証券が見つからないとき ほか折りたたみ ---------- */
+.finder{
+  background:var(--white);border:2px solid var(--sky-border);border-radius:20px;
+  padding:4px 18px;margin-top:16px;
+}
+.finder summary{
+  list-style:none;cursor:pointer;min-height:52px;
+  display:flex;align-items:center;gap:10px;
+  font-size:1.02rem;font-weight:700;color:var(--navy);padding:8px 0;
+}
+.finder summary::-webkit-details-marker{display:none;}
+.finder summary::before{
+  content:"";flex:0 0 22px;width:22px;height:22px;border-radius:50%;
+  background:var(--sky);
+  -webkit-mask:linear-gradient(#000,#000) center/11px 2.6px no-repeat,linear-gradient(#000,#000) center/2.6px 11px no-repeat;
+  mask:linear-gradient(#000,#000) center/11px 2.6px no-repeat,linear-gradient(#000,#000) center/2.6px 11px no-repeat;
+  transition:transform .2s;
+}
+.finder[open] summary::before{transform:rotate(45deg);}
+.finder ul{list-style:none;margin-bottom:10px;}
+.finder li{position:relative;padding:6px 0 6px 22px;font-size:1rem;line-height:1.85;}
+.finder li::before{
+  content:"";position:absolute;left:3px;top:16px;width:8px;height:8px;
+  border-radius:50%;background:var(--sky);
+}
+.finder > p{font-size:1rem;line-height:1.85;padding-bottom:14px;}
+
+/* ---------- 一覧リスト（もしものとき／今日できること） ---------- */
+.howto{display:grid;gap:12px;margin-top:16px;}
+.howto-item{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--white);border-radius:18px;padding:16px 18px;box-shadow:var(--shadow-sm);
+}
+.howto-item .n{
+  flex:0 0 34px;width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,#c2452a,#a8601a);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:1rem;
+}
+.howto-item .ic{
+  flex:0 0 40px;width:40px;height:40px;border-radius:50%;
+  background:var(--navy-soft);
+  display:flex;align-items:center;justify-content:center;
+}
+.howto-item .ic svg{width:24px;height:24px;}
+.howto-item h4{font-size:1.03rem;color:var(--navy);margin-bottom:4px;}
+.howto-item p{font-size:1rem;line-height:1.85;}
+.tips-box{
+  background:var(--white);border-radius:20px;padding:20px 18px;
+  margin-top:16px;box-shadow:var(--shadow-sm);
+}
+.tips-box ul{list-style:none;}
+.tips-box li{position:relative;padding:7px 0 7px 26px;font-size:1rem;line-height:1.85;}
+.tips-box li::before{
+  content:"";position:absolute;left:4px;top:17px;width:9px;height:9px;
+  border-radius:50%;background:var(--mint);
+}
+.tips-box > p{font-size:.97rem;color:var(--muted);margin-top:10px;line-height:1.85;}
+
+/* ---------- クイズ結果の持ち帰り ---------- */
+.wrong-list{
+  background:var(--amber-bg);border:2px solid var(--amber-border);
+  border-radius:18px;padding:16px 18px;margin-top:16px;text-align:left;
+}
+.wrong-list h4{font-size:1.02rem;color:var(--navy);margin-bottom:8px;}
+.wrong-list ul{list-style:none;}
+.wrong-list li{position:relative;padding:7px 0 7px 24px;font-size:.98rem;line-height:1.8;}
+.wrong-list li::before{
+  content:"";position:absolute;left:3px;top:16px;width:9px;height:9px;
+  border-radius:50%;background:var(--coral-text);
+}
+.wrong-list li b{color:var(--navy);}
+
+/* ---------- ケースカードの結論 ---------- */
+.case-ans{
+  display:block;font-size:.95rem;font-weight:700;color:var(--green);
+  background:var(--green-bg);border-radius:12px;
+  padding:8px 12px;margin-bottom:14px;line-height:1.6;
+}
+
+/* ---------- 見出しの折り返し ---------- */
+h1,h2,h3,.cta h3,.case-card h3{line-break:strict;}
+
+/* ---------- 印刷 ---------- */
+@media print{
+  /* JSがbodyのpadding-bottomをインラインで設定するため !important で打ち消す */
+  body{padding-bottom:0 !important;background:#fff;}
+  .disclaimer{position:static;background:#fff;}
+  .hero-nav,.case-btn,
+  #btnNext,#btnRetry,.btn-primary,.btn-ghost{display:none !important;}
+  .case-card,.risk-card,.basic-card,.family-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc;}
+  .round-top{margin-top:0;}
+}
+
+/* ---------- 固定フッター（免責） ---------- */
+.disclaimer{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:rgba(255,255,255,.97);border-top:1px solid var(--line);
+  padding:9px 14px calc(9px + env(safe-area-inset-bottom));
+  text-align:center;
+}
+.disclaimer p{
+  max-width:900px;margin:0 auto;
+  font-size:.85rem;line-height:1.7;color:var(--muted);
+}
+/* フォーカス可視化（キーボード操作） */
+button:focus-visible,a:focus-visible,.chk input:focus-visible{
+  outline:3px solid var(--sunny);outline-offset:2px;
+}
+.cmodal-close:focus-visible{outline:3px solid var(--sunny);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<!-- ================= ヘッダー ================= -->
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <span class="ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 4.5 5.6v5.2c0 4.7 3.2 8.6 7.5 9.8 4.3-1.2 7.5-5.1 7.5-9.8V5.6L12 2.7Z"/><path d="m9 12 2.2 2.2L15.4 10"/></svg>
+      </span>
+      <span>株式会社Office-M</span>
+    </div>
+    <div class="hero-flex">
+      <div class="hero-copy">
+        <h1>大雨で水没した車。<br><span class="nowrap">保険金が<span class="accent">出る車</span>と</span><span class="nowrap"><span class="accent">出ない車</span>が、あります。</span></h1>
+        <!-- ⚠️要確認：「令和8年8月千葉豪雨」（2026年8月13〜14日・大雨特別警報）への言及。
+             2026-08-20時点の報道（放置車両1,200台超の見通し・JAF救援要請3,871件など）で事実確認済みだが、
+             いずれも速報値。公開前に最新の報道・国交省「令和8年8月千葉豪雨による被害状況等について」で再確認し、
+             時間が経って「今月」「先日」が不自然になっていないかも必ず確認すること -->
+        <p class="lead">先日の千葉県の大雨では、冠水した道路や駐車場で、たくさんの車が水につかりました。同じように水没しても、保険金が出る方と、1円も出ない方に分かれます。分かれ目は運ではなく、ご契約の中身です。○×クイズだけなら5分、全部読むと10分ほど。気になるところだけどうぞ。</p>
+        <nav class="hero-nav" aria-label="ページ内メニュー">
+          <a href="#sec1"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c2.6 4.4 6.3 7.2 6.3 11.3a6.3 6.3 0 0 1-12.6 0c0-4.1 3.7-6.9 6.3-11.3Z"/></svg>クルマの「まさか」</a>
+          <a href="#sec2"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 9a2.6 2.6 0 0 1 5.1.7c0 1.7-2.6 2.6-2.6 2.6M12.4 16h.01"/><circle cx="12" cy="12" r="9"/></svg>○×クイズ</a>
+          <a href="#sec3"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 4.5 5.6v5.2c0 4.7 3.2 8.6 7.5 9.8 4.3-1.2 7.5-5.1 7.5-9.8V5.6L12 2.7Z"/></svg>車両保険のきほん</a>
+          <a href="#sec4"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3.3 11 3 3 0 0 1 1.1 1.9l.03.35h4.34l.03-.35a3 3 0 0 1 1.1-1.9A6 6 0 0 0 12 3Z"/><path d="M9.8 19.2h4.4M10.7 21.7h2.6"/></svg>保険の意外な出番</a>
+        </nav>
+      </div>
+      <div class="hero-scene" aria-hidden="true">
+        <svg viewBox="0 0 360 212">
+          <path d="M28 28a12 12 0 0 1 20-8 15 15 0 0 1 28 5 11 11 0 0 1-2 22H32a11 11 0 0 1-4-19Z" fill="#9fb3c8"/>
+          <path d="m36 56-4 12M56 56l-4 12M76 56l-4 12" fill="none" stroke="#63b8dd" stroke-width="4.5" stroke-linecap="round"/>
+          <circle cx="308" cy="40" r="34" fill="#ffd9a8" opacity=".45"/>
+          <circle cx="308" cy="40" r="22" fill="#f7c34e"/>
+          <path d="M0 152h360v60H0Z" fill="#cbeaf7"/>
+          <path d="M0 168c26-9 52-9 78 0s52 9 78 0 52-9 78 0 52 9 78 0 26-6 48-4v48H0Z" fill="#8fd2ec"/>
+          <path d="M0 186c26-8 52-8 78 0s52 8 78 0 52-8 78 0 52 8 78 0 26-5 48-3v29H0Z" fill="#63b8dd"/>
+          <path d="M96 160l6.5-19a9 9 0 0 1 8.5-6h44a9 9 0 0 1 8.5 6l6.5 19" fill="#f0846a"/>
+          <rect x="112" y="139" width="17" height="16" rx="3" fill="#e4f2fa"/>
+          <rect x="136" y="139" width="17" height="16" rx="3" fill="#e4f2fa"/>
+          <rect x="88" y="158" width="90" height="22" rx="9" fill="#d9603f"/>
+          <circle cx="110" cy="181" r="10" fill="#33404d"/>
+          <circle cx="156" cy="181" r="10" fill="#33404d"/>
+          <circle cx="110" cy="181" r="4" fill="#fff"/>
+          <circle cx="156" cy="181" r="4" fill="#fff"/>
+          <path d="M232 70l-29 11v19c0 17 12 31 29 35 17-4 29-18 29-35V81Z" fill="#27587f"/>
+          <path d="m219 103 9.5 9.5 16-19" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M282 118c0-15 6.5-33 15-33s15 18 15 33v3h-30Z" fill="#63b8dd"/>
+          <circle cx="297" cy="74" r="11.5" fill="#f7cdb4"/>
+          <path d="M285.5 72c1.2-9 5.7-13 11.5-13s10.3 4 11.5 13c-3.4-4-7.2-5.4-11.5-5.4s-8.1 1.4-11.5 5.4Z" fill="#5c4030"/>
+          <circle cx="293" cy="74.5" r="1.5" fill="#3d3028"/><circle cx="301" cy="74.5" r="1.5" fill="#3d3028"/>
+          <path d="M294.3 79.2c1.5 1.6 4 1.6 5.4 0" fill="none" stroke="#3d3028" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M318 130c0-12 5.2-26 12-26s12 14 12 26v2h-24Z" fill="#f0846a"/>
+          <circle cx="330" cy="94" r="9" fill="#f7cdb4"/>
+          <path d="M321 92c1-7.2 4.8-10.3 9-10.3s8 3.1 9 10.3c-2.8-3.3-5.6-4.3-9-4.3s-6.2 1-9 4.3Z" fill="#7a5a3a"/>
+          <circle cx="327" cy="94.5" r="1.2" fill="#3d3028"/><circle cx="333.5" cy="94.5" r="1.2" fill="#3d3028"/>
+          <path d="M327.8 98.4c1.2 1.3 3.2 1.3 4.4 0" fill="none" stroke="#3d3028" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= セクション1 ================= -->
+<section id="sec1">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="step-pill"><i>1</i>クルマの「まさか」を知る</span>
+        <h2>水害・地震・もらい事故——<span class="nowrap">最近の「まさか」</span></h2>
+      </div>
+      <div class="spot"><span class="spot-circle" data-art="spotRisk" aria-hidden="true"></span></div>
+    </div>
+
+    <p class="sec-lead">自動車保険は、「どこまで守るか」をご自身で選ぶ部分が大きい保険です。同じ被害でも、契約の組み方しだいで結果がまったく変わります。まず、実際によくある4つの場面から見ていきましょう。</p>
+
+    <div class="cards">
+      <div class="risk-card">
+        <div class="icon ic-blue" data-art="rainCar" aria-hidden="true"></div>
+        <h3>大雨で、車が水没した</h3>
+        <div class="num"><span class="ok">車両保険で「出る」</span></div>
+        <!-- ⚠️要確認：「約47%」は損害保険料率算出機構「自動車保険の概況」の車両保険普及率（共済を除く・
+             最新引用値47.4%）。公開前に原典PDF（第18表・普及率）で年度・数値を最終確認すること -->
+        <p>台風・豪雨・洪水・高潮による水没は、車両保険の対象です。補償をしぼったエコノミー型でも対象になるのが一般的。ただし——車両保険そのものを付けていなければ、1円も出ません。車両保険が付いている車は約47%。<strong>2台に1台は「出ない車」</strong>です。</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="icon ic-red" data-art="quakeCar" aria-hidden="true"></div>
+        <h3>地震で家屋が倒れ、車がつぶれた</h3>
+        <div class="num"><span class="ng">車両保険だけでは<span class="nowrap">「出ない」</span></span></div>
+        <p>地震・噴火・津波による損害は、車両保険でも対象外（免責）です。大雨の水没は出るのに、地震は出ない——ここが自動車保険のいちばん誤解されやすいところ。専用の特約を付けていた方だけ、全損のときに一時金が支払われます。</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="icon ic-amber" data-art="windSign" aria-hidden="true"></div>
+        <h3>台風で飛んできた看板が直撃</h3>
+        <div class="num"><span class="ok">車両保険で「出る」</span></div>
+        <p>飛来物・落下物との衝突や、強風・雹（ひょう）による損害は、エコノミー型でも対象になるのが一般的です。「自然災害だから出ないだろう」と思い込んで、請求しないまま自費で直してしまう方が実は少なくありません。</p>
+      </div>
+
+      <div class="risk-card">
+        <div class="icon ic-green" data-art="rearend" aria-hidden="true"></div>
+        <h3>信号待ちで追突された</h3>
+        <div class="num"><span class="ng">示談交渉は<span class="nowrap">「頼めない」</span></span></div>
+        <p>あなたに過失がない「もらい事故」では、あなたの保険会社は相手方と示談交渉を行えません（弁護士法との関係）。被害者なのに、交渉はご自身で——ここで効いてくるのが弁護士費用特約です。</p>
+      </div>
+    </div>
+
+    <!-- ⚠️要確認：以下の数値はいずれも2026-08-20時点で確認した引用値（千葉豪雨分は速報値）。
+         公開前に、国交省の被害状況資料・日本損害保険協会「近年の風水害等による支払保険金調査結果」・
+         損害保険料率算出機構「自動車保険の概況」の原典で最終確認すること -->
+    <div class="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 11.25h.75v5.25h.75M12 7.5h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <span>2026年8月の千葉県の大雨（令和8年8月千葉豪雨）では、水没などで路上に残された車が1,200台を超える見通しと報じられ、JAFへの冠水関連の救援要請は3,871件にのぼりました（いずれも2026年8月時点の速報値）。また2019年の台風19号では、自動車保険の支払いだけで約645億円（日本損害保険協会調べ）。車の水害は、めずらしい話ではなくなっています。車両保険の普及率は損害保険料率算出機構「自動車保険の概況」による値（共済を除く）です。本ページの説明はいずれも一般的な契約例にもとづくもので、補償の名称・範囲は保険会社やご契約により異なります。<strong>実際のお取り扱いは、お手元の保険証券と約款をご確認ください。</strong></span>
+    </div>
+
+    <div class="area-box">
+      <h3>あなたの使い方だと、どこに気をつける？</h3>
+      <p class="sub">ふだんの車の使い方に近いものをタップ（クリック）してください。特に確認したいポイントが表示されます。</p>
+      <div class="area-btns" role="group" aria-label="車の使い方の選択">
+        <button type="button" class="area-btn" data-area="commute" aria-pressed="false">
+          <span class="art" data-art="useCommute" aria-hidden="true"></span>
+          <span class="t">通勤・通学で毎日乗る<small>車がないと生活が回らない</small></span>
+        </button>
+        <button type="button" class="area-btn" data-area="daily" aria-pressed="false">
+          <span class="art" data-art="useDaily" aria-hidden="true"></span>
+          <span class="t">買い物・送迎が中心<small>家族もハンドルを握る</small></span>
+        </button>
+        <button type="button" class="area-btn" data-area="leisure" aria-pressed="false">
+          <span class="art" data-art="useLeisure" aria-hidden="true"></span>
+          <span class="t">週末・レジャーが中心<small>ふだんはあまり乗らない</small></span>
+        </button>
+        <button type="button" class="area-btn" data-area="loan" aria-pressed="false">
+          <span class="art" data-art="useLoan" aria-hidden="true"></span>
+          <span class="t">ローン・リースの返済中<small>買ったばかり・残債がある</small></span>
+        </button>
+      </div>
+      <div class="area-panel" id="areaPanel" aria-live="polite"></div>
+    </div>
+
+    <div class="area-box">
+      <h3>わが家のクルマのかたちで、見るところが変わります</h3>
+      <p class="sub">同じ「自動車保険の備え」でも、確かめる場所はご家庭のかたちで違います。</p>
+      <div class="family-grid">
+        <div class="family-card">
+          <div class="fc-head">
+            <div class="icon" data-art="sNewcar" aria-hidden="true"></div>
+            <h4>新車・ローン返済中の方</h4>
+          </div>
+          <p>車両保険から支払われるのは、原則<strong>いまの車の市場価格（時価相当）まで</strong>。買って数年でも、全損時の保険金が新車の買い直し費用に届かず、ローンだけ残ることがあります。</p>
+          <p>新車のうちは、新車の再取得費用まで補償を引き上げる<strong>車両新価特約</strong>という選択肢があります（対象期間・条件は保険会社により異なります）。</p>
+        </div>
+        <div class="family-card">
+          <div class="fc-head">
+            <div class="icon" data-art="sYoung" aria-hidden="true"></div>
+            <h4>お子さまが運転を始めた・帰省するご家庭</h4>
+          </div>
+          <p>保険料を抑えるための<strong>運転者限定・年齢条件</strong>が、家族の「ちょっとだけ運転」と食い違っていると、事故のとき保険金が出ません。</p>
+          <p>帰省の間だけ限定を外す変更や、1日単位で入れる自動車保険もあります。実際にハンドルを握る家族と、証券の条件を突き合わせてみてください。</p>
+        </div>
+        <div class="family-card">
+          <div class="fc-head">
+            <div class="icon" data-art="sTwoCars" aria-hidden="true"></div>
+            <h4>車が2台以上・バイクもあるご家庭</h4>
+          </div>
+          <p>2台目からの割引（セカンドカー割引）や、原付をカバーする<strong>ファミリーバイク特約</strong>など、まとめ方で変わる部分があります。</p>
+          <p>逆に、個人賠償責任特約や弁護士費用特約が<strong>車ごと・火災保険と重複</strong>していることも。重複の整理も、ご相談の内容です。</p>
+        </div>
+        <div class="family-card">
+          <div class="fc-head">
+            <div class="icon" data-art="sOldcar" aria-hidden="true"></div>
+            <h4>年式の古い車にお乗りの方</h4>
+          </div>
+          <p>車両保険金額は時価に合わせて年々下がるため、「車両保険はもう外そうか」と迷う時期が来ます。</p>
+          <p>外すかどうかは、<strong>お住まいの水害リスクとセットで</strong>考えるのがおすすめです。水没のとき、車両保険は「いちばん出番の多い補償」だからです。判断の材料づくりからお手伝いします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ================= セクション2 クイズ ================= -->
+<section id="sec2" class="band round-top">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="step-pill"><i>2</i>クイズで確かめる</span>
+        <h2>出る？出ない？　<span class="nowrap">○×クイズ10問</span></h2>
+      </div>
+      <div class="spot"><span class="spot-circle" data-art="spotQuiz" aria-hidden="true"></span></div>
+    </div>
+    <p class="sec-lead">「この場合、保険金は出る？出ない？」○か×をタップ（クリック）してください。どれも、実際によくある場面です。「出るもの」も「出ないもの」も混ざっています。<strong>設問によって、選択肢の言葉が変わります</strong>（出る／出ない、任せられる／任せられない、合っている／まちがい）。答える前に、選択肢の言葉をご確認ください。（10問・約5分）</p>
+
+    <div class="guide">
+      <span class="guide-ava" data-guide aria-hidden="true"></span>
+      <p class="guide-msg">先にお伝えします。この10問は、少し意地悪です。「うちはちゃんと入っているから大丈夫」と思っている方ほど、つまずくように作りました。まちがえた問題が、そのまま「いまのご契約で確認したいところ」になります。全問正解できる方は、ほとんどいません。</p>
+    </div>
+
+    <div class="quiz-box">
+      <div id="quizPlay">
+        <div class="quiz-head">
+          <div class="q-count">質問 <span id="qNum">1</span> ／ 10</div>
+          <div class="dots" id="qDots" aria-hidden="true"></div>
+        </div>
+        <div class="q-scene">
+          <div class="icon" id="qIcon" aria-hidden="true"></div>
+          <p id="qText"></p>
+        </div>
+        <div class="ans-row">
+          <button type="button" class="ans-btn yes" id="btnYes">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><circle cx="12" cy="12" r="8.5"/></svg>
+            <span id="lblYes">出る</span>
+          </button>
+          <button type="button" class="ans-btn no" id="btnNo">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            <span id="lblNo">出ない</span>
+          </button>
+        </div>
+        <div class="verdict" id="verdict" aria-live="polite">
+          <div class="verdict-head">
+            <span class="verdict-answer" id="vAnswer"></span>
+            <span class="result-chip" id="vChip"></span>
+          </div>
+          <p class="expl" id="vExpl"></p>
+          <div class="kv"><b>使える保険：</b><span id="vHoken"></span></div>
+          <div class="kv"><b>備え方：</b><span id="vSonae"></span></div>
+        </div>
+        <button type="button" class="btn-primary" id="btnNext" style="display:none;">
+          次の問題へ
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+        </button>
+        <button type="button" class="btn-ghost" id="btnStopHere" style="display:none;">ここまでの結果を見る（残りはあとでも大丈夫です）</button>
+      </div>
+
+      <div class="quiz-done" id="quizDone">
+        <span class="done-art" data-art="resultCheer" aria-hidden="true"></span>
+        <p class="score">クイズおつかれさまでした！　<span class="nowrap"><span id="doneTotal">10</span>問中 <span class="num" id="doneScore">0</span>問正解</span></p>
+        <p class="cmt" id="doneCmt"></p>
+        <div class="wrong-list" id="wrongList" style="display:none;"></div>
+        <a class="btn-primary" href="#sec3">
+          車両保険の基礎知識へすすむ
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 8.25 12 15.75 4.5 8.25"/></svg>
+        </a>
+        <button type="button" class="btn-ghost" id="btnMailSelf">この結果を自分（またはご家族）に送る</button>
+        <button type="button" class="btn-ghost" id="btnPrint">印刷して保険証券と一緒に保管する</button>
+        <button type="button" class="btn-ghost" id="btnRetry">もう一度挑戦する</button>
+      </div>
+    </div>
+    <p class="quiz-note">※一般的な契約例にもとづくクイズです。実際のご契約の補償内容は、保険証券や約款をご確認ください。</p>
+  </div>
+</section>
+
+<!-- ================= セクション3 基礎知識 ================= -->
+<section id="sec3" class="band-sky round-top">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="step-pill"><i>3</i>車両保険のきほん</span>
+        <h2>車両保険の基礎知識</h2>
+      </div>
+      <div class="spot" aria-hidden="true">
+        <svg viewBox="0 0 96 96">
+          <circle cx="48" cy="48" r="44" fill="#fff"/>
+          <path d="M22 60l4.5-13a6.5 6.5 0 0 1 6.2-4.5h24.6a6.5 6.5 0 0 1 6.2 4.5L68 60" fill="#f0846a"/>
+          <rect x="33" y="46" width="11" height="11" rx="2.5" fill="#e4f2fa"/>
+          <rect x="48" y="46" width="11" height="11" rx="2.5" fill="#e4f2fa"/>
+          <rect x="17" y="59" width="58" height="15" rx="6" fill="#d9603f"/>
+          <circle cx="31" cy="75" r="6.5" fill="#33404d"/><circle cx="61" cy="75" r="6.5" fill="#33404d"/>
+          <circle cx="31" cy="75" r="2.6" fill="#fff"/><circle cx="61" cy="75" r="2.6" fill="#fff"/>
+          <path d="M69 20l-10 3.8v6.6c0 6 4 10.8 10 12.2 6-1.4 10-6.2 10-12.2v-6.6Z" fill="#4fbf9b" stroke="#fff" stroke-width="1.8"/>
+          <path d="m64.6 30.6 3.2 3.2 5.6-6.8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="25" cy="26" r="4" fill="#f7c34e"/>
+        </svg>
+      </div>
+    </div>
+    <p class="sec-lead">クイズで見たとおり、分かれ目は「車両保険の有無」「型」「特約」の3つに集まります。ここだけ読めば大丈夫、というポイントに絞りました。</p>
+
+    <div class="guide">
+      <span class="guide-ava" data-guide aria-hidden="true"></span>
+      <p class="guide-msg">制度の話が続くところです。むずかしければ、最初のカードと下の比較表だけでも十分です。</p>
+    </div>
+
+    <div class="basics">
+      <div class="basic-card">
+        <div class="bc-head">
+          <div class="icon" style="background:var(--red-bg);" data-art="bLayers" aria-hidden="true"></div>
+          <h3>自動車保険は「3階建て」。<br>自賠責は相手のケガだけ</h3>
+        </div>
+        <p>1階の自賠責保険（強制保険）が守るのは<strong>相手など「他人」の身体のみ</strong>で、上限もあります（傷害120万円・死亡3,000万円など）。相手の車や物、ご自身のケガ、ご自身の車には出ません。</p>
+        <p>2階が任意保険の賠償（対人・対物）、3階が<strong>自分と車を守る部分</strong>（人身傷害・車両保険）。大雨や地震で問われるのは、この3階部分です。</p>
+      </div>
+
+      <div class="basic-card">
+        <div class="bc-head">
+          <div class="icon" style="background:var(--sky-bg);" data-art="bTwoTypes" aria-hidden="true"></div>
+          <h3>車両保険には<br>「一般型」と「エコノミー型」</h3>
+        </div>
+        <p>水没・台風・盗難・飛び石は<strong>どちらの型でも対象</strong>になるのが一般的。いっぽう、電柱への単独事故・あて逃げ・転覆は<strong>一般型だけ</strong>の領域です。</p>
+        <p>ご自身の型がどちらかは、証券の「車両保険のタイプ」欄でわかります。下の比較表とあわせてご覧ください。</p>
+      </div>
+
+      <div class="basic-card">
+        <div class="bc-head">
+          <div class="icon" style="background:var(--amber-bg);" data-art="quakeCar" aria-hidden="true"></div>
+          <h3>地震・噴火・津波は、<br>どちらの型でも対象外</h3>
+        </div>
+        <!-- ⚠️要確認：一時金の金額（50万円）・全損時のみ・車両保険金額が下回る場合の扱いは
+             各社の「地震・噴火・津波危険車両全損時一時金特約」の一般的な内容。名称・条件の各社差を公開前に確認すること -->
+        <p>正直にお伝えすると、地震で車が壊れたときに車両保険だけでは備えられません。実は、相手への賠償（対人・対物）にも地震・噴火・津波の免責規定があります。ここは制度の設計上の「穴」です。</p>
+        <p>穴を埋める方法は<strong>「地震・噴火・津波危険車両全損時一時金特約」</strong>。全損のときに一時金（50万円が一般的。車両保険金額がそれを下回る場合はその額）が出ます。修理できる程度の損害（分損）は対象外で、買い替え費用の全額でもなく、<strong>当面の足を確保するための資金</strong>という位置づけです。</p>
+        <p>この特約は<strong>車両保険にセットして付ける</strong>のが一般的で、車両保険のご契約が前提になります。名称は保険会社により異なり（「車両全損時定額払」など）、金額を上乗せできる商品もあります。</p>
+      </div>
+
+      <div class="basic-card">
+        <div class="bc-head">
+          <div class="icon" style="background:var(--green-bg);" data-art="bTime" aria-hidden="true"></div>
+          <h3>支払われるのは「時価」まで。<br>新車は買い直せないことも</h3>
+        </div>
+        <p>車両保険金額は、車の市場販売価格相当（時価）を基準に設定され、<strong>年式が進むほど下がります</strong>。全損しても、同じ車の新車を買い直せる金額にはならないのが原則です。</p>
+        <p>買って間もない車なら、新車の再取得費用まで補償される<strong>車両新価特約</strong>を検討できます（対象期間・条件は保険会社により異なります）。</p>
+      </div>
+
+      <div class="basic-card">
+        <div class="bc-head">
+          <div class="icon" style="background:var(--berry-bg);" data-art="bGrade" aria-hidden="true"></div>
+          <h3>「出る」と「使う」は、<br>別の問題です</h3>
+        </div>
+        <p>車両保険を使うと、多くの場合翌年から等級が下がり、保険料が数年にわたって上がります（事故の種類により3等級または1等級。水没・台風・飛び石・盗難などは1等級ダウンの扱いが一般的です）。</p>
+        <p>少額の修理なら、保険を使わないほうがトータルで得なことも。<strong>使う・使わないの損得は、請求の前にご相談ください。</strong>試算してから決められます。</p>
+      </div>
+
+      <div class="basic-card">
+        <div class="bc-head">
+          <div class="icon" style="background:var(--navy-soft);" data-art="bSaving" aria-hidden="true"></div>
+          <h3>保険料を抑えるなら、<br>順番があります</h3>
+        </div>
+        <p>車両保険を外すのは最後の手段です。先に見直せるのは、<strong>自己負担額（免責金額）の設定・型の変更・運転者の範囲・走行距離の区分</strong>など。</p>
+        <p>水害リスクのある地域で車両保険を外すのは、「いちばん出番の多い補償」を外すことになりかねません。ハザードマップとあわせてご一緒に考えましょう。</p>
+      </div>
+    </div>
+
+    <h3 class="sub-title" style="margin-top:32px;">もし全損になったら、いくら受け取れる？</h3>
+    <p class="sec-lead">いまのご契約の車両保険金額に近いものを選んでください。「原因」によって、受け取れる金額がどう変わるかが出ます。</p>
+    <div class="calc-box">
+      <div class="calc-btns" role="group" aria-label="車両保険金額の選択">
+        <button type="button" class="calc-btn" data-syaryo="100" aria-pressed="false">100万円</button>
+        <button type="button" class="calc-btn" data-syaryo="200" aria-pressed="false">200万円</button>
+        <button type="button" class="calc-btn" data-syaryo="300" aria-pressed="false">300万円</button>
+        <button type="button" class="calc-btn" data-syaryo="0" aria-pressed="false">車両保険なし</button>
+      </div>
+      <div class="calc-result" id="calcResult" aria-live="polite"></div>
+    </div>
+
+    <div class="table-scroll">
+      <table class="grade-table">
+        <caption>車両保険の2つの型——どこまで出る？</caption>
+        <thead>
+          <tr><th>こんなとき</th><th>一般型</th><th>エコノミー型<br>（車対車＋A）</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>相手のいる車どうしの事故</td><td><span class="mk ok">○</span></td><td><span class="mk ok">○</span><small>相手の車と運転者などが確認できる場合</small></td></tr>
+          <tr><td>台風・洪水・高潮による水没</td><td><span class="mk ok">○</span></td><td><span class="mk ok">○</span></td></tr>
+          <tr><td>火災・盗難・いたずら・落書き</td><td><span class="mk ok">○</span></td><td><span class="mk ok">○</span></td></tr>
+          <tr><td>飛び石・飛来物・落下物、雹（ひょう）</td><td><span class="mk ok">○</span></td><td><span class="mk ok">○</span></td></tr>
+          <tr><td>単独事故（電柱・ガードレール）</td><td><span class="mk ok">○</span></td><td><span class="mk ng">×</span></td></tr>
+          <tr><td>あて逃げ（相手が特定できない）</td><td><span class="mk ok">○</span></td><td><span class="mk ng">×</span></td></tr>
+          <tr><td>転覆・墜落</td><td><span class="mk ok">○</span></td><td><span class="mk ng">×</span></td></tr>
+          <tr><td>自転車との接触で車が壊れた</td><td><span class="mk ok">○</span></td><td><span class="mk ng">×</span><small>相手が「自動車」ではないため</small></td></tr>
+          <tr class="total"><td>地震・噴火・津波</td><td><span class="mk ng">×</span></td><td><span class="mk ng">×</span><small>→ 全損時一時金の特約で備える</small></td></tr>
+        </tbody>
+      </table>
+      <p class="table-foot">○＝対象になるのが一般的、×＝対象外が一般的。型の名称・補償範囲は保険会社により異なります。自己負担額（免責金額）の設定により、支払時にご負担が生じる場合があります。</p>
+    </div>
+    <div class="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 11.25h.75v5.25h.75M12 7.5h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <span><strong>故障・経年劣化は、どちらの型でも対象外です。</strong>車両保険は「偶然な事故・災害」に備える保険で、寿命や消耗はメーカー保証・点検の領域になります。この線引きも含めてご説明します。</span>
+    </div>
+  </div>
+</section>
+<!-- ================= セクション4 ケーススタディ ================= -->
+<section id="sec4" class="band-blush round-top">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="step-pill"><i>4</i>保険の意外な出番</span>
+        <h2>こんなときも、自動車保険が使えます</h2>
+      </div>
+      <div class="spot"><span class="spot-circle" data-art="spotIdea" aria-hidden="true"></span></div>
+    </div>
+    <p class="sec-lead">「出ない」の話が続きましたが、逆に「えっ、これも自動車保険で？」という場面も意外とたくさんあります。6つすべて開く必要はありません。気になるものだけどうぞ。</p>
+
+    <div class="guide">
+      <span class="guide-ava" data-guide aria-hidden="true"></span>
+      <p class="guide-msg">よくいただくご相談を、例にしてご紹介します。ご存じない方が多い6つを選びました。</p>
+    </div>
+
+    <div class="case-grid" id="caseGrid"></div>
+
+    <div class="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.25 11.25h.75v5.25h.75M12 7.5h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <span>いずれも、該当する補償・特約を付けている場合の一般的な例です。特約の名称や補償の範囲は保険会社・ご契約により異なります。<strong>お手元の保険証券でご確認ください。</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= まとめ ================= -->
+<section id="matome" class="band round-top">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="step-pill plain">まとめ</span>
+        <h2>あなたの備えチェック</h2>
+      </div>
+      <div class="spot"><span class="spot-circle" data-art="spotCheck" aria-hidden="true"></span></div>
+    </div>
+    <p class="sec-lead">最後に、いまの備えを確認してみましょう。あてはまるものをタップ（クリック）してください。</p>
+
+    <div class="score-box">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 9a2.6 2.6 0 0 1 5.1.7c0 1.7-2.6 2.6-2.6 2.6M12.4 16h.01"/><circle cx="12" cy="12" r="9"/></svg>
+        クイズの結果
+      </h3>
+      <div id="sumScore">
+        <p>まだクイズに挑戦していません。<a href="#sec2">②の○×クイズ</a>で、補償の思い込みをチェックしてみてください。</p>
+      </div>
+    </div>
+
+    <div class="checklist" id="checklist">
+      <p class="chk-group">保険証券で確認できること</p>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="chkCar" aria-hidden="true"></span><span><strong>車両保険</strong>が付いているか、付いているなら<strong>「一般型」か「エコノミー型」か</strong>を確認した</span></label>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="quakeCar" aria-hidden="true"></span><span>車が地震・津波でだめになったときのそなえ（<strong>地震・噴火・津波危険車両全損時一時金特約</strong>）を確認した</span></label>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="chkLawyer" aria-hidden="true"></span><span>もらい事故のそなえ（<strong>弁護士費用特約</strong>）が付いているか確認した</span></label>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="chkDriver" aria-hidden="true"></span><span><strong>運転者の限定・年齢条件</strong>が、実際にハンドルを握る家族と合っているか確認した</span></label>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="chkInjury" aria-hidden="true"></span><span>自分と家族のケガのそなえ（<strong>人身傷害</strong>）の範囲（搭乗中のみ／歩行中もカバー）を確認した</span></label>
+      <p class="chk-group">今日、おうちで確認できること</p>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="chkMap" aria-hidden="true"></span><span>駐車場と通勤路の浸水リスクを<strong>ハザードマップ</strong>で見た</span></label>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="sCall" aria-hidden="true"></span><span>事故受付・<strong>ロードサービスの連絡先</strong>をスマホに登録した</span></label>
+      <label class="chk"><input type="checkbox"><span class="art" data-art="chkNoStart" aria-hidden="true"></span><span><strong>「水没した車はエンジンをかけ直さない」</strong>を家族と共有した</span></label>
+    </div>
+    <div class="chk-msg" id="chkMsg">
+      あてはまるものにチェックを入れてみてください。証券で分かる項目と、今日おうちで確認できる項目が混じっています。
+    </div>
+
+    <details class="finder">
+      <summary>「保険証券が見つからない」も、よくあるご相談です</summary>
+      <ul>
+        <li>毎年届く「継続のご案内」「満期のお知らせ」が手がかりになります。</li>
+        <li>保険会社のマイページ・アプリで、ご契約内容を確認できることがあります。</li>
+        <li>車を買った販売店（ディーラー）経由のご契約なら、そちらに控えがあることがあります。</li>
+        <li>保険会社のコールセンターでも確認できます（原則、ご契約者ご本人からのお問い合わせになります）。</li>
+      </ul>
+      <p>見つからなくてもご相談いただけます。保険会社名とご契約者のお名前が分かれば、確認の進め方をご案内します。証券探しからお手伝いします。</p>
+    </details>
+
+    <details class="finder" style="margin-top:34px;">
+      <summary>「保険料を抑えたい」も、ご相談の内容です</summary>
+      <div class="tips-box" style="box-shadow:none;padding:4px 0 14px;">
+      <ul>
+        <li>自己負担額（免責金額）を上げると保険料は下がりますが、そのぶん支払時のご負担が増えます。バランスの取り方からご相談ください。</li>
+        <li>一般型からエコノミー型への変更で保険料は下がりますが、単独事故・あて逃げが対象外になります。運転の頻度・環境とあわせて考えます。</li>
+        <li>運転者の限定・年齢条件・走行距離の区分が、いまの使い方と合っていないままのことがあります（広すぎても、狭すぎても損です）。</li>
+        <li>個人賠償責任特約や弁護士費用特約が、火災保険・家族の契約と重複していることがあります。整理する前に、示談交渉サービスの有無など中身をご確認ください。</li>
+      </ul>
+      <p>重複や、いまの暮らしに合わなくなった補償の整理も、ご相談の内容です。増やすことだけがご提案ではありません。</p>
+      </div>
+    </details>
+
+    <details class="finder" style="margin-top:14px;">
+      <summary>もしものときは、こう進みます</summary>
+      <div class="howto" style="margin-bottom:14px;">
+      <div class="howto-item">
+        <span class="n">1</span>
+        <span class="ic" data-art="sCall" aria-hidden="true"></span>
+        <div>
+          <h4>安全の確保と、警察への連絡</h4>
+          <p>ケガ人の救護と安全な場所への移動が最優先です。相手のある事故や盗難・いたずらでは、物損だけでも警察への届出を必ず（保険の請求にも事故の記録が必要になります）。台風や水害など自然災害だけの損害では、警察への届出は不要です。</p>
+        </div>
+      </div>
+      <div class="howto-item">
+        <span class="n">2</span>
+        <span class="ic" data-art="sCamera" aria-hidden="true"></span>
+        <div>
+          <h4>被害の写真を撮る</h4>
+          <p>車の全景と、こわれた部分を近くから。水没なら、水位が分かる写真があると助かります。片づけ・修理の前に撮っておくのがコツです。</p>
+        </div>
+      </div>
+      <div class="howto-item">
+        <span class="n">3</span>
+        <span class="ic" data-art="sVerdict" aria-hidden="true"></span>
+        <div>
+          <h4>当社にご連絡ください</h4>
+          <p>保険会社への連絡と必要書類のご案内に加えて、<strong>「保険を使うと翌年からいくら上がるか」の損得</strong>も一緒に考えます（支払の可否・時期は保険会社の判断によります）。</p>
+        </div>
+      </div>
+      </div>
+    </details>
+
+    <h3 class="sub-title" style="margin-top:34px;">大雨のとき、クルマを守る3つ</h3>
+    <div class="tips-box">
+      <ul>
+        <li>大雨の予報が出たら、早めに車を高い場所へ動かしておく（浸水が始まってからでは間に合いません。夜間の移動はかえって危険です）。</li>
+        <li>冠水した道路・アンダーパスには入らない（見た目より深く、エンジンが止まります）。</li>
+        <li>水につかった車は、エンジンをかけない（電気系統のショートによる車両火災のおそれがあります。ハイブリッド車・EVは高電圧バッテリーがあるため、むやみに触らないこと。そのまま保険会社・ロードサービスへ）。</li>
+      </ul>
+      <p>保険よりも先に、命と車を守る行動です。国土交通省・JAFが繰り返し注意を呼びかけています。</p>
+    </div>
+
+    <div class="cta">
+      <div class="cta-illust" aria-hidden="true">
+        <svg viewBox="0 0 120 86">
+          <rect x="28" y="32" width="10" height="12" rx="5" fill="#f7cdb4"/>
+          <path d="M14 70c0-14 8.5-26 19-26s19 12 19 26v3H14Z" fill="#f0846a"/>
+          <path d="M26 44l7 9 7-9 3.4 1.8L33 60 22.6 45.8Z" fill="#fff"/>
+          <ellipse cx="33" cy="24" rx="14" ry="15" fill="#5c4030"/>
+          <ellipse cx="33" cy="26" rx="11" ry="12" fill="#f7cdb4"/>
+          <path d="M22 23c0-8 5-13 11-13s11 5 11 13c-1.4-3.2-3.7-5-6.3-5.8-2.3 2.1-6.2 3.3-9.6 2.8-1.2.9-2.1 1.9-2.6 3Z" fill="#5c4030"/>
+          <circle cx="28.5" cy="27" r="1.5" fill="#3d3028"/><circle cx="37.5" cy="27" r="1.5" fill="#3d3028"/>
+          <ellipse cx="25.6" cy="30.6" rx="2.3" ry="1.5" fill="#f4a08a" opacity=".55"/>
+          <ellipse cx="40.4" cy="30.6" rx="2.3" ry="1.5" fill="#f4a08a" opacity=".55"/>
+          <path d="M30.7 31.8c1.4 1.5 3.2 1.5 4.6 0" fill="none" stroke="#3d3028" stroke-width="1.4" stroke-linecap="round"/>
+          <rect x="82" y="32" width="10" height="12" rx="5" fill="#f7cdb4"/>
+          <path d="M68 70c0-14 8.5-26 19-26s19 12 19 26v3H68Z" fill="#63b8dd"/>
+          <path d="M80 44l7 9 7-9 3.4 1.8L87 60 76.6 45.8Z" fill="#fff"/>
+          <ellipse cx="87" cy="25" rx="13" ry="14" fill="#7a5a3a"/>
+          <ellipse cx="87" cy="26" rx="11" ry="12" fill="#f7cdb4"/>
+          <path d="M76 23c0-8 5-13 11-13s11 5 11 13c-1.6-3.6-4.3-5.5-7.3-6.2-2.6 2.3-6.5 2.9-10 2-1.6 1-2.9 2.4-3.7 4.2Z" fill="#7a5a3a"/>
+          <circle cx="82.5" cy="27" r="1.5" fill="#3d3028"/><circle cx="91.5" cy="27" r="1.5" fill="#3d3028"/>
+          <ellipse cx="79.6" cy="30.6" rx="2.3" ry="1.5" fill="#f4a08a" opacity=".5"/>
+          <ellipse cx="94.4" cy="30.6" rx="2.3" ry="1.5" fill="#f4a08a" opacity=".5"/>
+          <path d="M84.7 31.8c1.4 1.5 3.2 1.5 4.6 0" fill="none" stroke="#3d3028" stroke-width="1.4" stroke-linecap="round"/>
+          <rect x="6" y="70" width="108" height="10" rx="5" fill="#f7c34e"/>
+          <rect x="49" y="54" width="22" height="15" rx="3" fill="#fff"/>
+          <path d="M52.5 60h15M52.5 64h9" fill="none" stroke="#9aa7b3" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>いまのご契約、<br><span class="nowrap">いっしょに確認しませんか</span></h3>
+      <p>「自分の車両保険はどっちの型？」「特約は付いている？」——いまの補償の範囲を、証券を見ながらわかりやすくご説明します。</p>
+
+      <!-- ⚠️要確認：代理店の運営実態の裏付けが必要な記述です。実態と異なると景品表示法上の不当表示になります。
+           確認事項：①相談料を一切いただかない運用か ②返信の実績（何営業日以内か）③ご来店応対の可否と場所
+           ④土日・夜間の対応可否 ⑤他社証券の閲覧に関する社内ルール ⑥受付時間 ⑦証券探しの支援可否
+           ⑧ご契約者本人の同意があれば家族同席で内容確認できるか
+           対象は下の .promise ブロックだけでなく、同種の運営実態にかかわる記述すべて：
+           ・まとめの「証券探しからお手伝いします」
+           ・「もしものときは」の「損得も一緒に考えます」
+           ・「当社にご連絡ください」系の案内
+           すべて確認が取れるまで公開しないこと -->
+      <div class="promise">
+        <h4>ご相談の前に、4つのお約束</h4>
+        <ul>
+          <li>ご相談に費用はいただきません。</li>
+          <li>その場でご契約をお決めいただく必要はありません。持ち帰って、ご家族とご相談ください。</li>
+          <li>他社・他の代理店でご契約中の保険証券でも拝見します。</li>
+          <li>保険証券が見つからなくても大丈夫です。探すところからお手伝いします。</li>
+        </ul>
+        <p>お時間の目安は30分ほどです。お車の使い方が変わったとき（お子さまの免許取得・お引っ越し・車の買い替え）は、見直しのちょうどよいタイミングです。</p>
+        <p>いただいた個人情報は、ご相談への対応のみに使用し、ご本人の同意なく第三者に提供しません。</p>
+      </div>
+
+      <!-- ⚠️要確認：このページには電話・メールのCTAを置かない方針のため、連絡先の掲載要否
+           （募集文書として代理店名・所在地・連絡先の表示が求められるか）を所属保険会社に確認すること。
+           住所は2026-08-20にユーザー提供の本番値へ差し替え済み -->
+      <p class="co">株式会社Office-M</p>
+      <p class="addr">香川県高松市今里町1丁目29番地24</p>
+      <p class="tip">保険証券がお手元にあれば、その場での確認がより早く進みます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 固定フッター（免責） ================= -->
+<!-- ⚠️要確認：本ツールは特約名と補償範囲に踏み込み、相談へのCTAを繰り返す構成のため、
+     所属保険会社の募集文書等の審査（代理店独自資料の届出・承認）の対象になり得ます。
+     公開前に必ず審査を受け、承認番号の記載要否と表示位置を確認すること。
+     承認番号を入れる場合は、下の免責文の直前に1行追加する（免責文そのものは一字一句変更しないこと）。
+     あわせて取扱保険会社名の記載要否も確認すること -->
+<footer class="disclaimer">
+  <p>本ツールは一般的な補償内容の説明であり、実際の支払可否は各保険会社の約款・契約内容によります。詳細は保険会社または当社までお問い合わせください。</p>
+</footer>
+
+<!-- ================= ケース詳細モーダル ================= -->
+<div class="cmodal" id="caseModal" aria-hidden="true">
+  <div class="cmodal-back" id="caseModalBack"></div>
+  <div class="cmodal-panel" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <div class="cmodal-head" id="caseModalHead">
+      <button type="button" class="cmodal-close" id="caseModalClose" aria-label="閉じる">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="cmodal-ico" id="caseModalIco" aria-hidden="true"></div>
+      <div>
+        <span class="cmodal-chip" id="caseModalChip"></span>
+        <h3 class="cmodal-title" id="caseModalTitle"></h3>
+      </div>
+    </div>
+    <div class="cmodal-body">
+      <div class="cmodal-scene" id="caseModalScene"></div>
+      <div class="cmodal-block">
+        <div class="cmodal-label lb-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15.5a2 2 0 0 1-2 2H8l-4 3.5v-15a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2Z"/></svg>
+          よくあるご相談の例
+        </div>
+        <blockquote class="cmodal-quote" id="caseModalStory"></blockquote>
+      </div>
+      <div class="cmodal-block">
+        <div class="cmodal-label lb-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+          こんな保険が使えます
+        </div>
+        <div class="cmodal-hoken" id="caseModalHoken"></div>
+        <div id="caseModalSonae"></div>
+      </div>
+      <p class="cmodal-note">※事例は一般的な内容をもとにした例で、実在の個人・事案とは関係ありません。補償の名称・範囲は保険会社やご契約により異なります。実際の支払可否は約款・契約内容によりますので、お手元の保険証券でご確認ください。</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+'use strict';
+
+/* ---------- ガイド（案内役）のイラスト ---------- */
+var SVG_GUIDE =
+  '<svg viewBox="0 0 64 64">' +
+  '<circle cx="32" cy="32" r="32" fill="#ffeee3"/>' +
+  '<path d="M8 64c0-13 11-20 24-20s24 7 24 20H8Z" fill="#f0846a"/>' +
+  '<rect x="27" y="39" width="10" height="11" rx="5" fill="#f7cdb4"/>' +
+  '<path d="M25 45l7 9 7-9 3.4 1.8L32 61 21.6 46.8Z" fill="#fff"/>' +
+  '<ellipse cx="32" cy="28" rx="16" ry="17" fill="#5c4030"/>' +
+  '<ellipse cx="32" cy="30" rx="12.5" ry="13.5" fill="#f7cdb4"/>' +
+  '<path d="M19.5 27c0-9 5.6-14.5 12.5-14.5S44.5 18 44.5 27c-1.6-3.6-4.2-5.7-7.2-6.6-2.6 2.4-7 3.8-10.9 3.2-1.4 1-2.4 2.1-2.9 3.4Z" fill="#5c4030"/>' +
+  '<circle cx="27" cy="31" r="1.7" fill="#3d3028"/>' +
+  '<circle cx="37" cy="31" r="1.7" fill="#3d3028"/>' +
+  '<ellipse cx="23.6" cy="35" rx="2.6" ry="1.7" fill="#f4a08a" opacity=".55"/>' +
+  '<ellipse cx="40.4" cy="35" rx="2.6" ry="1.7" fill="#f4a08a" opacity=".55"/>' +
+  '<path d="M29.5 36.4c1.5 1.7 3.5 1.7 5 0" fill="none" stroke="#3d3028" stroke-width="1.6" stroke-linecap="round"/>' +
+  '</svg>';
+
+(function(){
+  var slots = document.querySelectorAll('[data-guide]');
+  for(var i = 0; i < slots.length; i++){ slots[i].innerHTML = SVG_GUIDE; }
+})();
+
+/* ---------- イラスト集（すべて自作インラインSVG） ---------- */
+var ART = {
+
+/* === STEP1 リスクカード === */
+rainCar:'<svg viewBox="0 0 48 48"><path d="M12 12a7 7 0 0 1 12-4.5A8.5 8.5 0 0 1 39 12.5 6.5 6.5 0 0 1 37.5 25H14a6.5 6.5 0 0 1-2-13Z" fill="#9fb3c8"/><path d="m16 28-2 5M24 28l-2 5M32 28l-2 5" fill="none" stroke="#63b8dd" stroke-width="2.8" stroke-linecap="round"/><path d="M11 38l1.8-5a3 3 0 0 1 2.8-2h16.8a3 3 0 0 1 2.8 2l1.8 5" fill="#f0846a"/><rect x="8" y="37" width="32" height="6" rx="3" fill="#d9603f"/><path d="M2 42c5-3.5 9.5-3.5 14.5 0s9.5 3.5 14.5 0c4-2.8 8.5-3 15-.6V48H2Z" fill="#63b8dd"/></svg>',
+quakeCar:'<svg viewBox="0 0 48 48"><g transform="rotate(-11 20 20)"><path d="M11 20v8h18v-8Z" fill="#fff" stroke="#e0cdb4" stroke-width="1.8"/><path d="M8 21l12-9 12 9" fill="none" stroke="#f0846a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g><path d="m30 15-3 4.5 3.6 2-2.2 3.5" fill="none" stroke="#c2452a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 38l1.6-4.4a3 3 0 0 1 2.8-2h13.2a3 3 0 0 1 2.8 2L34 38" fill="#63b8dd"/><rect x="9" y="37" width="28" height="6.5" rx="3" fill="#3f7fae"/><circle cx="16" cy="44" r="3" fill="#33404d"/><circle cx="31" cy="44" r="3" fill="#33404d"/><path d="M4 33c-1.6-2-1.6-5.2 0-7.2M44 33c1.6-2 1.6-5.2 0-7.2" fill="none" stroke="#f7c34e" stroke-width="2.6" stroke-linecap="round"/></svg>',
+windSign:'<svg viewBox="0 0 48 48"><path d="M4 10h14a4 4 0 1 0-4-5M4 18h22a4 4 0 1 1-4 5.5" fill="none" stroke="#63b8dd" stroke-width="3.2" stroke-linecap="round"/><g transform="rotate(18 34 14)"><rect x="27" y="8" width="15" height="11" rx="2" fill="#f7c34e" stroke="#a8701a" stroke-width="1.6"/><path d="M30.5 12h8M30.5 15h5" stroke="#a8701a" stroke-width="1.8" stroke-linecap="round"/></g><path d="M11 37l1.8-5a3 3 0 0 1 2.8-2h16.8a3 3 0 0 1 2.8 2l1.8 5" fill="#f0846a"/><rect x="8" y="36" width="32" height="7" rx="3" fill="#d9603f"/><circle cx="15" cy="43.5" r="3.2" fill="#33404d"/><circle cx="33" cy="43.5" r="3.2" fill="#33404d"/></svg>',
+rearend:'<svg viewBox="0 0 48 48"><path d="M4 29l2-5.5A3 3 0 0 1 8.8 22h8.4a3 3 0 0 1 2.8 1.5L22 29" fill="#63b8dd"/><rect x="8.5" y="23.5" width="4.5" height="5" rx="1" fill="#e4f2fa"/><rect x="14" y="23.5" width="4.5" height="5" rx="1" fill="#e4f2fa"/><rect x="2" y="28.5" width="21" height="7" rx="2.5" fill="#3f7fae"/><circle cx="7" cy="36" r="3" fill="#33404d"/><circle cx="18" cy="36" r="3" fill="#33404d"/><path d="M26 29l2-5.5A3 3 0 0 1 30.8 22h8.4a3 3 0 0 1 2.8 1.5L44 29" fill="#f0846a"/><rect x="30.5" y="23.5" width="4.5" height="5" rx="1" fill="#fde8e0"/><rect x="36" y="23.5" width="4.5" height="5" rx="1" fill="#fde8e0"/><rect x="25" y="28.5" width="21" height="7" rx="2.5" fill="#d9603f"/><circle cx="30" cy="36" r="3" fill="#33404d"/><circle cx="41" cy="36" r="3" fill="#33404d"/><path d="M24 18v-5M19.5 19l-3-3.5M28.5 19l3-3.5" fill="none" stroke="#f7c34e" stroke-width="2.8" stroke-linecap="round"/></svg>',
+
+/* === STEP1 使い方選択 === */
+useCommute:'<svg viewBox="0 0 48 48"><circle cx="38" cy="10" r="6" fill="#f7c34e"/><path d="M4 40h40" stroke="#e8d9c4" stroke-width="5" stroke-linecap="round"/><path d="M24 40V22M24 34l-6-4M24 28l6-4" fill="none" stroke="#c9dbe7" stroke-width="0" /><path d="M10 36l1.8-5a3 3 0 0 1 2.8-2h13.8a3 3 0 0 1 2.8 2l1.8 5" fill="#63b8dd"/><rect x="7" y="35" width="29" height="6.5" rx="3" fill="#3f7fae"/><circle cx="14" cy="42" r="3" fill="#33404d"/><circle cx="29" cy="42" r="3" fill="#33404d"/><rect x="13" y="30.5" width="5" height="4.5" rx="1" fill="#e4f2fa"/><rect x="20" y="30.5" width="5" height="4.5" rx="1" fill="#e4f2fa"/><path d="M40 22v-6h-8" fill="none" stroke="#f0846a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+useDaily:'<svg viewBox="0 0 48 48"><path d="M28 18h13l-1.6 12H30Z" fill="#f0846a"/><path d="M31 18v-2.6a3.6 3.6 0 0 1 7.2 0V18" fill="none" stroke="#d9603f" stroke-width="2.2"/><path d="M6 34l1.6-4.6a3 3 0 0 1 2.8-2h11.2a3 3 0 0 1 2.8 2L26 34" fill="#63b8dd"/><rect x="4" y="33" width="24" height="6.5" rx="3" fill="#3f7fae"/><circle cx="10" cy="40" r="3" fill="#33404d"/><circle cx="22" cy="40" r="3" fill="#33404d"/><rect x="9.5" y="29" width="4.5" height="4" rx="1" fill="#e4f2fa"/><rect x="16" y="29" width="4.5" height="4" rx="1" fill="#e4f2fa"/></svg>',
+useLeisure:'<svg viewBox="0 0 48 48"><path d="M30 26 39 12l9 14Z" fill="#94d49a"/><path d="M34 26 39 18l5 8Z" fill="#5fae6b"/><circle cx="10" cy="10" r="5" fill="#f7c34e"/><path d="M6 34l1.8-5a3 3 0 0 1 2.8-2h13.8a3 3 0 0 1 2.8 2L29 34" fill="#f0846a"/><rect x="3" y="33" width="30" height="6.5" rx="3" fill="#d9603f"/><circle cx="10" cy="40" r="3" fill="#33404d"/><circle cx="26" cy="40" r="3" fill="#33404d"/><rect x="9.5" y="28.5" width="5" height="4.5" rx="1" fill="#fde8e0"/><rect x="17" y="28.5" width="5" height="4.5" rx="1" fill="#fde8e0"/><rect x="8" y="24" width="18" height="3.5" rx="1.7" fill="#a8701a"/></svg>',
+useLoan:'<svg viewBox="0 0 48 48"><path d="M8 30l1.8-5a3 3 0 0 1 2.8-2h13.8a3 3 0 0 1 2.8 2l1.8 5" fill="#63b8dd"/><rect x="5" y="29" width="29" height="6.5" rx="3" fill="#3f7fae"/><circle cx="12" cy="36" r="3" fill="#33404d"/><circle cx="27" cy="36" r="3" fill="#33404d"/><rect x="11.5" y="24.5" width="5" height="4.5" rx="1" fill="#e4f2fa"/><rect x="18.5" y="24.5" width="5" height="4.5" rx="1" fill="#e4f2fa"/><ellipse cx="39" cy="38" rx="7" ry="2.8" fill="#e0a92f"/><ellipse cx="39" cy="34" rx="7" ry="2.8" fill="#f7c34e"/><ellipse cx="39" cy="30" rx="7" ry="2.8" fill="#ffd76b"/><path d="M36 16.5h6M39 13.5v6" stroke="#a8701a" stroke-width="2" stroke-linecap="round"/><circle cx="39" cy="16.5" r="6.6" fill="none" stroke="#f7c34e" stroke-width="2.2"/></svg>',
+
+/* === STEP1 わが家のクルマのかたち === */
+sNewcar:'<svg viewBox="0 0 48 48"><path d="M8 30l2.2-6.4A3.4 3.4 0 0 1 13.4 21h15.2a3.4 3.4 0 0 1 3.2 2.6L34 30" fill="#f0846a"/><rect x="5" y="29" width="32" height="7.5" rx="3.2" fill="#d9603f"/><circle cx="12" cy="37" r="3.4" fill="#33404d"/><circle cx="29" cy="37" r="3.4" fill="#33404d"/><rect x="12" y="23" width="6" height="5.5" rx="1.2" fill="#fde8e0"/><rect x="21" y="23" width="6" height="5.5" rx="1.2" fill="#fde8e0"/><path d="M39 8l1.5 4L45 13.5 40.5 15 39 19l-1.5-4L33 13.5 37.5 12Z" fill="#f7c34e"/><path d="M42 24l.9 2.4 2.7.9-2.7.9-.9 2.4-.9-2.4-2.7-.9 2.7-.9Z" fill="#63b8dd"/></svg>',
+sYoung:'<svg viewBox="0 0 48 48"><circle cx="18" cy="14" r="7.5" fill="#f7cdb4"/><path d="M10.5 13c.9-6 3.9-8.6 7.5-8.6s6.6 2.6 7.5 8.6c-2.3-2.6-4.7-3.5-7.5-3.5s-5.2.9-7.5 3.5Z" fill="#5c4030"/><path d="M7 38c0-8.5 5-14 11-14s11 5.5 11 14v3H7Z" fill="#63b8dd"/><circle cx="36" cy="30" r="6.5" fill="none" stroke="#d9a45f" stroke-width="3.4"/><circle cx="36" cy="30" r="2.2" fill="#fdf3e2"/><path d="M36 36.5V44M36 40h4M36 44h3" stroke="#d9a45f" stroke-width="3" stroke-linecap="round"/></svg>',
+sTwoCars:'<svg viewBox="0 0 48 48"><path d="M4 20l1.6-4.4a3 3 0 0 1 2.8-2h9.2a3 3 0 0 1 2.8 2L22 20" fill="#63b8dd"/><rect x="2" y="19" width="22" height="6" rx="2.8" fill="#3f7fae"/><circle cx="8" cy="25.5" r="2.8" fill="#33404d"/><circle cx="18" cy="25.5" r="2.8" fill="#33404d"/><path d="M24 38l1.6-4.4a3 3 0 0 1 2.8-2h9.2a3 3 0 0 1 2.8 2L42 38" fill="#f0846a"/><rect x="22" y="37" width="22" height="6" rx="2.8" fill="#d9603f"/><circle cx="28" cy="43.5" r="2.8" fill="#33404d"/><circle cx="38" cy="43.5" r="2.8" fill="#33404d"/><circle cx="36" cy="14" r="8" fill="none" stroke="#4fbf9b" stroke-width="3"/><circle cx="36" cy="14" r="3" fill="#e8f6ef"/><path d="M30 26c1.8 1.4 3.8 2.2 6 2.2" fill="none" stroke="#4fbf9b" stroke-width="0"/></svg>',
+sOldcar:'<svg viewBox="0 0 48 48"><path d="M8 28l2-5.6a3.2 3.2 0 0 1 3-2.4h13a3.2 3.2 0 0 1 3 2.4L31 28" fill="#d9a45f"/><rect x="5" y="27" width="30" height="7" rx="3" fill="#c0a684"/><circle cx="12" cy="34.5" r="3.2" fill="#33404d"/><circle cx="28" cy="34.5" r="3.2" fill="#33404d"/><rect x="12" y="22" width="5.5" height="5" rx="1.2" fill="#fdf3e2"/><rect x="20" y="22" width="5.5" height="5" rx="1.2" fill="#fdf3e2"/><circle cx="39" cy="15" r="8" fill="#fdf3e2" stroke="#d9a45f" stroke-width="2.6"/><path d="M39 10.5V15l3 2.4" fill="none" stroke="#a8701a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+
+/* === STEP3 基礎知識 === */
+bLayers:'<svg viewBox="0 0 48 48"><rect x="8" y="31" width="32" height="9" rx="3" fill="#9fb3c8"/><rect x="10" y="20" width="28" height="9" rx="3" fill="#a8dcef"/><rect x="12" y="9" width="24" height="9" rx="3" fill="#f7c34e"/><path d="M44 13.5v27" stroke="#f0846a" stroke-width="0"/></svg>',
+bTwoTypes:'<svg viewBox="0 0 48 48"><path d="M15 5 4 9.2v7.4c0 6.8 4.6 12.4 11 14 6.4-1.6 11-7.2 11-14V9.2Z" fill="#4fbf9b"/><path d="m10.4 16.4 3.2 3.2 6-7.2" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 17.5 26 21v6c0 5.6 3.8 10.2 9 11.5 5.2-1.3 9-5.9 9-11.5v-6Z" fill="#fff" stroke="#63b8dd" stroke-width="2.4"/><path d="M35 17.5V38.5" stroke="#63b8dd" stroke-width="2"/><path d="M26 21 44 27" stroke="#63b8dd" stroke-width="0"/></svg>',
+bTime:'<svg viewBox="0 0 48 48"><path d="M6 22l2-5.6a3.2 3.2 0 0 1 3-2.4h13a3.2 3.2 0 0 1 3 2.4L29 22" fill="#63b8dd"/><rect x="3" y="21" width="30" height="7" rx="3" fill="#3f7fae"/><circle cx="10" cy="28.5" r="3.2" fill="#33404d"/><circle cx="26" cy="28.5" r="3.2" fill="#33404d"/><ellipse cx="38" cy="18" rx="7" ry="2.8" fill="#ffd76b"/><ellipse cx="38" cy="14" rx="7" ry="2.8" fill="#f7c34e"/><path d="M38 26v12M34.5 34.5 38 38l3.5-3.5" fill="none" stroke="#c2452a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+bGrade:'<svg viewBox="0 0 48 48"><path d="M5 42h38" stroke="#c9dbe7" stroke-width="3" stroke-linecap="round"/><path d="M7 12l10 8 9-4 13 14" fill="none" stroke="#f0846a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M39 24v6.5h-6.5" fill="none" stroke="#c2452a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="12" r="3" fill="#f7c34e"/></svg>',
+bSaving:'<svg viewBox="0 0 48 48"><rect x="6" y="14" width="30" height="22" rx="5" fill="#fff8f2" stroke="#d9c3ae" stroke-width="2.6"/><path d="M30 22h12v8H30a4 4 0 0 1 0-8Z" fill="#f7c34e" stroke="#d9a45f" stroke-width="2"/><circle cx="33" cy="26" r="1.8" fill="#a8701a"/><path d="M12 14v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2" fill="none" stroke="#d9c3ae" stroke-width="2.6"/></svg>',
+
+/* === まとめ チェックリスト === */
+chkCar:'<svg viewBox="0 0 48 48"><path d="M10 25l2.4-7A3.4 3.4 0 0 1 15.6 16h13.8a3.4 3.4 0 0 1 3.2 2l2.4 7" fill="#f0846a"/><rect x="15" y="17.5" width="6" height="6.5" rx="1.5" fill="#e4f2fa"/><rect x="24" y="17.5" width="6" height="6.5" rx="1.5" fill="#e4f2fa"/><rect x="7" y="25" width="31" height="8.5" rx="3.5" fill="#d9603f"/><circle cx="14" cy="34" r="3.6" fill="#33404d"/><circle cx="31" cy="34" r="3.6" fill="#33404d"/><path d="M39 20l-6 2.4v4.2c0 3.8 2.5 6.9 6 8 3.5-1.1 6-4.2 6-8v-4.2Z" fill="#4fbf9b" stroke="#fff" stroke-width="1.4"/></svg>',
+chkLawyer:'<svg viewBox="0 0 48 48"><path d="M24 8v30" stroke="#27587f" stroke-width="3.4" stroke-linecap="round"/><path d="M10 40h28" stroke="#27587f" stroke-width="3.6" stroke-linecap="round"/><path d="M8 14h32" stroke="#27587f" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="8" r="3.4" fill="#f7c34e"/><path d="M8 14 3 26h10Z" fill="#a8dcef"/><path d="M40 14 35 26h10Z" fill="#a8dcef"/></svg>',
+chkDriver:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="17" fill="none" stroke="#27587f" stroke-width="3.4"/><circle cx="24" cy="24" r="5.5" fill="#f0846a"/><path d="M7.5 22c5.5-3 9.5-3 16.5-3s11 0 16.5 3M24 29.5V41" fill="none" stroke="#27587f" stroke-width="3" stroke-linecap="round"/></svg>',
+chkInjury:'<svg viewBox="0 0 48 48"><circle cx="24" cy="14" r="8" fill="#f7cdb4"/><path d="M16 13c.9-6.4 4.1-9.2 8-9.2s7.1 2.8 8 9.2c-2.4-2.7-4.9-3.7-8-3.7s-5.6 1-8 3.7Z" fill="#5c4030"/><path d="M11 40c0-9 5.8-15 13-15s13 6 13 15v2H11Z" fill="#63b8dd"/><path d="M30 30l8 8M38 30l-8 8" stroke="#fff" stroke-width="0"/><rect x="28" y="28" width="14" height="14" rx="7" fill="#fff" stroke="#f0846a" stroke-width="2.2"/><path d="M35 31.5v7M31.5 35h7" stroke="#f0846a" stroke-width="2.6" stroke-linecap="round"/></svg>',
+chkMap:'<svg viewBox="0 0 48 48"><path d="M4 12l13-5 14 5 13-5v29l-13 5-14-5-13 5Z" fill="#e8f4fb" stroke="#63b8dd" stroke-width="2.4" stroke-linejoin="round"/><path d="M17 7v29M31 12v29" stroke="#a8dcef" stroke-width="2.2"/><path d="M24 15c4.4 0 8 3.6 8 8 0 6-8 13-8 13s-8-7-8-13c0-4.4 3.6-8 8-8Z" fill="#f0846a"/><circle cx="24" cy="23" r="3.2" fill="#fff"/></svg>',
+chkNoStart:'<svg viewBox="0 0 48 48"><circle cx="20" cy="18" r="8" fill="none" stroke="#d9a45f" stroke-width="4"/><circle cx="20" cy="18" r="2.8" fill="#fdf3e2"/><path d="M26 24l7 7M35 33l4 4M37.5 30.5l2.5 2.5M33.5 36.5l2.5 2.5" stroke="#d9a45f" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="24" r="21" fill="none" stroke="#c2453f" stroke-width="3.4"/><path d="M9 9l30 30" stroke="#c2453f" stroke-width="3.4" stroke-linecap="round"/></svg>',
+
+/* === もしものとき === */
+sCamera:'<svg viewBox="0 0 48 48"><path d="M6 16a3 3 0 0 1 3-3h6l2-4h10l2 4h6a3 3 0 0 1 3 3v20a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3Z" fill="#fff" stroke="#63b8dd" stroke-width="2.4"/><circle cx="24" cy="27" r="8" fill="none" stroke="#27587f" stroke-width="2.6"/><circle cx="24" cy="27" r="3.4" fill="#27587f"/><circle cx="35" cy="18" r="1.6" fill="#f7c34e"/></svg>',
+sCall:'<svg viewBox="0 0 48 48"><path d="M11 8c8 0 8 0 10 6l-4 4c1.5 4 4.5 7 8.5 8.5l4-4c6 2 6 2 6 10a3 3 0 0 1-3 3C19 35.5 12.5 29 9 16a3 3 0 0 1 2-8Z" fill="#4fbf9b" stroke="#1b7867" stroke-width="1.6"/></svg>',
+sVerdict:'<svg viewBox="0 0 48 48"><rect x="10" y="6" width="24" height="34" rx="3" fill="#fff" stroke="#9fb3c8" stroke-width="2.2"/><path d="M15 15h14M15 21h14M15 27h9" stroke="#c9dbe7" stroke-width="2.4" stroke-linecap="round"/><circle cx="34" cy="34" r="9" fill="#f7c34e"/><path d="m30 34 2.7 2.7L38 31" fill="none" stroke="#a8701a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+
+/* === セクション見出しのスポット === */
+spotRisk:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#e8f4fb"/><path d="M14 13a5.5 5.5 0 0 1 9.4-3.5A6.6 6.6 0 0 1 35 13.6 5 5 0 0 1 33.8 23H15.5A5 5 0 0 1 14 13Z" fill="#9fb3c8"/><path d="m18 26-1.6 4M25 26l-1.6 4M32 26l-1.6 4" fill="none" stroke="#63b8dd" stroke-width="2.4" stroke-linecap="round"/><path d="M13 38l1.5-4.2a2.8 2.8 0 0 1 2.6-1.8h13.8a2.8 2.8 0 0 1 2.6 1.8L35 38" fill="#f0846a"/><rect x="10" y="37" width="28" height="5.5" rx="2.6" fill="#d9603f"/><path d="M5 44c4.5-3 8.5-3 13 0s8.5 3 13 0c3.5-2.4 7-2.6 12-.6" fill="none" stroke="#63b8dd" stroke-width="2.6" stroke-linecap="round"/></svg>',
+spotQuiz:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#fdf3e2"/><circle cx="15" cy="24" r="8" fill="none" stroke="#2c7a4b" stroke-width="4"/><path d="M28 18l10 10M38 18 28 28" stroke="#c2453f" stroke-width="4" stroke-linecap="round"/></svg>',
+spotIdea:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#fdf1eb"/><path d="M24 10a10 10 0 0 0-5.6 18.3c1.1.8 1.8 2 1.9 3.3l.1.9h7.2l.1-.9c.1-1.3.8-2.5 1.9-3.3A10 10 0 0 0 24 10Z" fill="#f7c34e"/><path d="M20.6 35.5h6.8M21.6 39h4.8" stroke="#a8701a" stroke-width="2.6" stroke-linecap="round"/><path d="M24 4v3M9 15l2.6 1.5M39 15l-2.6 1.5M8 30l2.8-1M40 30l-2.8-1" stroke="#f0846a" stroke-width="2.6" stroke-linecap="round"/></svg>',
+spotCheck:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#e8f6ef"/><rect x="12" y="9" width="24" height="30" rx="4" fill="#fff" stroke="#c3e5d3" stroke-width="1.6"/><rect x="18" y="6" width="12" height="6" rx="3" fill="#4fbf9b"/><path d="m17 19 2.4 2.4L24 17M17 28l2.4 2.4L24 26" fill="none" stroke="#2c7a4b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 20h6M27 29h6" stroke="#c3e5d3" stroke-width="2.6" stroke-linecap="round"/></svg>',
+
+/* === ケーススタディのシーン === */
+sRearend:'<svg viewBox="0 0 48 48"><path d="M4 29l2-5.5A3 3 0 0 1 8.8 22h8.4a3 3 0 0 1 2.8 1.5L22 29" fill="#63b8dd"/><rect x="8.5" y="23.5" width="4.5" height="5" rx="1" fill="#e4f2fa"/><rect x="14" y="23.5" width="4.5" height="5" rx="1" fill="#e4f2fa"/><rect x="2" y="28.5" width="21" height="7" rx="2.5" fill="#3f7fae"/><circle cx="7" cy="36" r="3" fill="#33404d"/><circle cx="18" cy="36" r="3" fill="#33404d"/><path d="M26 29l2-5.5A3 3 0 0 1 30.8 22h8.4a3 3 0 0 1 2.8 1.5L44 29" fill="#f0846a"/><rect x="30.5" y="23.5" width="4.5" height="5" rx="1" fill="#fde8e0"/><rect x="36" y="23.5" width="4.5" height="5" rx="1" fill="#fde8e0"/><rect x="25" y="28.5" width="21" height="7" rx="2.5" fill="#d9603f"/><circle cx="30" cy="36" r="3" fill="#33404d"/><circle cx="41" cy="36" r="3" fill="#33404d"/><path d="M24 18v-5M19.5 19l-3-3.5M28.5 19l3-3.5" fill="none" stroke="#f7c34e" stroke-width="2.8" stroke-linecap="round"/></svg>',
+sTalk:'<svg viewBox="0 0 48 48"><path d="M4 10h20a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H12l-6 5v-5a3 3 0 0 1-2-3V13a3 3 0 0 1 0-3Z" fill="#e4f2fa" stroke="#63b8dd" stroke-width="2.2"/><path d="M9 16h10M9 21h7" stroke="#63b8dd" stroke-width="2.4" stroke-linecap="round"/><path d="M44 22H28a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h9l6 5v-5a3 3 0 0 0 1-3v-9a3 3 0 0 0 0-3Z" fill="#fdeee9" stroke="#f0846a" stroke-width="2.2"/><path d="M31 30.5h.01M35 30.5h.01M39 30.5h.01" stroke="#f0846a" stroke-width="3" stroke-linecap="round"/></svg>',
+sLawyer:'<svg viewBox="0 0 48 48"><path d="M24 8v30" stroke="#27587f" stroke-width="3.4" stroke-linecap="round"/><path d="M10 40h28" stroke="#27587f" stroke-width="3.6" stroke-linecap="round"/><path d="M8 14h32" stroke="#27587f" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="8" r="3.4" fill="#f7c34e"/><path d="M8 14 3 26h10Z" fill="#a8dcef"/><path d="M40 14 35 26h10Z" fill="#a8dcef"/></svg>',
+sMoney:'<svg viewBox="0 0 48 48"><rect x="5" y="14" width="38" height="22" rx="4" fill="#fff8f2" stroke="#d9c3ae" stroke-width="2.6"/><circle cx="24" cy="25" r="7.4" fill="#f7c34e"/><path d="M20.4 20.6 24 24.2l3.6-3.6M24 24v6M20.8 26h6.4M20.8 28.4h6.4" fill="none" stroke="#a8701a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19v12M38 19v12" stroke="#eadbc9" stroke-width="2.4" stroke-linecap="round"/></svg>',
+sBike:'<svg viewBox="0 0 48 48"><circle cx="12" cy="33" r="8" fill="none" stroke="#27587f" stroke-width="3"/><circle cx="36" cy="33" r="8" fill="none" stroke="#27587f" stroke-width="3"/><path d="M12 33 20 18h12l4 15M24 33 20 18M24 33H12" fill="none" stroke="#f0846a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 17h6M20 17v1.5M31 15h6M34 15v3" fill="none" stroke="#27587f" stroke-width="2.6" stroke-linecap="round"/></svg>',
+sWalker:'<svg viewBox="0 0 48 48"><circle cx="22" cy="13" r="7" fill="#f7cdb4"/><path d="M15 12c.8-5.6 3.6-8 7-8s6.2 2.4 7 8c-2.1-2.4-4.3-3.2-7-3.2s-4.9.8-7 3.2Z" fill="#7a5a3a"/><path d="M11 36c0-8 5-13 11-13s11 5 11 13v3H11Z" fill="#63b8dd"/><path d="M33 22l6-4M35 28h7M33 34l6 4" stroke="#c2453f" stroke-width="3" stroke-linecap="round"/><path d="M14 39v6M28 39v6" stroke="#27587f" stroke-width="3.4" stroke-linecap="round"/><rect x="9.5" y="38" width="9" height="5" rx="2.2" fill="#fdeee9" stroke="#f0846a" stroke-width="1.6" transform="rotate(-18 14 40.5)"/></svg>',
+sInjury:'<svg viewBox="0 0 48 48"><circle cx="24" cy="13" r="8" fill="#f7cdb4"/><path d="M16 12c.9-6.4 4.1-9.2 8-9.2s7.1 2.8 8 9.2c-2.4-2.7-4.9-3.7-8-3.7s-5.6 1-8 3.7Z" fill="#5c4030"/><path d="M16 8.5c2.5-1.5 5-2 8-2" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/><path d="M11 40c0-9 5.8-15 13-15s13 6 13 15v2H11Z" fill="#63b8dd"/><path d="M13 32c3.5 2.2 7 3.4 11 3.4s7.5-1.2 11-3.4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg>',
+sHospital:'<svg viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="28" rx="3" fill="#fff" stroke="#9fb3c8" stroke-width="2.4"/><rect x="20" y="4" width="8" height="8" rx="2" fill="#f0846a"/><path d="M24 18v10M19 23h10" stroke="#f0846a" stroke-width="3" stroke-linecap="round"/><rect x="14" y="32" width="6" height="8" fill="#a8dcef"/><rect x="28" y="32" width="6" height="8" fill="#a8dcef"/></svg>',
+sMoped:'<svg viewBox="0 0 48 48"><circle cx="11" cy="35" r="7" fill="none" stroke="#27587f" stroke-width="3"/><circle cx="38" cy="35" r="7" fill="none" stroke="#27587f" stroke-width="3"/><path d="M11 35h14l5-12h5" fill="none" stroke="#f0846a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 23h6a5 5 0 0 1 5 5v2" fill="none" stroke="#f0846a" stroke-width="3" stroke-linecap="round"/><path d="M15 25h8l2 10" fill="none" stroke="#d9603f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 12h6M34 12v-2.5" stroke="#27587f" stroke-width="2.6" stroke-linecap="round"/></svg>',
+sBattery:'<svg viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="24" rx="4" fill="#fff" stroke="#27587f" stroke-width="2.8"/><rect x="12" y="9" width="7" height="5" rx="1.5" fill="#27587f"/><rect x="29" y="9" width="7" height="5" rx="1.5" fill="#27587f"/><path d="M12 21h6M32 21h4M34 19v4" stroke="#c2453f" stroke-width="2.4" stroke-linecap="round"/><path d="m26 22-6 8h5l-3 8 9-11h-5l4-5Z" fill="#f7c34e" stroke="#a8701a" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+sTow:'<svg viewBox="0 0 48 48"><rect x="3" y="24" width="17" height="10" rx="2.5" fill="#63b8dd"/><rect x="14" y="18" width="7" height="7" rx="1.6" fill="#a8dcef"/><circle cx="9" cy="36" r="3.4" fill="#33404d"/><circle cx="17" cy="36" r="3.4" fill="#33404d"/><path d="M22 16v8" stroke="#27587f" stroke-width="2.6" stroke-linecap="round"/><path d="M22 16c6 0 8 4 8 9" fill="none" stroke="#27587f" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 4"/><path d="M28 34l1.6-4.4a3 3 0 0 1 2.8-2h8.2a3 3 0 0 1 2.8 2L45 34" fill="#f0846a"/><rect x="26" y="33" width="21" height="6" rx="2.8" fill="#d9603f"/><circle cx="32" cy="39.5" r="3" fill="#33404d"/><circle cx="41" cy="39.5" r="3" fill="#33404d"/></svg>',
+sGolf:'<svg viewBox="0 0 48 48"><path d="M14 14h14l2.5 26H11.5Z" fill="#8f4574"/><path d="M17 14v-3a4 4 0 0 1 8 0v3" fill="none" stroke="#8f4574" stroke-width="2.6"/><circle cx="21" cy="26" r="3" fill="#fff"/><path d="M32 8l6-3.5M32 8v14" stroke="#d9a45f" stroke-width="2.6" stroke-linecap="round"/><path d="M35 22h4M37 22v10" stroke="#d9a45f" stroke-width="0"/></svg>',
+sWindowCar:'<svg viewBox="0 0 48 48"><path d="M8 26l2.4-6.6A3.4 3.4 0 0 1 13.6 17h14.8a3.4 3.4 0 0 1 3.2 2.4L34 26" fill="#63b8dd"/><rect x="13" y="19" width="6.5" height="6" rx="1.4" fill="#e4f2fa"/><rect x="22.5" y="19" width="6.5" height="6" rx="1.4" fill="#e4f2fa"/><path d="m17 20-2 2.6 2.6 1.2-1.8 2" fill="none" stroke="#c2452a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="5" y="25" width="32" height="8" rx="3.4" fill="#3f7fae"/><circle cx="12" cy="34" r="3.4" fill="#33404d"/><circle cx="29" cy="34" r="3.4" fill="#33404d"/><path d="M38 12h7v7h-7Z" fill="none" stroke="#c2453f" stroke-width="2.2" stroke-dasharray="3 3"/></svg>',
+
+/* === クイズ結果 === */
+resultCheer:'<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#fff3e6"/><path d="M8 64c0-13 11-20 24-20s24 7 24 20H8Z" fill="#f0846a"/><rect x="27" y="39" width="10" height="11" rx="5" fill="#f7cdb4"/><path d="M25 45l7 9 7-9 3.4 1.8L32 61 21.6 46.8Z" fill="#fff"/><ellipse cx="32" cy="28" rx="16" ry="17" fill="#5c4030"/><ellipse cx="32" cy="30" rx="12.5" ry="13.5" fill="#f7cdb4"/><path d="M19.5 27c0-9 5.6-14.5 12.5-14.5S44.5 18 44.5 27c-1.6-3.6-4.2-5.7-7.2-6.6-2.6 2.4-7 3.8-10.9 3.2-1.4 1-2.4 2.1-2.9 3.4Z" fill="#5c4030"/><path d="M24 30.5c1.4-1.8 4-1.8 5.4 0M34.6 30.5c1.4-1.8 4-1.8 5.4 0" fill="none" stroke="#3d3028" stroke-width="1.8" stroke-linecap="round"/><ellipse cx="23.6" cy="35.5" rx="2.6" ry="1.7" fill="#f4a08a" opacity=".6"/><ellipse cx="40.4" cy="35.5" rx="2.6" ry="1.7" fill="#f4a08a" opacity=".6"/><path d="M28.5 36c1.9 2.4 5.1 2.4 7 0" fill="none" stroke="#3d3028" stroke-width="1.8" stroke-linecap="round"/><path d="M8 14l1.5 4L14 19.5 9.5 21 8 25l-1.5-4L2 19.5 6.5 18Z" fill="#f7c34e"/><path d="M56 10l1.2 3.2L60 14.5l-2.8 1.3L56 19l-1.2-3.2L52 14.5l2.8-1.3Z" fill="#63b8dd"/></svg>'
+};
+
+(function(){
+  var slots = document.querySelectorAll('[data-art]');
+  for(var i = 0; i < slots.length; i++){
+    var k = slots[i].getAttribute('data-art');
+    if(ART[k]){ slots[i].innerHTML = ART[k]; }
+  }
+})();
+
+/* ---------- 使い方タイプ別の注意ポイント ---------- */
+var AREAS = {
+  commute:{
+    title:'通勤・通学で毎日乗る方へ',
+    items:[
+      '車が使えない期間の「足」——修理・全損のときの代車費用（レンタカー費用特約）が付いているか。',
+      '地震・噴火・津波危険車両全損時一時金特約。被災した翌日も通勤は続きます。「当面の足の資金」の有無は大きな差になります。',
+      '通勤路のアンダーパス・冠水しやすい道を、ハザードマップで一度見ておく。'
+    ]
+  },
+  daily:{
+    title:'買い物・送迎が中心の方へ',
+    items:[
+      '運転者の限定・年齢条件が、実際にハンドルを握るご家族全員と合っているか（範囲外の家族の事故は、原則保険金が出ません）。',
+      '自転車との事故や日常の賠償に備える個人賠償責任特約。自動車保険にも付けられます（火災保険側との重複に注意）。',
+      '駐車場でのあて逃げは、エコノミー型の車両保険では対象外になるのが一般的。「戻ったら傷が…」に備えるなら一般型の領域です。'
+    ]
+  },
+  leisure:{
+    title:'週末・レジャーが中心の方へ',
+    items:[
+      '使用目的の区分（日常・レジャー使用など）が実態と合っているか。保険料にも影響します。',
+      '高速道路の飛び石はエコノミー型でも対象になるのが一般的。自己負担額（免責金額）の設定とあわせて確認を。',
+      '旅行先でご家族・ご友人と運転を交代するなら、運転者限定の範囲を出発前に確認。'
+    ]
+  },
+  loan:{
+    title:'ローン・リース返済中の方へ',
+    items:[
+      '全損時の保険金は原則、時価まで。ローンの残債との差が出ないか、車両保険金額を確認。',
+      '新車のうちは、新車の再取得費用まで補償される車両新価特約という選択肢があります（対象期間は保険会社により異なります）。',
+      '地震・噴火・津波危険車両全損時一時金特約。ローンが残る車が動かなくなったときの、次の一歩の資金に。'
+    ]
+  }
+};
+
+var areaPanel = document.getElementById('areaPanel');
+var areaBtns  = document.querySelectorAll('.area-btn');
+var SVG_PIN = '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3.3 11 3 3 0 0 1 1.1 1.9l.03.35h4.34l.03-.35a3 3 0 0 1 1.1-1.9A6 6 0 0 0 12 3Z"/><path d="M9.8 19.2h4.4M10.7 21.7h2.6"/></svg>';
+
+function selectArea(key){
+  var a = AREAS[key];
+  if(!a){ return; }
+  var html = '<h4>' + SVG_PIN + a.title + '</h4><ul>';
+  for(var i = 0; i < a.items.length; i++){ html += '<li>' + a.items[i] + '</li>'; }
+  html += '</ul>';
+  areaPanel.innerHTML = html;
+  areaPanel.classList.add('show');
+}
+(function(){
+  for(var i = 0; i < areaBtns.length; i++){
+    areaBtns[i].addEventListener('click', function(){
+      for(var j = 0; j < areaBtns.length; j++){
+        areaBtns[j].classList.remove('on');
+        areaBtns[j].setAttribute('aria-pressed', 'false');
+      }
+      this.classList.add('on');
+      this.setAttribute('aria-pressed', 'true');
+      selectArea(this.getAttribute('data-area'));
+    });
+  }
+})();
+
+/* ---------- クイズの状況イラスト ---------- */
+var ICONS = {
+  flood:'<svg viewBox="0 0 48 48"><path d="M13 10a6 6 0 0 1 10.4-3.8A7.2 7.2 0 0 1 36.5 10 5.5 5.5 0 0 1 35 20.8H14.5A5.5 5.5 0 0 1 13 10Z" fill="#9fb3c8"/><path d="m16 24-1.6 4M23 24l-1.6 4M30 24l-1.6 4" fill="none" stroke="#63b8dd" stroke-width="2.6" stroke-linecap="round"/><path d="M10 38l1.8-5a3 3 0 0 1 2.8-2h16.8a3 3 0 0 1 2.8 2l1.8 5" fill="#f0846a"/><rect x="7" y="37" width="34" height="6" rx="3" fill="#d9603f"/><path d="M2 41c5-3.5 9.5-3.5 14.5 0s9.5 3.5 14.5 0c4-2.8 8.5-3 15-.6V48H2Z" fill="#63b8dd"/></svg>',
+  quakeG:'<svg viewBox="0 0 48 48"><g transform="rotate(-11 20 19)"><path d="M11 19v8h18v-8Z" fill="#fff" stroke="#e0cdb4" stroke-width="1.8"/><path d="M8 20l12-9 12 9" fill="none" stroke="#f0846a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></g><path d="m30 14-3 4.5 3.6 2-2.2 3.5" fill="none" stroke="#c2452a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 37l1.6-4.4a3 3 0 0 1 2.8-2h13.2a3 3 0 0 1 2.8 2L34 37" fill="#63b8dd"/><rect x="9" y="36" width="28" height="6.5" rx="3" fill="#3f7fae"/><circle cx="16" cy="43" r="3" fill="#33404d"/><circle cx="31" cy="43" r="3" fill="#33404d"/><path d="M4 32c-1.6-2-1.6-5.2 0-7.2M44 32c1.6-2 1.6-5.2 0-7.2" fill="none" stroke="#f7c34e" stroke-width="2.6" stroke-linecap="round"/></svg>',
+  stone:'<svg viewBox="0 0 48 48"><path d="M8 34a17 17 0 0 1 32-8l1 3H8Z" fill="#e4f2fa" stroke="#63b8dd" stroke-width="2.4"/><rect x="5" y="33" width="38" height="7" rx="3.4" fill="#3f7fae"/><path d="m22 20 3 3-3.6 1.6 2.6 3" fill="none" stroke="#c2452a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="16" r="3.4" fill="#9aa7b3"/><path d="M9 8l4.5 4M6 14l4.6 1.6" stroke="#c9dbe7" stroke-width="2.2" stroke-linecap="round"/></svg>',
+  scratch:'<svg viewBox="0 0 48 48"><path d="M8 27l2.2-6.2A3.4 3.4 0 0 1 13.4 18h15.2a3.4 3.4 0 0 1 3.2 2.2L34 27" fill="#63b8dd"/><rect x="13" y="20" width="6" height="5.5" rx="1.3" fill="#e4f2fa"/><rect x="22" y="20" width="6" height="5.5" rx="1.3" fill="#e4f2fa"/><rect x="5" y="26" width="32" height="8" rx="3.4" fill="#3f7fae"/><circle cx="12" cy="35" r="3.4" fill="#33404d"/><circle cx="29" cy="35" r="3.4" fill="#33404d"/><path d="m38 10 4 4M40 8l4 4M42 6l4 4" stroke="#c2452a" stroke-width="2.2" stroke-linecap="round"/><path d="M10 29.5h14" stroke="#c2452a" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3"/></svg>',
+  rearend:'<svg viewBox="0 0 48 48"><path d="M4 29l2-5.5A3 3 0 0 1 8.8 22h8.4a3 3 0 0 1 2.8 1.5L22 29" fill="#63b8dd"/><rect x="8.5" y="23.5" width="4.5" height="5" rx="1" fill="#e4f2fa"/><rect x="14" y="23.5" width="4.5" height="5" rx="1" fill="#e4f2fa"/><rect x="2" y="28.5" width="21" height="7" rx="2.5" fill="#3f7fae"/><circle cx="7" cy="36" r="3" fill="#33404d"/><circle cx="18" cy="36" r="3" fill="#33404d"/><path d="M26 29l2-5.5A3 3 0 0 1 30.8 22h8.4a3 3 0 0 1 2.8 1.5L44 29" fill="#f0846a"/><rect x="30.5" y="23.5" width="4.5" height="5" rx="1" fill="#fde8e0"/><rect x="36" y="23.5" width="4.5" height="5" rx="1" fill="#fde8e0"/><rect x="25" y="28.5" width="21" height="7" rx="2.5" fill="#d9603f"/><circle cx="30" cy="36" r="3" fill="#33404d"/><circle cx="41" cy="36" r="3" fill="#33404d"/><path d="M24 18v-5M19.5 19l-3-3.5M28.5 19l3-3.5" fill="none" stroke="#f7c34e" stroke-width="2.8" stroke-linecap="round"/></svg>',
+  family:'<svg viewBox="0 0 48 48"><circle cx="14" cy="14" r="6.5" fill="#f7cdb4"/><path d="M7.5 13c.8-5.2 3.4-7.5 6.5-7.5s5.7 2.3 6.5 7.5c-2-2.2-4-3-6.5-3s-4.5.8-6.5 3Z" fill="#5c4030"/><path d="M4 36c0-7.5 4.3-12.5 10-12.5S24 28.5 24 36v3H4Z" fill="#63b8dd"/><circle cx="33" cy="17" r="5.5" fill="#f7cdb4"/><path d="M27.5 16c.7-4.4 2.9-6.3 5.5-6.3s4.8 1.9 5.5 6.3c-1.7-1.9-3.4-2.5-5.5-2.5s-3.8.6-5.5 2.5Z" fill="#7a5a3a"/><path d="M25 39c0-6.3 3.5-10.5 8-10.5s8 4.2 8 10.5v0H25Z" fill="#f0846a"/><circle cx="41" cy="28" r="4.6" fill="none" stroke="#d9a45f" stroke-width="2.6"/><circle cx="41" cy="28" r="1.5" fill="#fdf3e2"/><path d="M41 32.6V39M41 35.5h3M41 39h2.4" stroke="#d9a45f" stroke-width="2.4" stroke-linecap="round"/></svg>',
+  borrow:'<svg viewBox="0 0 48 48"><path d="M9 26l2-5.6a3.2 3.2 0 0 1 3-2.4h13a3.2 3.2 0 0 1 3 2.4L32 26" fill="#63b8dd"/><rect x="6" y="25" width="30" height="7.5" rx="3.2" fill="#3f7fae"/><circle cx="13" cy="33" r="3.2" fill="#33404d"/><circle cx="29" cy="33" r="3.2" fill="#33404d"/><rect x="12.5" y="20" width="5.5" height="5" rx="1.2" fill="#e4f2fa"/><rect x="20.5" y="20" width="5.5" height="5" rx="1.2" fill="#e4f2fa"/><circle cx="39" cy="12" r="5.5" fill="none" stroke="#d9a45f" stroke-width="3"/><circle cx="39" cy="12" r="1.8" fill="#fdf3e2"/><path d="M39 17.5V24M39 20.5h3.4M39 24h2.8" stroke="#d9a45f" stroke-width="2.6" stroke-linecap="round"/><path d="M4 12h8M9 9l3 3-3 3" fill="none" stroke="#f0846a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  grade:ART.bGrade,
+  bike:ART.sBike,
+  golf:ART.sGolf
+};
+
+/* ---------- ○×クイズ（10問） ---------- */
+var QUIZ = [
+  {
+    icon:'flood', a:false,
+    q:'自動車保険（対人・対物・人身傷害）に、きちんと入っています。大雨で駐車場が冠水し、愛車が水没しました。車の修理代は、自分の自動車保険から出る？',
+    expl:'「ちゃんと保険に入っているから大丈夫」——ここが、いちばん多い思い込みです。対人・対物は相手の方への賠償、人身傷害は人のケガのための補償で、ご自身の車そのものに支払われるのは車両保険だけ。台風・豪雨・洪水・高潮による水没は車両保険の対象（エコノミー型でも対象になるのが一般的）ですが、その車両保険が付いている車は約47%。2台に1台は、水没しても修理代が出ません。',
+    hoken:'車両保険（一般型・エコノミー型とも）',
+    sonae:'証券の「車両保険」欄に金額が入っているか確認する（空欄なら付いていません）'
+  },
+  {
+    icon:'quakeG', a:false,
+    q:'車両保険は、いちばん手厚い「一般型」で加入しています。地震で自宅の車庫が倒れ、下敷きになった車が全損しました。車両保険から出る？',
+    expl:'「一般型なら何でも出る」と思われがちですが、地震・噴火・津波による損害は、一般型でも対象外（免責）です。大雨の水没は出るのに、地震は出ない。しかも同じ免責は、相手への賠償（対人・対物）にもあります。備えるには「地震・噴火・津波危険車両全損時一時金特約」を車両保険にセットしておく必要があり、支払われるのは全損のときの一時金（50万円が一般的）です。',
+    hoken:'地震・噴火・津波危険車両全損時一時金特約（車両保険にセット）',
+    sonae:'通勤・生活に車が欠かせない方は、特約が付いているか確認する'
+  },
+  {
+    icon:'stone', a:true,
+    q:'保険料を抑えるため、車両保険は「エコノミー型（車対車＋A）」にしています。高速道路の飛び石で、フロントガラスにヒビが入りました。出る？',
+    expl:'「ぶつけた相手がいないから」「安いほうの型だから」と思い込んで、自費で交換してしまう方が多い問題です。飛び石は「飛来中・落下中の物との衝突」として、エコノミー型でも対象になるのが一般的。ただし、自己負担額（免責金額）の設定と、使うと翌年の等級が下がる点は要確認です。修理費によっては「出るけれど、使わないほうが得」なこともあります。',
+    hoken:'車両保険（一般型・エコノミー型とも）',
+    sonae:'免責金額と、使った場合の保険料への影響を確かめてから請求を判断する'
+  },
+  {
+    icon:'scratch', a:false,
+    q:'エコノミー型の車両保険です。駐車場に戻ると、知らない間にぶつけられてへこんでいました（相手は不明）。こちらは完全な被害者。出る？',
+    expl:'被害者なのに出ない——ここが、自動車保険のいちばん厳しいところです。エコノミー型が補償する衝突は「相手の車と、その運転者などが確認できる場合」に限られ、相手が分からないあて逃げは対象外。相手が特定できないので、相手の対物賠償も使えません。この場面をカバーできるのは一般型だけです。',
+    hoken:'車両保険（一般型）',
+    sonae:'証券の「車両保険のタイプ」欄で、一般型かエコノミー型かを確認する'
+  },
+  {
+    icon:'family', a:false,
+    q:'運転者を「本人・配偶者限定」で契約している車です。お盆に帰省した息子が運転し、よその家の塀を壊してしまいました。相手への賠償（対物賠償）は出る？',
+    expl:'「自分の車は直せなくても、相手への賠償は出るだろう」と思われがちですが、限定の範囲外の人が運転中に起こした事故は、対人・対物も含めて、この車のご契約からは支払われないのが原則です。塀の弁償まで自己負担になります（自賠責保険が使えるのは相手のケガだけで、物損には使えません。ただし、息子さんご自身が自動車保険をお持ちなら、その契約の他車運転特約から支払われる場合があります）。帰省の間だけ限定を外す変更や、1日単位の自動車保険という方法もあります。',
+    hoken:'運転者限定の変更／1日単位の自動車保険',
+    sonae:'ハンドルを握る可能性のある家族を書き出し、証券の限定条件と突き合わせる'
+  },
+  {
+    icon:'rearend', a:false, yes:'任せられる', no:'任せられない',
+    q:'信号待ちで追突されました。過失はゼロ、こちらは完全な被害者です。相手との示談交渉は、自分の保険会社に任せられる？',
+    expl:'保険料を払っているのに、被害者のときこそ動いてもらえない——意外に思われる問題です。ご自身に過失がない事故では、ご自身の保険会社が相手方と示談交渉をすることは、法律上できません（弁護士法との関係）。相手方の保険会社との交渉を、ご自身で進めることになります。弁護士費用特約があれば、弁護士への相談・依頼の費用を限度額の範囲内でまかなえ、使っても等級に影響しない扱いが一般的です。',
+    hoken:'弁護士費用特約',
+    sonae:'特約の有無を証券で確認する（ご家族の契約の特約を使える場合もあります）'
+  },
+  {
+    icon:'grade', a:false, yes:'合っている', no:'まちがい',
+    q:'台風で水没した車の修理に、車両保険を使いました。「自分は何も悪くない自然災害なのだから、翌年の等級も保険料も変わらない」——この考えは合っている？',
+    expl:'自然災害でも、車両保険を使えば等級は下がります。台風・水没・盗難・いたずら・飛び石などは1等級ダウン（追突などの一般的な事故は3等級ダウン）で、あわせて事故有係数適用期間も加算されます（1等級ダウン事故なら1年、3等級ダウン事故なら3年が一般的）。そのぶん、翌年からの保険料が上がります。だからこそ、修理費が小さいときは「出るけれど、あえて使わない」という判断もあります。使う前に、保険料がいくら増えるかを試算してから決められます。',
+    hoken:'車両保険（使うかどうかは、損得を試算してから）',
+    sonae:'請求の前に、保険を使った場合の保険料への影響を確認する'
+  },
+  {
+    icon:'borrow', a:false, pay:true, yes:'合っている', no:'まちがい',
+    q:'友人の車を借りて運転中、ぶつけてしまいました。「他人の車なのだから、自分の自動車保険は使えない」——この考えは合っている？',
+    expl:'ここは逆に、知っておくと助かる話です。多くの自動車保険には「他車運転特約」が自動セットされていて、臨時に借りた他人の車を運転中の事故は、持ち主の保険より優先して、ご自身の契約から支払われるのが一般的です（借りた車自体の損害は、ご自身の契約に車両保険が付いている場合など、条件があります）。ただし、日常的に借りている車や、同居のご家族の車は対象外になるのが一般的です。',
+    hoken:'他車運転特約（自動セットが一般的）',
+    sonae:'ご自身の契約に付いているか、対象になる車の範囲とあわせて確認する'
+  },
+  {
+    icon:'bike', a:true,
+    q:'自動車保険に「個人賠償責任特約」をセットしています。休日、自転車で歩行者にぶつかり、ケガをさせてしまいました。車にはまったく乗っていません。この自動車保険から出る？',
+    expl:'「自動車保険なのに、自転車？」と思われた方は、もったいないかもしれません。個人賠償責任特約は自動車保険にセットでき、自転車事故をはじめ、日常生活の賠償事故（お子さまがお店の商品をこわした、飼い犬が人をかんだ等）も対象になります。ご本人だけでなく同居のご家族なども対象になるのが一般的で、示談交渉サービス付きのものが多くあります。',
+    hoken:'個人賠償責任特約',
+    sonae:'火災保険側と重複していないかも含めて、付帯の状況を確認する'
+  },
+  {
+    icon:'golf', a:false,
+    q:'事故で、車に積んでいたゴルフバッグとカメラが壊れました。車両保険には入っています。出る？',
+    expl:'車両保険が守るのは「車そのもの」と、車に定着した付属品（カーナビ・ETCなど）まで。車内やトランクに積んでいた物は、原則として対象外です。備えるには「車内身の回り品の補償特約」が必要で、限度額は10〜30万円程度が一般的。現金・貴金属・データ類は特約でも対象外です。また、車上荒らしなどの「盗難」が対象になるかは、保険会社によって取り扱いが分かれます。',
+    hoken:'車内身の回り品の補償特約',
+    sonae:'積みっぱなしの高価な物がないか見直し、特約の有無を確認する'
+  }
+];
+
+var qIdx = 0, qScore = 0, qAnswered = false, qAnsweredCount = 0;
+var wrongList = [];
+
+var elNum   = document.getElementById('qNum');
+var elDots  = document.getElementById('qDots');
+var elIcon  = document.getElementById('qIcon');
+var elText  = document.getElementById('qText');
+var btnYes  = document.getElementById('btnYes');
+var btnNo   = document.getElementById('btnNo');
+var lblYes  = document.getElementById('lblYes');
+var lblNo   = document.getElementById('lblNo');
+var elVerd  = document.getElementById('verdict');
+var elVAns  = document.getElementById('vAnswer');
+var elVChip = document.getElementById('vChip');
+var elVExpl = document.getElementById('vExpl');
+var elVHoken= document.getElementById('vHoken');
+var elVSonae= document.getElementById('vSonae');
+var btnNext = document.getElementById('btnNext');
+var elPlay  = document.getElementById('quizPlay');
+var elDone  = document.getElementById('quizDone');
+var elDoneScore = document.getElementById('doneScore');
+var elDoneCmt   = document.getElementById('doneCmt');
+var btnRetry    = document.getElementById('btnRetry');
+var btnStop     = document.getElementById('btnStopHere');
+var elDoneTotal = document.getElementById('doneTotal');
+var elWrongList = document.getElementById('wrongList');
+var btnMailSelf = document.getElementById('btnMailSelf');
+var btnPrint    = document.getElementById('btnPrint');
+var quizBox     = document.querySelector('.quiz-box');
+var elSumScore  = document.getElementById('sumScore');
+var quizSec     = document.getElementById('sec2');
+
+var SVG_O = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.6"><circle cx="12" cy="12" r="8.5"/></svg>';
+var SVG_X = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+
+function renderDots(){
+  var html = '', i;
+  for(i = 0; i < QUIZ.length; i++){
+    html += '<i class="' + (i < qIdx ? 'done' : (i === qIdx ? 'cur' : '')) + '"></i>';
+  }
+  elDots.innerHTML = html;
+}
+
+function renderQuestion(){
+  var item = QUIZ[qIdx];
+  qAnswered = false;
+  elNum.textContent = String(qIdx + 1);
+  elIcon.innerHTML = ICONS[item.icon] || '';
+  elText.textContent = item.q;
+  lblYes.textContent = item.yes || '出る';
+  lblNo.textContent  = item.no  || '出ない';
+  btnYes.disabled = false; btnNo.disabled = false;
+  btnYes.classList.remove('picked'); btnNo.classList.remove('picked');
+  elVerd.className = 'verdict';
+  btnNext.style.display = 'none';
+  btnStop.style.display = 'none';
+  renderDots();
+}
+
+function commentFor(score, total){
+  if(total && total < QUIZ.length){
+    return 'ここまでで ' + total + '問。続きはお時間のあるときにどうぞ。まちがえたところが、いまのご契約でいちばん確認したいポイントです。';
+  }
+  if(score >= 10){
+    return '全問正解です。この10問は意地悪に作ってありますので、これは相当お詳しい方です。あとは「知識」ではなく「実際のご契約がどうなっているか」の確認だけ。ぜひ一度、証券をチェックしてみてください。';
+  }
+  if(score >= 7){
+    return '好成績です。それでも、まちがえた問題が残りました。知識としてご存じでも、いまのご契約にその補償・特約が付いているかは別の話です。証券で確かめてみてください。';
+  }
+  if(score >= 4){
+    return 'ちょうど半分ほど。ここでつまずくのが、いちばん多いパターンです。「入っているつもり」と「実際に出るかどうか」の間には、これだけの差があります。まちがえた問題から確認してみてください。';
+  }
+  return '驚かれたかもしれません。でも、これがふつうです。自動車保険は「入っていれば安心」ではなく、「どこまで守るかを選ぶ」保険だからです。「知らなかった」に今日気づけたことが、いちばんの備えです。';
+}
+
+function onAnswer(choiceYes){
+  if(qAnswered){ return; }
+  qAnswered = true;
+  qAnsweredCount++;
+  var item = QUIZ[qIdx];
+  var correct = (choiceYes === item.a);
+  if(correct){ qScore++; } else { wrongList.push(qIdx); }
+
+  btnYes.disabled = true; btnNo.disabled = true;
+  (choiceYes ? btnYes : btnNo).classList.add('picked');
+
+  /* 色は「結果が良い知らせか」で決める。考え方の正誤を問う設問は a と一致しないことがある */
+  var isPay = (typeof item.pay === 'boolean') ? item.pay : item.a;
+  elVerd.className = 'verdict show ' + (isPay ? 'pay' : 'nopay');
+  elVAns.innerHTML = (item.a ? SVG_O : SVG_X) + '正解は「' + (item.a ? (item.yes || '出る') : (item.no || '出ない')) + '」';
+  elVChip.className = 'result-chip ' + (correct ? 'ok' : 'ng');
+  elVChip.textContent = correct ? 'あなたの回答：正解！' : 'あなたの回答：残念…';
+  elVExpl.textContent = item.expl;
+  elVHoken.textContent = item.hoken;
+  elVSonae.textContent = item.sonae;
+
+  btnNext.innerHTML = (qIdx < QUIZ.length - 1 ? '次の問題へ' : '結果を見る') +
+    '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>';
+  btnNext.style.display = 'flex';
+  btnStop.style.display = (qIdx < QUIZ.length - 1) ? 'flex' : 'none';
+
+  if(qIdx < QUIZ.length - 1){
+    elSumScore.innerHTML = '<p>ここまで ' + qAnsweredCount + '問中 ' + qScore + '問正解です。<a href="#sec2">②で続きに挑戦できます</a>。</p>';
+  }
+}
+
+function updateSummary(){
+  elSumScore.innerHTML =
+    '<p class="big">' + qAnsweredCount + '問中 <span>' + qScore + '</span>問正解でした</p>' +
+    '<p>' + commentFor(qScore, qAnsweredCount) + '</p>';
+}
+
+function finishQuiz(){
+  elPlay.style.display = 'none';
+  elDone.classList.add('show');
+  elDoneScore.textContent = String(qScore);
+  elDoneTotal.textContent = String(qAnsweredCount);
+  elDoneCmt.textContent = commentFor(qScore, qAnsweredCount);
+  renderWrongList();
+  updateSummary();
+}
+
+/* 間違えた設問＝いちばん確認したいところ */
+function renderWrongList(){
+  if(!wrongList.length){
+    elWrongList.style.display = 'none';
+    return;
+  }
+  var html = '<h4>あなたが「知らなかった」のは、この' + wrongList.length + '問でした</h4><ul>';
+  for(var i = 0; i < wrongList.length; i++){
+    var it = QUIZ[wrongList[i]];
+    html += '<li>' + it.q.replace(/。[^。]*？$/, '。').replace(/？$/, '') +
+            '<br><b>使える保険：</b>' + it.hoken + '</li>';
+  }
+  html += '</ul>';
+  elWrongList.innerHTML = html;
+  elWrongList.style.display = 'block';
+}
+
+/* 結果を自分・家族あてにメールで持ち帰る（宛先は空。送信はメーラー側） */
+function buildResultMail(){
+  var b = 'わが家の自動車保険で確認したいこと\n\n';
+  b += '■○×クイズの結果：' + qAnsweredCount + '問中 ' + qScore + '問正解\n\n';
+  if(wrongList.length){
+    b += '■知らなかったこと（証券で確認したいところ）：\n';
+    for(var i = 0; i < wrongList.length; i++){
+      var it = QUIZ[wrongList[i]];
+      b += '・' + it.q.replace(/。[^。]*？$/, '。').replace(/？$/, '') + '\n';
+      b += '　→ 使える保険：' + it.hoken + '\n';
+    }
+    b += '\n';
+  }
+  b += '■証券で確認する3点：\n';
+  b += '・車両保険の有無と型（一般型／エコノミー型）\n';
+  b += '・地震・噴火・津波危険車両全損時一時金特約\n';
+  b += '・弁護士費用特約と運転者の限定条件\n';
+  return 'mailto:?subject=' + encodeURIComponent('自動車保険の備えチェックの結果') +
+         '&body=' + encodeURIComponent(b);
+}
+
+btnYes.addEventListener('click', function(){ onAnswer(true); });
+btnNo.addEventListener('click', function(){ onAnswer(false); });
+
+function scrollToQuiz(){
+  if(quizSec){ quizSec.scrollIntoView({behavior:'smooth', block:'start'}); }
+}
+btnNext.addEventListener('click', function(){
+  if(qIdx < QUIZ.length - 1){
+    qIdx++;
+    renderQuestion();
+    if(quizBox){ quizBox.scrollIntoView({behavior:'smooth', block:'start'}); }
+  }else{
+    finishQuiz();
+  }
+});
+btnStop.addEventListener('click', function(){ finishQuiz(); });
+
+btnRetry.addEventListener('click', function(){
+  qIdx = 0; qScore = 0; qAnsweredCount = 0; wrongList = [];
+  elDone.classList.remove('show');
+  elPlay.style.display = 'block';
+  renderQuestion();
+  scrollToQuiz();
+});
+btnMailSelf.addEventListener('click', function(){ window.location.href = buildResultMail(); });
+btnPrint.addEventListener('click', function(){ window.print(); });
+
+renderQuestion();
+
+/* ---------- まとめ チェックリスト ---------- */
+var chkBoxes = document.querySelectorAll('#checklist .chk input');
+var chkMsg   = document.getElementById('chkMsg');
+
+function updateChecklist(){
+  var on = 0, i;
+  for(i = 0; i < chkBoxes.length; i++){
+    var label = chkBoxes[i].closest('.chk');
+    if(chkBoxes[i].checked){ on++; label.classList.add('on'); }
+    else{ label.classList.remove('on'); }
+  }
+  if(on === 0){
+    chkMsg.className = 'chk-msg';
+    chkMsg.textContent = 'あてはまるものにチェックを入れてみてください。証券で分かる項目と、今日おうちで確認できる項目が混じっています。';
+  }else if(on === chkBoxes.length){
+    chkMsg.className = 'chk-msg allok';
+    chkMsg.textContent = 'すべてチェックが付きました。すばらしい備えです。あとは、車の使い方が変わったとき（家族の免許取得・引っ越し・買い替え）に見直すだけ。そのときは、どうぞお声がけください。';
+  }else{
+    chkMsg.className = 'chk-msg';
+    chkMsg.textContent = on + '個チェックできました。残りの' + (chkBoxes.length - on) + '個が、次に確認したいところです。証券が見つからない・読み方が分からないときも、お手伝いします。';
+  }
+}
+(function(){
+  for(var i = 0; i < chkBoxes.length; i++){
+    chkBoxes[i].addEventListener('change', updateChecklist);
+  }
+})();
+
+/* ---------- もし全損になったら（簡易比較） ---------- */
+(function(){
+  var btns = document.querySelectorAll('.calc-btn');
+  var out  = document.getElementById('calcResult');
+  if(!btns.length || !out){ return; }
+
+  function yen(man){ return man.toLocaleString('ja-JP') + '万円'; }
+
+  function render(man){
+    var html = '';
+    if(man > 0){
+      html += '<p class="calc-lead">車両保険金額 <strong>' + yen(man) + '</strong> のご契約で全損になった場合の、一般的な例です。同じ「全損」でも、原因と特約でこれだけ変わります。</p>';
+      html += '<div class="calc-rows">';
+      html += '<div class="calc-row pay"><span class="k">大雨・台風・洪水で全損<small>車両保険（一般型・エコノミー型とも）</small></span><span class="v">最大 ' + yen(man) + '</span></div>';
+      html += '<div class="calc-row zero"><span class="k">地震・津波で全損（特約なし）<small>車両保険だけでは対象外</small></span><span class="v">0円</span></div>';
+      html += '<div class="calc-row pay"><span class="k">地震・津波で全損（一時金特約あり）<small>当面の足を確保するための一時金</small></span><span class="v">一時金 50万円</span></div>';
+      html += '</div>';
+      html += '<p class="calc-note">実際のお支払いは、時価・自己負担額（免責金額）・損害の認定・ご契約内容によります。一時金の金額・条件（車両保険金額が50万円を下回る場合はその額、など）は保険会社により異なります。</p>';
+    }else{
+      html += '<p class="calc-lead">車両保険を付けていないご契約では、<strong>ご自身の車の損害には保険金が出ません</strong>。</p>';
+      html += '<div class="calc-rows">';
+      html += '<div class="calc-row zero"><span class="k">大雨・台風・洪水で全損</span><span class="v">0円</span></div>';
+      html += '<div class="calc-row zero"><span class="k">地震・津波で全損</span><span class="v">0円</span></div>';
+      html += '<div class="calc-row zero"><span class="k">単独事故・あて逃げ・盗難</span><span class="v">0円</span></div>';
+      html += '<div class="calc-row"><span class="k">相手への賠償（対人・対物）<small>こちらは「相手のため」の備えです</small></span><span class="v">対象</span></div>';
+      html += '</div>';
+      html += '<p class="calc-note">対人・対物は相手の方への賠償に備える保険で、ご自身の車の修理費はご自身のご契約からは支払われません（相手のある事故で相手に過失がある場合は、相手側の対物賠償から支払われることがあります）。車両保険の要否は、車の時価とお住まいの水害リスクをあわせてご相談ください。</p>';
+    }
+    out.innerHTML = html;
+    out.classList.add('show');
+  }
+
+  for(var i = 0; i < btns.length; i++){
+    btns[i].addEventListener('click', function(){
+      for(var j = 0; j < btns.length; j++){
+        btns[j].classList.remove('on');
+        btns[j].setAttribute('aria-pressed', 'false');
+      }
+      this.classList.add('on');
+      this.setAttribute('aria-pressed', 'true');
+      render(parseInt(this.getAttribute('data-syaryo'), 10));
+    });
+  }
+})();
+
+/* ---------- 固定フッター（免責）の高さぶん、本文の下に余白を積む ---------- */
+(function(){
+  var footer = document.querySelector('.disclaimer');
+  if(!footer){ return; }
+  /* 免責フッターの高さは文字サイズ・画面幅で変わるので毎回実測する */
+  function layout(){
+    document.body.style.paddingBottom = (footer.offsetHeight + 16) + 'px';
+  }
+  window.addEventListener('resize', layout, {passive:true});
+  layout();
+})();
+
+/* ---------- セクション4：ケーススタディ（カード＋モーダル） ---------- */
+var CASES = [
+  {
+    chip:'もらい事故', title:'過失ゼロなのに、交渉は自分',
+    color:'#4a5aa0', bg:'#eeeffa',
+    ill:ART.rearend,
+    scene:[['sRearend','追突された'],['sTalk','進まない交渉'],['sLawyer','弁護士に依頼']],
+    lead:'自分は悪くないのに、どうすれば？',
+    story:'「信号待ちで追突されました。私は何も悪くないのに、相手の保険会社との話し合いがなかなか進まなくて困っています」',
+    hoken:'弁護士費用特約',
+    sonae:'<p>ご自身に過失がない事故では、ご自身の保険会社は相手方と示談交渉を行えません（弁護士法との関係）。弁護士費用特約があれば、弁護士への相談・依頼の費用を限度額の範囲内で補償できます。</p>' +
+          '<p class="case-plus">この特約を使っても、翌年の等級に影響しない扱いが一般的です。ご家族の契約に付いている特約を使えるケースもあります。付いているのに使われないままの、もったいない特約の代表です。</p>'
+  },
+  {
+    chip:'自分と家族のケガ', title:'過失があっても、治療費の全額を',
+    color:'#1b7867', bg:'#e6f5f0',
+    ill:ART.sInjury,
+    scene:[['sInjury','自分のケガ'],['sHospital','治療・入院'],['sMoney','過失分もカバー']],
+    lead:'相手からは7割しか出ないと言われた',
+    story:'「私にも3割の過失がある事故でした。相手の保険からは7割分しか出ないと言われて、治療費と休んだ分の収入が足りません…」',
+    hoken:'人身傷害保険',
+    sonae:'<p>過失割合にかかわらず、治療費・休業損害などの実際の損害額が、ご契約の範囲内で支払われます。相手との示談の決着を待たずに受け取れるのも、この保険の大きな役割です。</p>' +
+          '<p class="case-plus">「契約の車に搭乗中のみ」を対象とするタイプと、歩行中・自転車搭乗中など車外の自動車事故までカバーするタイプがあります。ご家族の契約と重複していることもあるので、範囲は証券でご確認ください。</p>'
+  },
+  {
+    chip:'日常のリスク', title:'自転車で、うっかり',
+    color:'#24729f', bg:'#e8f4fb',
+    ill:ART.sBike,
+    scene:[['sBike','自転車'],['sWalker','歩行者のケガ'],['sMoney','相手への賠償']],
+    lead:'相手のケガ、だれが払うの？',
+    story:'「子どもが自転車で、歩行者の方とぶつかってしまいました。ケガをさせてしまって…自動車保険は関係ないですよね？」',
+    hoken:'個人賠償責任特約',
+    sonae:'<p>実は、自動車保険にもセットで付けられる特約です。自転車事故や日常生活の賠償事故（飼い犬が人をかんだ、お子さまがお店の商品をこわした等）で、相手の方への賠償に備えられます。ご本人だけでなく同居のご家族なども対象になるのが一般的で、示談交渉サービス付きのものが多くあります。</p>' +
+          '<p class="case-plus">火災保険側に同じ特約が付いていて重複していることもよくあります。整理する前に、示談交渉サービスの有無など中身をご確認ください。</p>'
+  },
+  {
+    chip:'ご家族のこと', title:'子どもが原付に乗り始めた',
+    color:'#96631a', bg:'#fdf3e2',
+    ill:ART.sMoped,
+    scene:[['sMoped','原付バイク'],['sYoung','お子さまの通学'],['sMoney','保険料をおさえる']],
+    lead:'バイクの保険は高いと聞くけれど',
+    story:'「進学した息子が、原付で通学を始めることになりました。若い子のバイク保険は保険料が高いと聞いて、迷っています」',
+    hoken:'ファミリーバイク特約',
+    sonae:'<p>総排気量125cc以下の原動機付自転車なら、ご家族の自動車保険にこの特約を付けてカバーする方法があります。原付が複数台あってもまとめて対象にでき、特約を使っても等級に影響しない扱いが一般的です。</p>' +
+          '<p class="case-plus">補償の型（自損型・人身傷害型）でご自身のケガの守られ方が変わります。また、特約には等級制度がないため、長年無事故でも割引は育ちません。毎日長く乗るなら、単体のバイク保険との比較もご案内します。</p>'
+  },
+  {
+    chip:'出先のトラブル', title:'バッテリー上がり・パンク・脱輪',
+    color:'#8f4574', bg:'#fbeef6',
+    ill:ART.sBattery,
+    scene:[['sBattery','バッテリー上がり'],['sTow','レッカー移動'],['sVerdict','等級に影響なし']],
+    lead:'JAFに入っていないと、だめ？',
+    story:'「旅行先の駐車場で、車のバッテリーが上がってしまいました。JAFには入っていなくて…どうすればいいでしょうか」',
+    hoken:'ロードサービス（多くの契約に自動セット）',
+    sonae:'<p>多くの任意保険には、レッカー移動・バッテリー上がりの応急対応・パンク時のスペアタイヤ交換・脱輪の引き上げなどのロードサービスがセットされています。利用しても等級に影響しない扱いが一般的です。</p>' +
+          '<p class="case-plus">自動セットではなく選択制の保険会社もあり、サービスの範囲・回数制限・レッカーの無料距離も会社により異なります。JAF会員の方は重なり方の整理も。事故受付の番号とあわせて、スマホに登録しておくと安心です。</p>'
+  },
+  {
+    chip:'クルマの中の物', title:'積んでいた物は、別あつかい',
+    color:'#b2452f', bg:'#fdeee9',
+    ill:ART.sGolf,
+    scene:[['sRearend','事故でこわれた'],['sGolf','積んでいた物'],['sMoney','特約でカバー']],
+    lead:'車両保険で一緒に出る？',
+    story:'「追突された事故で、積んでいたゴルフバッグとカメラがこわれてしまいました。車両保険で一緒に出ますよね？」',
+    hoken:'車内身の回り品の補償特約',
+    sonae:'<p>意外な落とし穴ですが、車両保険が守るのは「車そのもの」と定着した付属品まで。車内やトランクに積んでいた物は、原則対象外です。身の回り品の特約を付けていれば、事故でこわれた積載物を限度額（10〜30万円程度が一般的）の範囲内で補償できます。</p>' +
+          '<p class="case-plus">現金・貴金属・データ類などは特約でも対象外。さらに、車上荒らしなどによる「盗難」は特約でも対象外とする保険会社が多いのもご注意ください（こわされた窓ガラスの修理は車両保険の領域です）。名称・範囲は保険会社により異なります。</p>'
+  }
+];
+
+var caseGrid   = document.getElementById('caseGrid');
+var caseModal  = document.getElementById('caseModal');
+var cmHead     = document.getElementById('caseModalHead');
+var cmIco      = document.getElementById('caseModalIco');
+var cmChip     = document.getElementById('caseModalChip');
+var cmTitle    = document.getElementById('caseModalTitle');
+var cmStory    = document.getElementById('caseModalStory');
+var cmHoken    = document.getElementById('caseModalHoken');
+var cmSonae    = document.getElementById('caseModalSonae');
+var cmScene    = document.getElementById('caseModalScene');
+var cmClose    = document.getElementById('caseModalClose');
+var cmBack     = document.getElementById('caseModalBack');
+var cmLastFocus = null;
+
+var SVG_SHIELD = '<svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 4.5 5.6v5.2c0 4.7 3.2 8.6 7.5 9.8 4.3-1.2 7.5-5.1 7.5-9.8V5.6L12 2.7Z"/></svg>';
+
+(function renderCases(){
+  var html = '', i, c;
+  for(i = 0; i < CASES.length; i++){
+    c = CASES[i];
+    html +=
+      '<article class="case-card" data-i="' + i + '">' +
+        '<div class="case-illust" style="background:' + c.bg + '" aria-hidden="true">' + c.ill + '</div>' +
+        '<span class="case-chip" style="color:' + c.color + ';background:' + c.bg + '">' + c.chip + '</span>' +
+        '<h3>' + c.title + '</h3>' +
+        '<p class="case-q">' + c.lead + '</p>' +
+        '<span class="case-ans">使えるのは：' + c.hoken + '</span>' +
+        '<button type="button" class="case-btn" aria-haspopup="dialog">' +
+          'どこまで出るか見る' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>' +
+        '</button>' +
+      '</article>';
+  }
+  caseGrid.innerHTML = html;
+})();
+
+function openCase(i){
+  var c = CASES[i];
+  if(!c){ return; }
+  cmHead.style.background = c.color;
+  cmIco.innerHTML = c.ill;
+  cmChip.textContent = c.chip;
+  cmTitle.textContent = c.title;
+  cmStory.textContent = c.story;
+  cmHoken.innerHTML = SVG_SHIELD + c.hoken;
+  cmSonae.innerHTML = c.sonae;
+
+  var sh = '', s;
+  for(var j = 0; j < c.scene.length; j++){
+    s = c.scene[j];
+    sh += '<figure><span class="art" aria-hidden="true">' + (ART[s[0]] || '') + '</span><figcaption>' + s[1] + '</figcaption></figure>';
+  }
+  cmScene.innerHTML = sh;
+
+  cmLastFocus = document.activeElement;
+  caseModal.classList.add('open');
+  caseModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  setBackgroundInert(true);
+  cmClose.focus();
+}
+
+function closeCase(){
+  caseModal.classList.remove('open');
+  caseModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  setBackgroundInert(false);
+  if(cmLastFocus && cmLastFocus.focus){ cmLastFocus.focus(); }
+}
+
+/* モーダル表示中は背面をキーボード・読み上げの対象外にする */
+function setBackgroundInert(on){
+  var bg = document.querySelectorAll('body > header, body > section, body > footer');
+  for(var i = 0; i < bg.length; i++){ bg[i].inert = on; }
+}
+
+caseGrid.addEventListener('click', function(e){
+  var card = e.target.closest('.case-card');
+  if(!card){ return; }
+  openCase(parseInt(card.getAttribute('data-i'), 10));
+});
+cmClose.addEventListener('click', closeCase);
+cmBack.addEventListener('click', closeCase);
+document.addEventListener('keydown', function(e){
+  if(!caseModal.classList.contains('open')){ return; }
+  if(e.key === 'Escape'){ closeCase(); return; }
+  /* inert未対応環境向けの簡易フォーカストラップ */
+  if(e.key === 'Tab'){
+    var f = caseModal.querySelectorAll('button, a[href]');
+    if(!f.length){ return; }
+    var first = f[0], last = f[f.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+});
+
+})();
+</script>
+</body>
+</html>
